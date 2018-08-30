@@ -1,0 +1,35 @@
+﻿.mmenu1-header .logo 
+{
+	background-image: url(ui/logo.png);
+	background-repeat: no-repeat;
+	height: 60px;
+	width: 200px;
+	_background-image:none;
+	_filter : progid:DXImageTransform.Microsoft.AlphaImageLoader (sizingMethod='scale',src='BPM/Styles/ui/logo.png');
+}
+
+.mmenu1-header .site_switch .switch:hover { background-image: none; }
+
+.NoticeRow p {
+    margin:10px 10px 10px 10px !important;
+    font-size:14px;
+    color:#000000;
+    line-height:normal;
+}
+
+.NoticeRow .topic 
+{
+    margin:10px 0px 0px 5px !important;
+}
+
+.NoticeRow .topic .ntitle
+{
+	font-size:18px;
+	font-weight:bold;
+}
+
+.NoticeRow .topic .nauth
+{
+	margin-left:6px;
+	color:#999999;
+}

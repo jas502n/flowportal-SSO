@@ -1,0 +1,93 @@
+﻿@import url(../../Frame/Styles/core.css);
+
+.x-tree-node-leaf .folder{background-image:url(../../ExtJS/images/default/tree/folder.gif);}
+
+.yz-grid-menu .x-menu-item-icon{height:13px;width:15px}
+.yz-grid-menu a.x-menu-item{line-height:13px;padding: 2px 12px 2px 26px;}
+.yz-grid-menu .x-menu-list{padding: 2px;}
+.yz-grid-menu  .x-menu-sep{margin: 0px 0px;}
+
+.appendblock {background-image: url(../images/appendblock.gif) !important;}
+.delete {background-image: url(../images/delete.gif) !important;}
+.insertabove {background-image: url(../images/insertabove.gif) !important;}
+.insertbelow {background-image: url(../images/insertbelow.gif) !important;}
+.appendcopy {background-image: url(../images/appendcopy.gif) !important;}
+.copy {background-image: url(../images/copy.gif) !important;}
+.paste {background-image: url(../images/paste.gif) !important;}
+
+.TaskRowGray .x-grid3-cell
+{
+	color:#999999;
+}
+
+.x-grid3-body .TaskRowGray .x-grid3-cell a
+{
+	color:#999999;
+}
+
+.yz-inp-cnt
+{
+    float:left;
+    position:relative;
+    padding:0px;
+    margin:0px;
+}
+
+.yz-spoor
+{
+    display:none;
+    padding:0px;
+    margin:0px;
+    position:absolute;
+    right:0px;
+    top:0px;
+    background-image:url(ui/modify.png);
+    background-position:0px -0px;
+    background-repeat:no-repeat;
+    width:10px;
+    height:10px;
+    cursor:pointer;
+}
+
+.yz-inp-cnt-spoor .yz-spoor
+{
+    display:block;    
+}
+
+.yz-spoor-table div
+{
+    padding:3px;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+.yz-spoor-table .yz-spoor-tb-coldate div
+{
+    width:140px;
+}
+
+.yz-spoor-table .yz-spoor-tb-coluser div
+{
+    width:100px;
+}
+
+.yz-spoor-table .yz-spoor-tb-colvalue div
+{
+    width:140px;
+}
+
+.yz-spoor-tr-head div
+{
+    font-weight:bold;
+    color:#333
+}
+
+.yz-spoor-tr-data div
+{
+    color:#333
+}
+
+.yz-spoor-tr-data td.yz-spoor-tb-colvalue
+{
+    color:#000;
+}

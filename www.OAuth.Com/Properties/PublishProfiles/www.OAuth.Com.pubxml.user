@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Joson\Desktop\Oauth\www.OAuth.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/DigitalHR.BLL.dll">
+      <publishTime>10/09/2014 12:20:49</publishTime>
+    </File>
+    <File Include="bin/DigitalHR.DBUtility.dll">
+      <publishTime>10/09/2014 12:20:47</publishTime>
+    </File>
+    <File Include="bin/DigitalHR.Model.dll">
+      <publishTime>10/09/2014 12:20:46</publishTime>
+    </File>
+    <File Include="bin/DigitalHR.SQLServerDAL.dll">
+      <publishTime>10/09/2014 12:20:50</publishTime>
+    </File>
+    <File Include="bin/DigitalHR.Web.dll">
+      <publishTime>10/09/2014 12:20:53</publishTime>
+    </File>
+    <File Include="bin/Joson.SSOSite.OAuth.dll">
+      <publishTime>08/05/2015 18:41:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/19/2012 10:59:52</publishTime>
+    </File>
+    <File Include="bin/Net.ADHelper.dll">
+      <publishTime>11/26/2014 13:59:45</publishTime>
+    </File>
+    <File Include="bin/Net.Common.dll">
+      <publishTime>10/21/2014 00:19:57</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>04/22/2012 22:21:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>08/05/2015 12:20:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>08/17/2012 11:22:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/10/2012 12:03:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/10/2012 12:03:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/10/2012 12:03:34</publishTime>
+    </File>
+    <File Include="bin/www.OAuth.Com.dll">
+      <publishTime>08/15/2018 15:15:01</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>07/10/2012 23:31:36</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>07/10/2012 23:31:52</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>07/10/2012 23:31:42</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>07/10/2012 23:31:42</publishTime>
+    </File>
+    <File Include="CSS/admin.css">
+      <publishTime>08/12/2014 18:09:29</publishTime>
+    </File>
+    <File Include="CSS/css.css">
+      <publishTime>10/09/2014 17:20:20</publishTime>
+    </File>
+    <File Include="CSS/lanrenzhijia.css">
+      <publishTime>08/12/2014 18:09:29</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/13/2014 12:43:01</publishTime>
+    </File>
+    <File Include="Images/1.jpg">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/2.jpg">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/3.jpg">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/4.jpg">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/5.jpg">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/6.jpg">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/20131204094937.jpg">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/20140109112034.jpg">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/20140613113759.jpg">
+      <publishTime>10/09/2014 13:12:37</publishTime>
+    </File>
+    <File Include="Images/ImgHome/banner-libra923-1023.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/banner-scorpio-1024-1122.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/ImgHome/banner.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/guoqing-banner.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/home-anju.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/home-chaoqingbox.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/ImgHome/home-chongyang99.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgZhuti/huodong.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/ImgZhuti/tongzhi.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/ImgZhuti/xinwen.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/ImgZhuti/Zhuti01.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/item-pointer-mover.gif">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/item-pointer.gif">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/lava.gif">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/lava.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/left_001.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/left_002.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/line_bg.gif">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/Logo.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/main-bg.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/main-delimiter.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/newgif.gif">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/new_point.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/title_bg.jpg">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/UserID.jpg">
+      <publishTime>10/09/2014 16:17:50</publishTime>
+    </File>
+    <File Include="Images/UserLogin.jpg">
+      <publishTime>10/09/2014 15:58:10</publishTime>
+    </File>
+    <File Include="Images/UserPwd.jpg">
+      <publishTime>10/09/2014 16:17:13</publishTime>
+    </File>
+    <File Include="Index.aspx">
+      <publishTime>08/04/2015 18:26:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.js">
+      <publishTime>10/13/2014 11:13:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.7.1.min.js">
+      <publishTime>10/13/2014 11:13:48</publishTime>
+    </File>
+    <File Include="Scripts/jquery.js">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery.KinSlideshow-1.1.js">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/15/2018 15:15:01</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

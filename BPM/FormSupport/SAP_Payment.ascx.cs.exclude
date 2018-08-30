@@ -1,0 +1,101 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using SAP.Connector;
+
+public partial class FormSupport_SAP_Payment : ListBase
+{
+    private string inputkey;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        TableRow hrow = CreateHeaderRow();
+        this._table1.Rows.Add(hrow);
+
+        hrow.Cells.Add(CreateCheckColumn());
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("条件代码", 100));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("支付条件描述", 300));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        string paykey = string.IsNullOrEmpty(Request.Form["paykey"]) ? "" : Request.Form["paykey"].Trim();
+        DataTable mytable = GetSapData(paykey);
+        foreach (DataRow myrow in mytable.Rows)
+        {
+            inputkey = "Col1=" + myrow["ZTERM"].ToString().Trim() + ";Col2=" + myrow["VTEXT"].ToString().Trim() + ";";
+            TableRow row = CreateItemRow();
+            row.CssClass = "ListItemRowH";
+            this._table1.Rows.Add(row);
+            row.Cells.Add(CreateCheckCell2(inputkey));
+            row.Cells.Add(CreateCell(myrow["ZTERM"].ToString().Trim(), 2));
+            row.Cells.Add(CreateCell(myrow["VTEXT"].ToString().Trim(), 2));
+        }
+    }
+    protected TableCell CreateCheckCell2(string mykey)
+    {
+        TableCell cell = new TableCell();
+        CheckBox checkBox = new CheckBox();
+        cell.Controls.Add(checkBox);
+        cell.CssClass = "CHK";
+        cell.Text = "<input id=\"" + mykey + "\" type=\"checkbox\" onclick=\"checkrow(this);\">";
+        cell.ColumnSpan = 2;
+        return cell;
+    }
+
+    protected DataTable GetData(string paykey)
+    {
+        DataTable SapTable;
+        string strError;
+        Destination sapDes = new Destination();
+        sapDes.Client = (short)Convert.ToInt16(200);
+        sapDes.SystemNumber = (short)Convert.ToInt16(00);
+        sapDes.Username = "IT09";
+        sapDes.Password = "123";
+        sapDes.AppServerHost = "172.20.1.31";
+
+        SAP_RFC_0010.SAPProxy1 dataProxy = new SAP_RFC_0010.SAPProxy1();
+        try
+        {
+            dataProxy.Connection = SAP.Connector.Connection.GetConnectionFromPool(sapDes);
+            SAP_RFC_0010.ZT052ATable zzTable = new SAP_RFC_0010.ZT052ATable();
+            dataProxy.Z_Rfc_0010(paykey, "X", out strError, ref zzTable);
+
+            SapTable = zzTable.ToADODataTable();
+
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("从SAP检索数据失败，原因：" + ex.Message);
+        }
+        finally
+        {
+            dataProxy.Connection.Close();
+            dataProxy.Connection = null;
+        }
+        return SapTable;
+    }
+
+
+    /// <summary>
+    /// Created By ZZM
+    /// </summary>
+    /// <param name="paykey"></param>
+    /// <returns></returns>
+    protected DataTable GetSapData(string paykey) 
+    {
+        SapRFCHelper saph = new SapRFCHelper();
+        string rfcName = "Z_RFC_0010";
+        string[] param = { "CHAR_IN|"+paykey, "CHAR_TYPE|X" };
+
+        DataTable dt = saph.GetRfcOutTable("PRD", param, rfcName, "IT_OUT");
+
+        return dt;
+    }
+
+}

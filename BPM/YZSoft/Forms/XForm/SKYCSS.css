@@ -1,0 +1,104 @@
+﻿
+.demotable{
+border:1px solid #DDDDDD;
+color:#666;
+table-layout:fixed;
+empty-cells:show;
+border-collapse: collapse;
+margin:0 auto;
+}
+.demotable th {
+background-repeat:repeat-x;
+height:30px;
+}
+.demotable td,.demotable th{
+border:1px solid #DDDDDD;
+padding:0 4px 0 2px;
+min-height:30px;
+}
+.demotable tr.alter{
+background-color:#f5fafe;
+}
+.demotable .td_label {
+background-color:#EEEEEE;text-align:right;
+}
+.demotable .td_header {
+background-color:#EEEEEE;padding:2px 4px 2px 4px; font-weight:bold; font-family:微软雅黑; color:#333333; font-size:15px;  text-align:left;
+}
+
+.textbox_red {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: #ffb3a7 1px solid
+}
+
+.textbox_gray {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: #CCCCCC 1px solid
+}
+
+.title{background-color:#CCCCCC;  width:200px;}
+
+
+
+
+
+
+TABLE.AA {
+	BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-COLLAPSE: separate; BACKGROUND-COLOR: #d1dedf; BORDER-RIGHT-WIDTH: 0px
+}
+TABLE.AA TD {
+	BORDER-RIGHT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-BOTTOM: #d1dedf 1px solid; HEIGHT: 15px
+}
+TABLE.AA TR.HeaderRow {
+	BACKGROUND-COLOR: #f0f0f0
+}
+TABLE.AA TR.HeaderRow TD {
+	HEIGHT: 25px; TEXT-ALIGN: left
+}
+TABLE.AA TR.HeaderRow TD.NoColumn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.HeaderRow TD.StepNameColumn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.HeaderRow TD.SignColumn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.HeaderRow TD.ActionColumn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.HeaderRow TD.DateColumn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.HeaderRow TD.CommentsColumn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-WEIGHT: bold; WIDTH: 99%
+}
+TABLE.AA TR.DataRow {
+	BACKGROUND-COLOR: #ffffff
+}
+TABLE.AA TR.DataRow TD {
+	HEIGHT: 25px; TEXT-ALIGN: left
+}
+TABLE.AA TR.DataRow TD.NoCell {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.DataRow TD.StepNameCell {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.DataRow TD.SignCell {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.DataRow TD.ActionCell {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.DataRow TD.DateCell {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.DataRow TD.CommentsCell {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; COLOR: blue; TEXT-ALIGN: left
+}
+TABLE.AA TR.Running TD.NoCell {
+	BACKGROUND-COLOR: #e0efe6
+}
+TABLE.AA TR.Running TD.SignCell {
+	COLOR: #999999
+}
+

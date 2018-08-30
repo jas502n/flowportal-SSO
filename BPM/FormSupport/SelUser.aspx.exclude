@@ -1,0 +1,35 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SelUser.aspx.cs" Inherits="FormSupport_SelUser" %>
+
+<%@ Register Assembly="BPM.WebControls" Namespace="BPM.WebControls" TagPrefix="cc1" %>
+<%--<%@ Register Src="../Controls/OrgTreeView.ascx" TagName="OrgTreeView" TagPrefix="uc1" %>--%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title><%=Resources.BPMResource.SelUser_Caption%></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <cc1:CSSLink ID="CSSLink1" CSSPath="../Style/Main.css" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="DPnl">
+        <span class="Caption"><%=Resources.BPMResource.SelUser_Title%></span>
+        <asp:Button ID="_bs" runat="server" Text="<% $Resources:BPMResource, Com_OK %>" CssClass="Btn2"/>
+        <asp:Button ID="_bc" runat="server" Text="<% $Resources:BPMResource, Com_Cancel %>" CssClass="Btn1" OnClientClick="window.close();return false;"/>
+    </div>
+    <table class="MainBody">
+        <tr>
+            <td class="LPnl2">
+                <div class="WC">
+                <uc1:OrgTreeView id="OrgTreeView1" NavigateUrl="../Common/ListOUMember.aspx?fs=y&" Target="memberlist" runat="server" />
+                </div>
+            </td>
+            <td class="RPnl2" id="mlist">
+                <iframe runat="server" id="memberlist" name="memberlist" style="width:100%" src="../Common/ListOUMember.aspx" frameborder="no" border="0" framespacing="0"></iframe>               
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

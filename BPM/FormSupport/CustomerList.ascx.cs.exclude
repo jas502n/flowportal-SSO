@@ -1,0 +1,113 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using SAP.Connector;
+
+public partial class FormSupport_CustomerList : ListBase
+{
+    private string inputkey;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        TableRow hrow = CreateHeaderRow();
+        this._table1.Rows.Add(hrow);
+
+        hrow.Cells.Add(CreateCheckColumn());
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("SAP客户名称", 180));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("SAP客户编号", 130));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("SAP客户等级", 130));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        if (!string.IsNullOrEmpty(Request.Form["customername"]))
+        {
+            string customername = string.IsNullOrEmpty(Request.Form["customername"].Trim()) ? "" : Request.Form["customername"].Trim();
+            DataTable mytable = GetSapData(customername); //GetData(customername);
+            foreach(DataRow myrow in mytable.Rows)
+            {
+                inputkey = "Col1=" + myrow["NAME1"].ToString().Trim() + ";Col2=" + myrow["KUNNR"].ToString().Trim() + ";Col3=" + myrow["STEXT"].ToString().Trim() + ";";
+                TableRow row = CreateItemRow();
+                row.CssClass = "ListItemRowH";
+                this._table1.Rows.Add(row);
+                row.Cells.Add(CreateCheckCell2(inputkey));
+                row.Cells.Add(CreateCell(myrow["NAME1"].ToString().Trim(), 2));
+                row.Cells.Add(CreateCell(myrow["KUNNR"].ToString().Trim(), 2));
+                row.Cells.Add(CreateCell(myrow["STEXT"].ToString().Trim(), 2));
+            }
+        }
+    }
+
+    protected TableCell CreateCheckCell2(string mykey)
+    {
+        TableCell cell = new TableCell();
+        CheckBox checkBox = new CheckBox();
+        cell.Controls.Add(checkBox);
+        cell.CssClass = "CHK";
+        cell.Text = "<input id=\"" + mykey + "\" type=\"checkbox\" onclick=\"checkrow(this);\">";
+        cell.ColumnSpan = 2;
+        return cell;
+    }
+
+    /// <summary>
+    /// CREATED BY ZZM
+    /// </summary>
+    /// <param name="strCustomerName"></param>
+    /// <returns></returns>
+    protected DataTable GetSapData(string strCustomerName)
+    {
+        SapRFCHelper saph = new SapRFCHelper();
+        string[] param = { "NAME1|" + strCustomerName };
+        string rfcName = "Z_RFC_READCUSTOMER1";
+
+        DataTable dt = saph.GetRfcOutTable("PRD", param, rfcName, "I_KUNNR");
+        return dt;
+    }
+
+    protected DataTable GetData(string strCustomerName)
+    {
+        DataTable SapTable;
+        string strError;
+        Destination sapDes = new Destination();
+        sapDes.Client = (short)Convert.ToInt16(200);
+        sapDes.SystemNumber = (short)Convert.ToInt16(00);
+        sapDes.Username = "IT09";
+        sapDes.Password = "123";
+        sapDes.AppServerHost = "172.20.1.36";
+
+        SAPCustomerInter.SAPProxy1 dataProxy = new SAPCustomerInter.SAPProxy1();
+
+        try
+        {
+            dataProxy.Connection = SAP.Connector.Connection.GetConnectionFromPool(sapDes);
+
+            SAPCustomerInter.ZKUNNRTable zzTable = new SAPCustomerInter.ZKUNNRTable();
+
+            dataProxy.Z_Rfc_Readcustomer1("", strCustomerName, out strError, ref zzTable);
+
+            SapTable = zzTable.ToADODataTable();
+
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("从SAP检索数据失败，原因：" + ex.Message);
+        }
+        finally
+        {
+            dataProxy.Connection.Close();
+            dataProxy.Connection = null;
+        }
+        return SapTable;
+    }
+
+    
+
+
+}

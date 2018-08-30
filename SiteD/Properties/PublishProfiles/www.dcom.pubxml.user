@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Joson\Desktop\Oauth\www.d.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AuthPage1.aspx">
+      <publishTime>09/28/2014 16:06:09</publishTime>
+    </File>
+    <File Include="AuthPage2.aspx">
+      <publishTime>09/28/2014 16:06:31</publishTime>
+    </File>
+    <File Include="bin/Net.Common.dll">
+      <publishTime>10/21/2014 00:19:57</publishTime>
+    </File>
+    <File Include="bin/SiteD.dll">
+      <publishTime>05/15/2018 11:44:25</publishTime>
+    </File>
+    <File Include="LogIn.aspx">
+      <publishTime>09/28/2014 14:20:28</publishTime>
+    </File>
+    <File Include="Quit.aspx">
+      <publishTime>09/28/2014 16:06:55</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/15/2018 11:44:26</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,752 @@
+﻿<%@ Page Language="C#" %>
+<%@ Register TagPrefix="aspxform" Namespace="XFormDesigner.Framework.Web.UI" Assembly="XFormDesigner.Framework" %>
+<script runat="server">
+
+    protected void Page_Load(object sender, EventArgs e)
+        {
+            XTextBox1.Attributes.Add("onpropertychange", "this.style.height=this.scrollHeight+(this.offsetHeight-this.clientHeight+1)");
+           XTextBox2.Attributes.Add("onpropertychange", "this.style.height=this.scrollHeight+(this.offsetHeight-this.clientHeight+1)");
+           XTextBox11.Attributes.Add("onpropertychange", "this.style.height=this.scrollHeight+(this.offsetHeight-this.clientHeight+1)");
+           XTextBox12.Attributes.Add("onpropertychange", "this.style.height=this.scrollHeight+(this.offsetHeight-this.clientHeight+1)");
+           XTextBox23.Attributes.Add("onpropertychange", "this.style.height=this.scrollHeight+(this.offsetHeight-this.clientHeight+1)");
+           XTextBox27.Attributes.Add("onpropertychange", "this.style.height=this.scrollHeight+(this.offsetHeight-this.clientHeight+1)");
+           XTextBox39.Attributes.Add("onpropertychange", "this.style.height=this.scrollHeight+(this.offsetHeight-this.clientHeight+1)");
+           XTextBox40.Attributes.Add("onpropertychange", "this.style.height=this.scrollHeight+(this.offsetHeight-this.clientHeight+1)");
+           XTextBox41.Attributes.Add("onpropertychange", "this.style.height=this.scrollHeight+(this.offsetHeight-this.clientHeight+1)");
+    
+           if(XTextBox18.Text=="")
+           {
+                TBSI.Attributes.Add("class","noprint");
+           }
+        }
+
+</script>
+<html xmlns:xform="xmlns:xform">
+<head runat="server">
+    <title>BPM Form</title> <style>BODY {
+	FONT-SIZE: 13px; FONT-FAMILY: verdana
+}
+TABLE {
+	FONT-SIZE: 13px; FONT-FAMILY: verdana; BORDER-COLLAPSE: collapse
+}
+P {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FONT-SIZE: 13px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY:verdana
+}
+TD {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 2px; BORDER-LEFT-COLOR: #d1dedf; BORDER-BOTTOM-COLOR: #d1dedf; PADDING-BOTTOM: 0px; BORDER-TOP-COLOR: #d1dedf; BORDER-RIGHT-COLOR: #d1dedf
+}
+TD.NoPadding {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	HEIGHT: 20px
+}
+INPUT.UL {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: #33ff33 1px solid
+}
+.BOXCSS {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: #517dbf 1px solid
+}
+.MYHEAD {
+	BORDER-TOP: #d1dedf 1px solid; FONT-WEIGHT: none; FONT-SIZE: 13px; COLOR: #004e98; BACKGROUND-COLOR: #dde6f4
+}
+.MYTABLE {
+	BORDER-RIGHT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-BOTTOM: #d1dedf 1px solid; BACKGROUND-COLOR: #fbfdff
+}
+TABLE.AA {
+	BORDER-COLLAPSE: separate; BACKGROUND-COLOR: #d1dedf
+}
+TABLE.AA TD {
+	BORDER-TOP: white 0px solid; BORDER-LEFT: white 0px solid
+}
+TABLE.AA TR.HeaderRow {
+	BACKGROUND-COLOR: #ffffff
+}
+TABLE.AA TR.HeaderRow TD {
+	HEIGHT: 29px; TEXT-ALIGN: center
+}
+TABLE.AA TR.HeaderRow TD.NoColumn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.HeaderRow TD.StepNameColumn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.HeaderRow TD.SignColumn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.HeaderRow TD.ActionColumn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.HeaderRow TD.DateColumn {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.HeaderRow TD.NoColumn {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px
+}
+TABLE.AA TR.HeaderRow TD.CommentsColumn {
+	WIDTH: 99%
+}
+TABLE.AA TR.DataRow {
+	BACKGROUND-COLOR: #f0f0f0
+}
+TABLE.AA TR.DataRow TD {
+	HEIGHT: 41px; TEXT-ALIGN: center
+}
+TABLE.AA TR.DataRow TD.NoCell {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.DataRow TD.StepNameCell {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.DataRow TD.SignCell {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.DataRow TD.ActionCell {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.DataRow TD.DateCell {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; WIDTH: 1%; WHITE-SPACE: nowrap
+}
+TABLE.AA TR.DataRow TD.NoCell {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px
+}
+TABLE.AA TR.DataRow TD.CommentsCell {
+	TEXT-ALIGN: left
+}
+TABLE.AA TR.Running TD.NoCell {
+	BACKGROUND-COLOR: #e0efe6
+}
+TABLE.AA TR.Running TD.SignCell {
+	COLOR: #999999
+}
+TEXTAREA {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; OVERFLOW-Y: visible; BACKGROUND: #ffffff; OVERFLOW: hidden; BORDER-LEFT: #ffffff 0px solid; BORDER-BOTTOM: #ffb3a7 0px solid
+}
+.BOXCSS {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; BORDER-LEFT: medium none; BORDER-BOTTOM: #d1dedf 1px solid;OVERFLOW: hidden
+}
+
+@media print{
+.noprint{  display:none}
+}
+</style>
+    <script language="javascript" type="text/javascript">
+    function getSN(SN)
+    {
+        var PISN;
+
+        PISN=SN.toString().substr(2,10);
+        return PISN;
+    }
+
+function getDate(AppDate)
+{
+   var Year;
+   var Month;
+   var Date;
+
+   Year=AppDate.toString().substr(0,4);
+   Month=AppDate.toString().substr(5,2);
+   Date=AppDate.toString().substr(8,2);
+   switch(Month)
+   {
+     case "01":
+        return "Jan "+Date+","+Year;
+        break;
+     case "02":
+        return "Feb "+Date+","+Year;
+        break;
+     case "03":
+        return "Mar "+Date+","+Year;
+        break;
+     case "04":
+        return "Apr "+Date+","+Year;
+        break;
+     case "05":
+        return "May "+Date+","+Year;
+        break;
+     case "06":
+        return "Jun "+Date+","+Year;
+        break;
+     case "07":
+        return "Jul "+Date+","+Year;
+        break;
+     case "08":
+        return "Aug "+Date+","+Year;
+        break;
+     case "09":
+        return "Sep "+Date+","+Year;
+        break;
+     case "10":
+        return "Oct "+Date+","+Year;
+        break;
+     case "11":
+        return "Nov "+Date+","+Year;
+        break;
+     case "12":
+        return "Dec "+Date+","+Year;
+        break;
+     default:
+        break;
+    }
+
+}
+
+</script>
+</head>
+<body>
+    <form runat="server">
+        <div align="center">
+            <table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" border="0" cellspacing="0" cellpadding="0" width="800">
+                <tbody>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" height="53" width="217">
+                            &nbsp;<aspxform:XLabel id="XLabel1" runat="server" Value ValueToDisplayText Font-Size="X-Large" text="SKYWORTH"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: medium none" width="403" align="left">
+                            <asp:Image id="Image1" runat="server" ImageUrl="../../image/logo.gif"></asp:Image>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT-COLOR: #d1dedf; BORDER-TOP: #d1dedf 1px solid; BORDER-LEFT-WIDTH: 1px; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="white" width="224">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" height="25" colspan="2" align="left">
+                            <aspxform:XLabel id="XLabel2" runat="server" Value ValueToDisplayText Font-Size="Medium" text="Shenzhen Skyworth Wireless Technology Co., Ltd"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid">
+                            <aspxform:XLabel id="XLabel5" runat="server" Value ValueToDisplayText Font-Size="Medium" text="Proforma Invoice"></aspxform:XLabel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" height="25" colspan="3">
+                            <aspxform:XLabel id="XLabel3" runat="server" Value ValueToDisplayText text="Unit3A01, Block A Skyworth Bldg.,Gaoxin Ave. 1.S.,"></aspxform:XLabel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" height="25" colspan="3">
+                            <aspxform:XLabel id="XLabel6" runat="server" Value ValueToDisplayText text="Nanshan District, Shenzhen, China"></aspxform:XLabel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" height="25" colspan="3">
+                            <aspxform:XLabel id="XLabel4" runat="server" Value ValueToDisplayText text="Tel:+86-755-26010007 Fax:+86-755-26010070"></aspxform:XLabel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" height="25" colspan="2" align="right">
+                            <aspxform:XLabel id="XLabel11" runat="server" Value ValueToDisplayText text="Invoice"></aspxform:XLabel>
+                            &nbsp;
+                        </td>
+                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid">
+                            <aspxform:XTextBox id="XTextBox33" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="White" XDataBind="PI_Applicant.SN" DisableBehavior="ReadOnly" BackColor="White" BorderStyle="None" ReadOnly="True" width="98%"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" height="20" colspan="2" align="right">
+                            &nbsp;<aspxform:XLabel id="XLabel12" runat="server" Value ValueToDisplayText text="Date"></aspxform:XLabel>
+                            &nbsp;
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid">
+                            <aspxform:XTextBox id="XTextBox3" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="White" XDataBind="PI_Applicant.AppDate" DisableBehavior="ReadOnly" BackColor="White" BorderStyle="None" ReadOnly="True" width="98%"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" height="24" colspan="3">
+                            <aspxform:XRadioButtonList id="XRadioButtonList1" runat="server" XDataBind="PI_Applicant.Type" CssClass="noprint" RepeatDirection="Horizontal" RepeatLayout="Flow">
+                                <asp:ListItem Selected="True">大货</asp:ListItem>
+                                <asp:ListItem>散件</asp:ListItem>
+                            </aspxform:XRadioButtonList>
+                            &nbsp;&nbsp;&nbsp;
+                            <aspxform:XLabel id="XLabel52" runat="server" Value ValueToDisplayText text="请选择领导审核：" CssClass="noprint" HiddenExpress="PI_Applicant.HRID!='SDT03767'"></aspxform:XLabel>
+                            <aspxform:XRadioButtonList id="XRadioButtonList2" runat="server" XDataBind="PI_Applicant.SuperLeader" CssClass="noprint" RepeatDirection="Horizontal" RepeatLayout="Flow" HiddenExpress="PI_Applicant.HRID!='SDT03767'">
+                                <asp:ListItem Selected="True" Value="SDT00014">张强</asp:ListItem>
+                                <asp:ListItem Value="SDT00320">李雪</asp:ListItem>
+                            </aspxform:XRadioButtonList>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" border="0" cellspacing="0" cellpadding="0" width="800">
+                <tbody>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#d1dedf" height="24" colspan="2">
+                            <aspxform:XLabel id="PerInfo" runat="server" Value ValueToDisplayText text="Bill to:"></aspxform:XLabel>
+                            <aspxform:XTextBox id="XTextBox35" runat="server" BorderWidth="1" BorderColor="#DCDCDC" XDataBind="PI_Applicant.Dept" width="10px" HiddenExpress="1"></aspxform:XTextBox>
+                            <aspxform:XTextBox id="XTextBox36" runat="server" BorderWidth="1" BorderColor="#DCDCDC" XDataBind="PI_Applicant.HRID" width="10px" HiddenExpress="1"></aspxform:XTextBox>
+                            <aspxform:XTextBox id="XTextBox37" runat="server" BorderWidth="1" BorderColor="#DCDCDC" XDataBind="PI_Applicant.Applicant" width="10px" HiddenExpress="1"></aspxform:XTextBox>
+                            <span class="MsoCommentReference"><span style="FONT-FAMILY: 'Times New Roman','serif'; FONT-SIZE: 10.5pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"><font color="black" size="2" face="Arial"></font></span></span></td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" bgcolor="#d1dedf" colspan="2">
+                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 10pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-bidi-font-size: 12.0pt" lang="EN-US"><font color="black">
+                            <aspxform:XLabel id="XLabel8" runat="server" Value ValueToDisplayText text="Ship to:"></aspxform:XLabel>
+                            </font></span></td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent" height="24" width="80">
+                            <aspxform:XLabel id="XLabel24" runat="server" Value ValueToDisplayText text="Company:"></aspxform:XLabel>
+                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 9pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"></span></td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#f0f0f0" width="300">
+                            <aspxform:XTextBox id="XTextBox8" runat="server" BorderWidth="1" BorderColor="#DCDCDC" XDataBind="PI_Applicant.BTCompany" DisableBehavior="ReadOnly" BackColor="#F0F0F0" BorderStyle="None" width="90%"></aspxform:XTextBox>
+                            <aspxform:XDataBrowserButton id="XDataBrowserButton1" runat="server" CssClass="noprint" Width="21px" DataMap="BTCompany->PI_Applicant.BTCompany;BTAdd->PI_Applicant.BTAdd;BTTel->PI_Applicant.BTTel;BTATTN->PI_Applicant.BTATTN" XDataSource="TableName:PI_BTInformation" DisplayColumns="Dealernum:Dealernum,50;BTCompany:Company,200;BTAdd:Add,200;BTTel:Tel,50;BTATTN:ATTN,50"></aspxform:XDataBrowserButton>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent" width="80">
+                            <aspxform:XLabel id="XLabel26" runat="server" Value ValueToDisplayText text="Company:"></aspxform:XLabel>
+                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 10pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-bidi-font-size: 12.0pt" lang="EN-US"></span></td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#f0f0f0" width="300">
+                            <aspxform:XTextBox id="XTextBox9" runat="server" BorderWidth="1" BorderColor="#DCDCDC" XDataBind="PI_Applicant.STCompany" DisableBehavior="ReadOnly" BackColor="#F0F0F0" BorderStyle="None" width="90%"></aspxform:XTextBox>
+                            <aspxform:XDataBrowserButton id="XDataBrowserButton2" runat="server" CssClass="noprint" Width="21px" DataMap="STCompany->PI_Applicant.STCompany;STAdd->PI_Applicant.STAdd;STTel->PI_Applicant.STTel;STATTN->PI_Applicant.STATTN" XDataSource="TableName:PI_STInformation" DisplayColumns="Dealernum:Dealernum,;STCompany:Company,;STAdd:Add,;STTel:Tel,;STATTN:ATTN,"></aspxform:XDataBrowserButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent" height="24">
+                            <aspxform:XLabel id="XLabel9" runat="server" Value ValueToDisplayText text="Add:"></aspxform:XLabel>
+                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 9pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"></span></td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#f0f0f0">
+                            <aspxform:XTextBox id="XTextBox1" runat="server" BorderWidth="1" BorderColor="#DCDCDC" XDataBind="PI_Applicant.BTAdd" DisableBehavior="ReadOnly" BackColor="#F0F0F0" BorderStyle="None" width="100%" Font-Names="Verdana" Font-Bold="False" TextMode="MultiLine"></aspxform:XTextBox>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent">
+                            <aspxform:XLabel id="XLabel10" runat="server" Value ValueToDisplayText text="Add:"></aspxform:XLabel>
+                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 9pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"></span></td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#f0f0f0">
+                            <aspxform:XTextBox id="XTextBox2" runat="server" BorderWidth="1" BorderColor="#DCDCDC" XDataBind="PI_Applicant.STAdd" DisableBehavior="ReadOnly" BackColor="#F0F0F0" BorderStyle="None" width="100%" Font-Names="Verdana" TextMode="MultiLine"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent" height="22">
+                            <aspxform:XLabel id="XLabel25" runat="server" Value ValueToDisplayText text="Tel:"></aspxform:XLabel>
+                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 9pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"></span></td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#f0f0f0">
+                            <aspxform:XTextBox id="XTextBox19" runat="server" BorderWidth="1" BorderColor="#DCDCDC" XDataBind="PI_Applicant.BTTel" DisableBehavior="ReadOnly" BackColor="#F0F0F0" BorderStyle="None" width="100%"></aspxform:XTextBox>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent">
+                            <aspxform:XLabel id="XLabel27" runat="server" Value ValueToDisplayText text="Tel:"></aspxform:XLabel>
+                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 9pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"></span></td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#f0f0f0">
+                            <aspxform:XTextBox id="XTextBox20" runat="server" BorderWidth="1" BorderColor="#DCDCDC" XDataBind="PI_Applicant.STTel" DisableBehavior="ReadOnly" BackColor="#F0F0F0" BorderStyle="None" width="100%"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24">
+                            <aspxform:XLabel id="XLabel13" runat="server" Value ValueToDisplayText text="ATTN:"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#f0f0f0">
+                            <aspxform:XTextBox id="XTextBox4" runat="server" BorderWidth="1" BorderColor="#DCDCDC" XDataBind="PI_Applicant.BTATTN" DisableBehavior="ReadOnly" BackColor="#F0F0F0" BorderStyle="None" width="100%"></aspxform:XTextBox>
+                        </td>
+                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid">
+                            <aspxform:XLabel id="XLabel14" runat="server" Value ValueToDisplayText text="ATTN:"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#f0f0f0">
+                            <aspxform:XTextBox id="XTextBox5" runat="server" BorderWidth="1" BorderColor="#DCDCDC" XDataBind="PI_Applicant.STATTN" DisableBehavior="ReadOnly" BackColor="#F0F0F0" BorderStyle="None" width="100%"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: medium none" height="15" colspan="4">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" border="0" cellspacing="0" cellpadding="0" width="800" hiddenexpress='PI_Applicant.Type=="散件"'>
+                <tbody>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" height="24" width="160" colspan="2">
+                            <aspxform:XLabel id="XLabel7" runat="server" Value ValueToDisplayText text="Configuration upload："></aspxform:XLabel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" colspan="2">
+                            <table border="0" cellspacing="0" cellpadding="0" width="800" dynamicarea="0,1">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <aspxform:XImageAttachment id="XImageAttachment1" runat="server" Height="128px" BorderWidth="3px" BorderColor="Gainsboro" XDataBind="PI_ConfigurationUpload.ConfigurationUpload" BorderStyle="Solid" Width="112px"></aspxform:XImageAttachment>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-TOP: #d1dedf 1px solid" height="15" colspan="2">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" border="0" cellspacing="0" cellpadding="0" width="800">
+                <tbody>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#d1dedf" height="24" colspan="6">
+                            <aspxform:XLabel id="XLabel15" runat="server" Value ValueToDisplayText text="Specification"></aspxform:XLabel>
+                            <aspxform:XDropDownList id="XDropDownList1" runat="server" XDataBind="PI_Applicant.Currency1" CssClass="noprint">
+                                <asp:ListItem Value="(RMB)">人民币</asp:ListItem>
+                                <asp:ListItem Selected="True" Value="(US$)">美元</asp:ListItem>
+                                <asp:ListItem Value="(HK$)">港币</asp:ListItem>
+                            </aspxform:XDropDownList>
+                            <span class="MsoCommentReference"><span style="FONT-FAMILY: 'Times New Roman','serif'; FONT-SIZE: 10.5pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"><font color="black" size="2" face="Arial"></font></span></span><span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 10pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-bidi-font-size: 12.0pt" lang="EN-US"><font color="black"></font></span></td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" height="24" colspan="6">
+                            <table border="0" cellspacing="0" cellpadding="0" width="800" dynamicarea="1,1">
+                                <tbody>
+                                    <tr>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent" height="52" width="120" align="left">
+                                            <aspxform:XLabel id="XLabel16" runat="server" Value ValueToDisplayText text="ITEM"></aspxform:XLabel>
+                                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 9pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"></span></td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="white" width="300">
+                                            <aspxform:XLabel id="XLabel18" runat="server" Value ValueToDisplayText text=" DESCRIPTION"></aspxform:XLabel>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent" width="80">
+                                            <aspxform:XLabel id="XLabel17" runat="server" Value ValueToDisplayText text=" UNIT PRICE" Width="49px"></aspxform:XLabel>
+                                            <aspxform:XLabel id="XLabel54" runat="server" Value ValueToDisplayText XDataBind="upr1" Width="49px" Express="PI_Applicant.Currency1"></aspxform:XLabel>
+                                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 10pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-bidi-font-size: 12.0pt" lang="EN-US"></span></td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="white" width="80">
+                                            <aspxform:XLabel id="XLabel19" runat="server" Value ValueToDisplayText text="QUANTITY"></aspxform:XLabel>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" width="100">
+                                            <aspxform:XLabel id="XLabel20" runat="server" Value ValueToDisplayText text="AMOUNT"></aspxform:XLabel>
+                                            <aspxform:XLabel id="XLabel55" runat="server" Value ValueToDisplayText XDataBind="ar1" Width="49px" Express="PI_Applicant.Currency1"></aspxform:XLabel>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" class="noprint" width="100" hiddenexpress='Global.StepName!="评估/确认报价"&amp;&amp;Global.StepName!="条款审核\财务初审"&amp;&amp;Global.StepName!="条款审核\财务终审"&amp;&amp;Global.StepName!="初始PI复核"&amp;&amp;Global.StepName!="总经理"' cssclass="noprint">
+                                            <aspxform:XLabel id="XLabel32" runat="server" Value ValueToDisplayText text="成本"></aspxform:XLabel>
+                                            <aspxform:XLabel id="XLabel56" runat="server" Value ValueToDisplayText XDataBind="cr1" Width="49px" Express="PI_Applicant.Currency1"></aspxform:XLabel>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" class="noprint" width="60" hiddenexpress='Global.StepName!="评估/确认报价"&amp;&amp;Global.StepName!="条款审核\财务初审"&amp;&amp;Global.StepName!="条款审核\财务终审"&amp;&amp;Global.StepName!="初始PI复核"&amp;&amp;Global.StepName!="总经理"' cssclass="noprint">
+                                            <aspxform:XLabel id="XLabel51" runat="server" Value ValueToDisplayText text="毛利率（%）" Width="60px"></aspxform:XLabel>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" width="37">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox40" runat="server" Font-Size="10pt" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_Specification.Item" DisableBehavior="ReadOnly" BorderStyle="None" CssClass="MYAREA" Width="120px" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: medium none">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox12" runat="server" Value ValueToDisplayText Font-Size="10pt" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_Specification.Description" DisableBehavior="ReadOnly" BorderStyle="None" width="300px" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: medium none">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox6" runat="server" Font-Size="10pt" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_Specification.UnitPrice" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox" Format="type:number;.4"></aspxform:XTextBox>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox7" runat="server" Font-Size="10pt" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_Specification.Quantity" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox10" runat="server" Font-Size="10pt" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_Specification.Amount" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" Express="PI_Specification.UnitPrice*PI_Specification.Quantity" NormalCssClass="TextBox" Format="type:number;.4"></aspxform:XTextBox>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" class="noprint" width="94" hiddenexpress='Global.StepName!="评估/确认报价"&amp;&amp;Global.StepName!="条款审核\财务初审"&amp;&amp;Global.StepName!="条款审核\财务终审"&amp;&amp;Global.StepName!="初始PI复核"&amp;&amp;Global.StepName!="总经理"' cssclass="noprint">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox17" runat="server" Font-Size="10pt" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_Specification.Cost" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox" Format="type:number;.4"></aspxform:XTextBox>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" class="noprint" width="85" hiddenexpress='Global.StepName!="评估/确认报价"&amp;&amp;Global.StepName!="条款审核\财务初审"&amp;&amp;Global.StepName!="条款审核\财务终审"&amp;&amp;Global.StepName!="初始PI复核"&amp;&amp;Global.StepName!="总经理"' cssclass="noprint">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox44" runat="server" Font-Size="10pt" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_Specification.Rates" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" Express="(PI_Specification.UnitPrice-PI_Specification.Cost)/PI_Specification.UnitPrice*100" NormalCssClass="TextBox" Format="type:number;.2"></aspxform:XTextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24" colspan="4" align="right">
+                                            <aspxform:XLabel id="XLabel31" runat="server" Value ValueToDisplayText text="TOTAL:"></aspxform:XLabel>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox16" runat="server" Font-Size="10pt" HiddenInput="False" Height="20px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_Applicant.SpecificationST" DisableBehavior="ReadOnly" BackColor="AntiqueWhite" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" Express="sum(PI_Specification.Amount)" NormalCssClass="TextBox" Format="type:number;.4"></aspxform:XTextBox>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" class="noprint" rowspan="3" width="94" colspan="2" hiddenexpress='Global.StepName!="评估/确认报价"&amp;&amp;Global.StepName!="条款审核\财务初审"&amp;&amp;Global.StepName!="条款审核\财务终审"&amp;&amp;Global.StepName!="初始PI复核"&amp;&amp;Global.StepName!="总经理"' cssclass="noprint">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="15" colspan="6">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" id="TBSI" border="0" cellspacing="0" cellpadding="0" width="800" runat="server">
+                <tbody>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#d1dedf" height="24" colspan="5">
+                            <aspxform:XLabel id="XLabel21" runat="server" Value ValueToDisplayText text="special item（Patent and Certification）"></aspxform:XLabel>
+                            <aspxform:XDropDownList id="XDropDownList2" runat="server" XDataBind="PI_Applicant.Currency2" CssClass="noprint">
+                                <asp:ListItem Value="(RMB)">人民币</asp:ListItem>
+                                <asp:ListItem Selected="True" Value="(US$)">美元</asp:ListItem>
+                                <asp:ListItem Value="(HK$)">港币</asp:ListItem>
+                            </aspxform:XDropDownList>
+                            <span class="MsoCommentReference"><span style="FONT-FAMILY: 'Times New Roman','serif'; FONT-SIZE: 10.5pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"><font color="black" size="2" face="Arial"></font></span></span><span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 10pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-bidi-font-size: 12.0pt" lang="EN-US"><font color="black"></font></span></td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" height="24" colspan="5">
+                            <table border="0" cellspacing="0" cellpadding="0" width="800" dynamicarea="1,1">
+                                <tbody>
+                                    <tr>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent" height="34" width="120" align="left">
+                                            <aspxform:XLabel id="XLabel22" runat="server" Value ValueToDisplayText text="ITEM"></aspxform:XLabel>
+                                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 9pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"></span></td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="white" width="349">
+                                            <aspxform:XLabel id="XLabel23" runat="server" Value ValueToDisplayText text=" DESCRIPTION"></aspxform:XLabel>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent" width="104">
+                                            <aspxform:XLabel id="XLabel28" runat="server" Value ValueToDisplayText text=" UNIT PRICE"></aspxform:XLabel>
+                                            <aspxform:XLabel id="XLabel57" runat="server" Value ValueToDisplayText XDataBind="upr2" Width="49px" Express="PI_Applicant.Currency2"></aspxform:XLabel>
+                                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 10pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-bidi-font-size: 12.0pt" lang="EN-US"></span></td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="white" width="94">
+                                            <aspxform:XLabel id="XLabel29" runat="server" Value ValueToDisplayText text="QUANTITY"></aspxform:XLabel>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" width="93">
+                                            <aspxform:XLabel id="XLabel30" runat="server" Value ValueToDisplayText text="AMOUNT"></aspxform:XLabel>
+                                            <aspxform:XLabel id="XLabel58" runat="server" Value ValueToDisplayText XDataBind="ar2" Width="49px" Express="PI_Applicant.Currency2"></aspxform:XLabel>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="25">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox41" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_SpecialItem.Item" DisableBehavior="ReadOnly" BorderStyle="None" CssClass="MYAREA" Width="120px" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: medium none">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox11" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_SpecialItem.Description" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: medium none">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox13" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_SpecialItem.UnitPrice" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox" Format="type:number;.4"></aspxform:XTextBox>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox14" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_SpecialItem.Quantity" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox15" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_SpecialItem.Amount" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" Express="PI_SpecialItem.UnitPrice*PI_SpecialItem.Quantity" NormalCssClass="TextBox" Format="type:number;.4"></aspxform:XTextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24" colspan="4" align="right">
+                                            <aspxform:XLabel id="XLabel33" runat="server" Value ValueToDisplayText text="TOTAL:"></aspxform:XLabel>
+                                        </td>
+                                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid">
+                                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox18" runat="server" HiddenInput="False" Height="20px" Min="0" Max="0" BorderWidth="1px" BorderColor="Gainsboro" XDataBind="PI_Applicant.TOTAL" DisableBehavior="ReadOnly" BackColor="AntiqueWhite" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" Express="sum(PI_SpecialItem.Amount)" NormalCssClass="TextBox" Format="type:number;.4"></aspxform:XTextBox>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="15" colspan="5">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" border="0" cellspacing="0" cellpadding="0" width="800">
+                <tbody>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent" height="24" width="200">
+                            <aspxform:XLabel id="XLabel36" runat="server" Value ValueToDisplayText text="Country of Origin（原产国）"></aspxform:XLabel>
+                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 9pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"></span></td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" colspan="3">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox21" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.CountryofOrigin" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox">P.R.C.</aspxform:XTextBox>
+                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 10pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-bidi-font-size: 12.0pt" lang="EN-US"></span></td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24">
+                            <aspxform:XLabel id="XLabel34" runat="server" Value ValueToDisplayText text="Shipping Terms（出货方式）"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" colspan="3">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox22" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.ShippingTerms" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24">
+                            <aspxform:XLabel id="XLabel35" runat="server" Value ValueToDisplayText text="Terms of Payment（付款条件）"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" colspan="3">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox23" runat="server" Font-Size="10pt" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.TermsofPayment" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24">
+                            <aspxform:XLabel id="XLabel37" runat="server" Value ValueToDisplayText text="Delivery Time（交期）"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" colspan="3">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox38" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.DeliveryTime" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24">
+                            <aspxform:XLabel id="XLabel38" runat="server" Value ValueToDisplayText text="Warranty（备损）"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" colspan="3">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox25" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.Warranty" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24">
+                            <aspxform:XLabel id="XLabel50" runat="server" Value ValueToDisplayText text="Notes"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" colspan="3">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox39" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.Notes" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24">
+                            <aspxform:XLabel id="XLabel39" runat="server" Value ValueToDisplayText text="Customer Collision（客户冲突）"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" colspan="3">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox26" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.CustomerCollision" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="15" colspan="4">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" class="noprint" border="0" cellspacing="0" cellpadding="0" width="800">
+                <tbody>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent" height="24" width="200">
+                            <aspxform:XLabel id="XLabel40" runat="server" Value ValueToDisplayText text="Commission（代理商佣金）" ForeColor="Red"></aspxform:XLabel>
+                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 9pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"></span></td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" colspan="3">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox24" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.Factorage" DisableBehavior="ReadOnly" BorderStyle="None" width="100px" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                            <span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 10pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-bidi-font-size: 12.0pt" lang="EN-US"></span></td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" height="24">
+                            <aspxform:XLabel id="XLabel49" runat="server" Value ValueToDisplayText text="（分摊前期质量扣款）" ForeColor="Red"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" colspan="3">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox32" runat="server" HiddenInput="False" Height="22px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.QuantityWithhold" DisableBehavior="ReadOnly" BorderStyle="None" width="100px" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="15" colspan="4">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" border="0" cellspacing="0" cellpadding="0" width="800">
+                <tbody>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: #d1dedf 1px solid; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#d1dedf" height="24" colspan="2">
+                            <aspxform:XLabel id="XLabel41" runat="server" Value ValueToDisplayText text="Kindly transfer above amount to the following bank coordinates"></aspxform:XLabel>
+                            <span class="MsoCommentReference"><span style="FONT-FAMILY: 'Times New Roman','serif'; FONT-SIZE: 10.5pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA" lang="EN-US"><font color="black" size="2" face="Arial"></font></span></span><span style="FONT-FAMILY: 'Arial','sans-serif'; FONT-SIZE: 10pt; mso-fareast-font-family: 宋体; mso-ansi-language: EN-US; mso-fareast-language: ZH-CN; mso-bidi-language: AR-SA; mso-bidi-font-size: 12.0pt" lang="EN-US"><font color="black"></font></span></td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="transparent" height="24" width="100">
+                            <aspxform:XLabel id="XLabel43" runat="server" Value ValueToDisplayText text="Bank Name"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" width="700">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox27" runat="server" Font-Size="10pt" HiddenInput="False" Height="20px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.BankName" DisableBehavior="ReadOnly" BorderStyle="None" width="300px" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                            <aspxform:XDataBrowserButton id="XDataBrowserButton3" runat="server" CssClass="noprint" Width="21px" DataMap="BankName->PI_Applicant.BankName;ACNo->PI_Applicant.ACNo;Beneficiary->PI_Applicant.Beneficiary;BankAddress->PI_Applicant.BankAddress;SwiftCode->PI_Applicant.SwiftCode" XDataSource="TableName:PI_BankInfomation" DisplayColumns="BankName:,;ACNo:,;Beneficiary:,;BankAddress:,;SwiftCode:,"></aspxform:XDataBrowserButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24">
+                            <aspxform:XLabel id="XLabel42" runat="server" Value ValueToDisplayText text="A/C No."></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox28" runat="server" HiddenInput="False" Height="20px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.ACNo" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24">
+                            <aspxform:XLabel id="XLabel44" runat="server" Value ValueToDisplayText text="Beneficiary"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox29" runat="server" HiddenInput="False" Height="20px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.Beneficiary" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="24">
+                            <aspxform:XLabel id="XLabel45" runat="server" Value ValueToDisplayText text="Bank Address"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox30" runat="server" HiddenInput="False" Height="20px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.BankAddress" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="23">
+                            <aspxform:XLabel id="XLabel46" runat="server" Value ValueToDisplayText text="Swift Code"></aspxform:XLabel>
+                        </td>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid">
+                            <aspxform:XTextBox style="OVERFLOW: hidden" id="XTextBox31" runat="server" HiddenInput="False" Height="20px" Min="0" Max="0" BorderWidth="1px" XDataBind="PI_Applicant.SwiftCode" DisableBehavior="ReadOnly" BorderStyle="None" width="100%" CssClass="MYAREA" Font-Names="Verdana" TextMode="MultiLine" NormalCssClass="TextBox"></aspxform:XTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="30" colspan="2">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" border="0" cellspacing="0" cellpadding="0" width="800">
+                <tbody>
+                    <tr>
+                        <td height="24" colspan="2" align="center">
+                            <aspxform:XLabel id="XLabel47" runat="server" Value ValueToDisplayText text="THANK YOU FOR YOUR BUSINESS!"></aspxform:XLabel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="NoPadding" height="24" colspan="2" align="center">
+                            <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td width="134">
+                                        </td>
+                                        <td width="336">
+                                            <aspxform:XLabel id="XLabel48" runat="server" Value ValueToDisplayText text="Shenzhen Skyworth Wireless Proforma Invoice #"></aspxform:XLabel>
+                                        </td>
+                                        <td width="100">
+                                            <aspxform:XTextBox id="XTextBox34" runat="server" HiddenInput="False" Height="18px" Min="0" Max="0" BorderWidth="1px" BorderColor="White" XDataBind="PISN" DisableBehavior="ReadOnly" BackColor="White" BorderStyle="None" ReadOnly="True" Width="75px" Express="javascript('getSN',PI_Applicant.SN)"></aspxform:XTextBox>
+                                        </td>
+                                        <td width="222">
+                                            <aspxform:XTextBox id="XTextBox45" runat="server" HiddenInput="False" Height="18px" Min="0" Max="0" BorderWidth="1px" BorderColor="White" XDataBind="PI" DisableBehavior="ReadOnly" BackColor="White" BorderStyle="None" ReadOnly="True" Width="100px" Express="javascript('getDate',PI_Applicant.AppDate)"></aspxform:XTextBox>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" class="noprint" border="0" cellspacing="0" cellpadding="0" width="800">
+                <tbody>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" bgcolor="#d1dedf" height="23" colspan="2">
+                            <aspxform:XLabel id="XLabel72" runat="server" text="审批信息" ForeColor="Black" PrintOut="False"></aspxform:XLabel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="55" colspan="2">
+                            <aspxform:XCommentsTextBox id="XCommentsTextBox1" runat="server" Height="48px" BorderWidth="1px" BorderColor="Gainsboro" width="100%" TextMode="MultiLine" PrintOut="False" Rows="3"></aspxform:XCommentsTextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: #d1dedf 1px solid; BORDER-LEFT: #d1dedf 1px solid; BORDER-TOP: medium none; BORDER-RIGHT: #d1dedf 1px solid" height="32" colspan="2">
+                            <aspxform:XSignTrace id="XSignTrace1" runat="server" BorderWidth="1" BorderColor="#dcdcdc" CssClass="AA" Width="100%"></aspxform:XSignTrace>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="BORDER-BOTTOM: white 1px solid; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" height="26" valign="bottom" width="50" align="right">
+                            <aspxform:XPrintButton id="XPrintButton1" runat="server" Height="20px" HiddenExpress="Global.StepName =='开始'" Width="80px" PageHeaderFormat="\t" PageFooterFormat="提交人:________部门负责人:________初审人:________电子流检查:________总裁审批:________"></aspxform:XPrintButton>
+                        </td>
+                        <td style="BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; BORDER-TOP: medium none; BORDER-RIGHT: medium none" valign="bottom" width="750" align="left">
+                            <table cellspacing="0" cellpadding="0" ?>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <aspxform:XProcessButtonList id="XProcessButtonList1" runat="server" Width="600px" DataMap="Department->PI_Applicant.Dept" ProcessBtnCssClass="a" SystemBtnCssClass="a" DorpDownListCssClass="b" PositionDisplayType="FullName"></aspxform:XProcessButtonList>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="mytable" border="1" cellspacing="0" cellpadding="0" width="800">
+                <tbody class="noprint">
+                    <tr>
+                        <td>
+                            <script type="text/javascript" src="../jquery-1.9.1.min.js"></script>
+                            <script type="text/javascript">
+                                document.write('<script type="text/javascript" charset="gb2312"   src="' + rootUrl + 'MyApp/Demo/TaskComment/taskcomment.js"><\/script>');
+                            </script>
+                        </td>
+                    </tr>
+                </tbody>
+                <div>
+                </div>
+            </table>
+        </div>
+    </form>
+</body>
+</html>

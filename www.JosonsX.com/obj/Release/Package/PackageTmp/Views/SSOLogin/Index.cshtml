@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "SSOLogin";
+   
+}
+
+
+<h2>SSOLogin</h2>
+
+@*@foreach (Joson.SSOSite.OAuth.OAuthToken OAuthToken in (IList<Joson.SSOSite.OAuth.OAuthToken>)ViewData["Token"])
+{
+    @OAuthToken.AccountID;
+    @OAuthToken.AccountName;
+    @OAuthToken.PassWords;
+    @OAuthToken.TokenVal;
+    @OAuthToken.RedirectURL;
+    @OAuthToken.ReturnURL;
+
+
+}*@
+
+
+<a href="@Url.Action("index", "SSOLogout")">SSOLogOut</a>

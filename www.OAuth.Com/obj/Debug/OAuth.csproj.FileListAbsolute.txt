@@ -1,0 +1,17 @@
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\DigitalHR.BLL.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\DigitalHR.DBUtility.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\DigitalHR.Model.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\DigitalHR.SQLServerDAL.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\DigitalHR.Web.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\Joson.SSOSite.OAuth.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\Net.ADHelper.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\Net.Common.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\Microsoft.Office.Interop.Excel.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\office.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\Microsoft.Vbe.Interop.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\Microsoft.Office.Interop.Excel.xml
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\office.xml
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\www.OAuth.Com.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\bin\www.OAuth.Com.pdb
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\obj\Debug\www.OAuth.Com.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\OAuth\obj\Debug\www.OAuth.Com.pdb

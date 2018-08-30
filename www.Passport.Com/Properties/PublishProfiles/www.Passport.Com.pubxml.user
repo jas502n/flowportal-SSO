@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Joson\Desktop\Oauth\www.Passport.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/HrSQLite.db">
+      <publishTime>08/02/2017 10:17:18</publishTime>
+    </File>
+    <File Include="App_Data/HrSQLite.SQLite">
+      <publishTime>08/02/2017 10:17:18</publishTime>
+    </File>
+    <File Include="App_Data/HSQLite.SQLite">
+      <publishTime>08/03/2017 12:23:29</publishTime>
+    </File>
+    <File Include="App_Data/Northwind.sl3">
+      <publishTime>08/02/2017 10:17:18</publishTime>
+    </File>
+    <File Include="bin/BPM.Client.dll">
+      <publishTime>09/01/2014 12:51:25</publishTime>
+    </File>
+    <File Include="bin/BPM.dll">
+      <publishTime>09/01/2014 12:51:24</publishTime>
+    </File>
+    <File Include="bin/DigitalHR.BLL.dll">
+      <publishTime>10/09/2014 12:20:49</publishTime>
+    </File>
+    <File Include="bin/DigitalHR.DBUtility.dll">
+      <publishTime>10/09/2014 12:20:47</publishTime>
+    </File>
+    <File Include="bin/DigitalHR.Model.dll">
+      <publishTime>10/09/2014 12:20:46</publishTime>
+    </File>
+    <File Include="bin/DigitalHR.SQLServerDAL.dll">
+      <publishTime>10/09/2014 12:20:50</publishTime>
+    </File>
+    <File Include="bin/DigitalHR.Web.dll">
+      <publishTime>10/09/2014 12:20:53</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>08/02/2017 17:51:14</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>08/02/2017 17:51:14</publishTime>
+    </File>
+    <File Include="bin/Joson.SSO.Passport.dll">
+      <publishTime>08/15/2018 15:30:23</publishTime>
+    </File>
+    <File Include="bin/Joson.SSOSite.OAuth.dll">
+      <publishTime>08/15/2018 15:27:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Office.Interop.Excel.dll">
+      <publishTime>08/31/2009 02:00:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Vbe.Interop.dll">
+      <publishTime>08/31/2009 02:00:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/19/2012 10:59:52</publishTime>
+    </File>
+    <File Include="bin/Net.ActiveDirectoryHelper.dll">
+      <publishTime>12/23/2015 09:53:04</publishTime>
+    </File>
+    <File Include="bin/Net.ADHelper.dll">
+      <publishTime>11/26/2014 13:59:45</publishTime>
+    </File>
+    <File Include="bin/Net.Common.dll">
+      <publishTime>10/21/2014 00:19:57</publishTime>
+    </File>
+    <File Include="bin/Net.DBUtility.dll">
+      <publishTime>08/28/2015 09:41:29</publishTime>
+    </File>
+    <File Include="bin/Net.MobileHelper.dll">
+      <publishTime>09/30/2015 13:28:20</publishTime>
+    </File>
+    <File Include="bin/office.dll">
+      <publishTime>08/31/2009 02:00:22</publishTime>
+    </File>
+    <File Include="bin/SSO.Passport.dll">
+      <publishTime>11/26/2014 16:24:46</publishTime>
+    </File>
+    <File Include="bin/stdole.dll">
+      <publishTime>04/22/2012 22:21:30</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.dll">
+      <publishTime>08/02/2017 17:51:11</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.EF6.dll">
+      <publishTime>08/02/2017 17:51:21</publishTime>
+    </File>
+    <File Include="bin/System.Data.SQLite.Linq.dll">
+      <publishTime>08/02/2017 17:51:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>09/25/2014 16:41:52</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>08/17/2012 11:22:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/10/2012 12:03:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/10/2012 12:03:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/10/2012 12:03:34</publishTime>
+    </File>
+    <File Include="bin/x64/SQLite.Interop.dll">
+      <publishTime>08/02/2017 17:51:10</publishTime>
+    </File>
+    <File Include="bin/x86/SQLite.Interop.dll">
+      <publishTime>08/02/2017 17:51:10</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Mvc.resources.dll">
+      <publishTime>07/10/2012 23:30:36</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.Razor.resources.dll">
+      <publishTime>07/10/2012 23:31:36</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>07/10/2012 23:31:52</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>07/10/2012 23:31:42</publishTime>
+    </File>
+    <File Include="bin/zh-Hans/System.Web.WebPages.resources.dll">
+      <publishTime>07/10/2012 23:31:42</publishTime>
+    </File>
+    <File Include="CacheList.aspx">
+      <publishTime>08/04/2015 17:11:15</publishTime>
+    </File>
+    <File Include="CaLogin.aspx">
+      <publishTime>08/04/2015 16:58:30</publishTime>
+    </File>
+    <File Include="Config/OAuthSite.xml">
+      <publishTime>08/07/2015 11:13:41</publishTime>
+    </File>
+    <File Include="CSS/css.css">
+      <publishTime>10/28/2014 14:20:18</publishTime>
+    </File>
+    <File Include="CSS/lanrenzhijia.css">
+      <publishTime>08/12/2014 18:09:29</publishTime>
+    </File>
+    <File Include="GetToken.aspx">
+      <publishTime>08/04/2015 14:10:16</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>08/04/2015 16:57:26</publishTime>
+    </File>
+    <File Include="Images/ImgHome/20131204094937.jpg">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/20140109112034.jpg">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/banner-libra923-1023.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/banner-scorpio-1024-1122.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/ImgHome/banner.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/guoqing-banner.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/home-anju.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgHome/home-chaoqingbox.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/ImgHome/home-chongyang99.png">
+      <publishTime>08/12/2014 18:09:36</publishTime>
+    </File>
+    <File Include="Images/ImgZhuti/huodong.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/ImgZhuti/tongzhi.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/ImgZhuti/xinwen.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Images/ImgZhuti/Zhuti01.png">
+      <publishTime>08/12/2014 18:09:37</publishTime>
+    </File>
+    <File Include="Index.aspx">
+      <publishTime>08/06/2015 17:12:28</publishTime>
+    </File>
+    <File Include="IService.aspx">
+      <publishTime>08/02/2017 18:03:15</publishTime>
+    </File>
+    <File Include="JosonJiang.aspx">
+      <publishTime>08/04/2015 17:09:41</publishTime>
+    </File>
+    <File Include="Jscript/ACLogon.js">
+      <publishTime>11/26/2014 14:12:30</publishTime>
+    </File>
+    <File Include="LogOut.aspx">
+      <publishTime>08/04/2015 14:10:16</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/02/2017 17:51:58</publishTime>
+    </File>
+    <File Include="Properties/DataSources/System.Data.DataSet.datasource">
+      <publishTime>01/16/2016 09:15:10</publishTime>
+    </File>
+    <File Include="Service References/JosonOAuth/configuration.svcinfo">
+      <publishTime>01/16/2016 09:42:03</publishTime>
+    </File>
+    <File Include="Service References/JosonOAuth/configuration91.svcinfo">
+      <publishTime>01/16/2016 09:42:03</publishTime>
+    </File>
+    <File Include="Service References/JosonOAuth/Joson.SSO.Passport.JosonOAuth.OUser.datasource">
+      <publishTime>01/16/2016 09:15:10</publishTime>
+    </File>
+    <File Include="Service References/JosonOAuth/Reference.svcmap">
+      <publishTime>01/16/2016 09:15:09</publishTime>
+    </File>
+    <File Include="Service References/JosonOAuth/WebService.wsdl">
+      <publishTime>01/16/2016 09:27:43</publishTime>
+    </File>
+    <File Include="SSOWebSite.aspx">
+      <publishTime>08/07/2015 11:33:58</publishTime>
+    </File>
+    <File Include="TokenOAuth.asmx">
+      <publishTime>08/05/2015 16:32:35</publishTime>
+    </File>
+    <File Include="TokenService.asmx">
+      <publishTime>08/05/2015 16:32:24</publishTime>
+    </File>
+    <File Include="UserLogin.aspx">
+      <publishTime>01/18/2016 17:39:15</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/03/2017 12:28:06</publishTime>
+    </File>
+    <File Include="WebService/TokenOAuth.asmx">
+      <publishTime>08/05/2015 16:32:35</publishTime>
+    </File>
+    <File Include="WebService/TokenService.asmx">
+      <publishTime>08/05/2015 16:32:24</publishTime>
+    </File>
+    <File Include="WebService/WebService.asmx">
+      <publishTime>08/28/2015 13:15:33</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

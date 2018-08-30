@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActiveUser_LastActive" xml:space="preserve">
+    <value>最近一次活動時間</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="ActMgr_ActMgr" xml:space="preserve">
+    <value>帳號管理</value>
+  </data>
+  <data name="ActMgr_Birthday" xml:space="preserve">
+    <value>生日</value>
+  </data>
+  <data name="ActMgr_CostCenter" xml:space="preserve">
+    <value>成本中心</value>
+  </data>
+  <data name="ActMgr_DateHired" xml:space="preserve">
+    <value>入職日期</value>
+  </data>
+  <data name="ActMgr_Desc" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="ActMgr_EMail" xml:space="preserve">
+    <value>電子郵件</value>
+  </data>
+  <data name="ActMgr_HRID" xml:space="preserve">
+    <value>雇員編號</value>
+  </data>
+  <data name="ActMgr_HTel" xml:space="preserve">
+    <value>家庭電話</value>
+  </data>
+  <data name="ActMgr_Mobile" xml:space="preserve">
+    <value>行動電話</value>
+  </data>
+  <data name="ActMgr_NewPwd" xml:space="preserve">
+    <value>新密碼</value>
+  </data>
+  <data name="ActMgr_NewPwdCfm" xml:space="preserve">
+    <value>重複新密碼</value>
+  </data>
+  <data name="ActMgr_Office" xml:space="preserve">
+    <value>辦公室</value>
+  </data>
+  <data name="ActMgr_OrgPwd" xml:space="preserve">
+    <value>原密碼</value>
+  </data>
+  <data name="ActMgr_Sex" xml:space="preserve">
+    <value>性別</value>
+  </data>
+  <data name="ActMgr_Tel" xml:space="preserve">
+    <value>電話</value>
+  </data>
+  <data name="ActMgr_WebSite" xml:space="preserve">
+    <value>網站</value>
+  </data>
+  <data name="ActMsg_Menu_ChgPWD" xml:space="preserve">
+    <value>修改密碼</value>
+  </data>
+  <data name="ActMsg_Menu_Delegation" xml:space="preserve">
+    <value>外出代理人</value>
+    <comment>3.20o</comment>
+  </data>
+  <data name="ActMsg_Menu_SetupMails" xml:space="preserve">
+    <value>通知接收設置</value>
+    <comment>3.05</comment>
+  </data>
+  <data name="ActMsg_Menu_TaskRule" xml:space="preserve">
+    <value>任務規則</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="ActMsg_Menu_UserInfo" xml:space="preserve">
+    <value>使用者資訊</value>
+  </data>
+  <data name="Admin_CtrlAU_Caption1" xml:space="preserve">
+    <value>所有線上用戶數：{0}，您可以查看其中{1}位使用者的資訊</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Action" xml:space="preserve">
+    <value>操作</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Caption1" xml:space="preserve">
+    <value>[共{0}條日誌]</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_ClientIP" xml:space="preserve">
+    <value>來自IP</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Date" xml:space="preserve">
+    <value>時間</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Failed" xml:space="preserve">
+    <value>失敗</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Param1" xml:space="preserve">
+    <value>備註1</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Param2" xml:space="preserve">
+    <value>備註2</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Response" xml:space="preserve">
+    <value>回應時間(秒)</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Result" xml:space="preserve">
+    <value>結果</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Succeed" xml:space="preserve">
+    <value>成功</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_User" xml:space="preserve">
+    <value>用戶</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlSU_Caption1" xml:space="preserve">
+    <value>最近30天內共有{0}人登錄系統</value>
+    <comment>3.50m</comment>
+  </data>
+  <data name="Admin_MenuCS_ActiveUsers" xml:space="preserve">
+    <value>線上用戶</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MenuCS_Caption" xml:space="preserve">
+    <value>系統資訊</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MenuCS_SystemUsers" xml:space="preserve">
+    <value>最近30天登錄用戶數</value>
+    <comment>3.50m</comment>
+  </data>
+  <data name="Admin_MenuLog_AppLog" xml:space="preserve">
+    <value>系統日誌</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MenuLog_Caption" xml:space="preserve">
+    <value>日誌統計與報表</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MenuPerformance_Node" xml:space="preserve">
+    <value>各節點處理時間</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="Admin_MenuUsage_Process" xml:space="preserve">
+    <value>流程使用情況</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="Admin_MenuUsage_System" xml:space="preserve">
+    <value>系統使用情況</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="Admin_MMenu_CurStatus" xml:space="preserve">
+    <value>當前狀態</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MMenu_Log" xml:space="preserve">
+    <value>系統日誌</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MMenu_ProcessPerformance" xml:space="preserve">
+    <value>處理效率</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="Admin_MMenu_SystemUsage" xml:space="preserve">
+    <value>系統利用率</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="AdvS_Back" xml:space="preserve">
+    <value>返回</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_Date" xml:space="preserve">
+    <value>日期</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_DateDate" xml:space="preserve">
+    <value>某一天</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_DateDesc" xml:space="preserve">
+    <value>提交日期是</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_DatePeriod" xml:space="preserve">
+    <value>某時間段</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_KeyWord" xml:space="preserve">
+    <value>關鍵字</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_KeyWordDesc" xml:space="preserve">
+    <value>包含以下關鍵字</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_PostUser" xml:space="preserve">
+    <value>提交人</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_PostUserDesc" xml:space="preserve">
+    <value>提交人的帳號是</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_ProcessName" xml:space="preserve">
+    <value>流程名</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_ProcessNameDesc" xml:space="preserve">
+    <value>流程的名稱是</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_RecpUser" xml:space="preserve">
+    <value>當前處理人</value>
+    <comment>3.40h</comment>
+  </data>
+  <data name="AdvS_RecpUserDesc" xml:space="preserve">
+    <value>當前處理人的帳號是</value>
+    <comment>3.40h</comment>
+  </data>
+  <data name="AdvS_Reset" xml:space="preserve">
+    <value>清除條件</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_Search" xml:space="preserve">
+    <value>執行搜索</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_SN" xml:space="preserve">
+    <value>流水號</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_SNDesc" xml:space="preserve">
+    <value>流水號的開頭是</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_Status" xml:space="preserve">
+    <value>狀態</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_StatusApproved" xml:space="preserve">
+    <value>已批准</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_StatusDesc" xml:space="preserve">
+    <value>任務當前狀態是</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_StatusRejected" xml:space="preserve">
+    <value>已拒絕</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_StatusRunning" xml:space="preserve">
+    <value>處理中</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AgentPostSelMember_BtnCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="AgentPostSelMember_BtnNext" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="AgentPostSelMember_Caption" xml:space="preserve">
+    <value>選擇成員</value>
+  </data>
+  <data name="AgentPostSelMember_Title" xml:space="preserve">
+    <value>為誰填寫表單？</value>
+  </data>
+  <data name="AgentPostSelMember_WarnMultiSelect" xml:space="preserve">
+    <value>不能選擇多個用戶。</value>
+  </data>
+  <data name="AgentPostSelMember_WarnNoSelect" xml:space="preserve">
+    <value>請選擇一個用戶。</value>
+  </data>
+  <data name="AssignOwner_BtnOK" xml:space="preserve">
+    <value>設為任務擁有人</value>
+  </data>
+  <data name="AssignOwner_Caption" xml:space="preserve">
+    <value>選擇新的任務擁有人</value>
+  </data>
+  <data name="AssignOwner_Title" xml:space="preserve">
+    <value>請選擇一個成員，按“確定”按鈕將選定人員設置為任務擁有人（處理人）。</value>
+  </data>
+  <data name="AssignOwnerSelStep_Caption" xml:space="preserve">
+    <value>選擇步驟</value>
+  </data>
+  <data name="AssignOwnerSelStep_Title" xml:space="preserve">
+    <value>請選擇要改變處理人的步驟，按“下一步”設定新處理人。</value>
+  </data>
+  <data name="AutoStep_StatusWaiting" xml:space="preserve">
+    <value>等待中</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="Com_Abort" xml:space="preserve">
+    <value>撤銷</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Aborted" xml:space="preserve">
+    <value>已撤銷</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Account" xml:space="preserve">
+    <value>帳號</value>
+  </data>
+  <data name="Com_Action" xml:space="preserve">
+    <value>操作</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_ActiveUsers" xml:space="preserve">
+    <value>當前{0}位用戶線上</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="Com_AdvSearch" xml:space="preserve">
+    <value>高級搜索</value>
+    <comment>3.40h</comment>
+  </data>
+  <data name="Com_AdvSearch1" xml:space="preserve">
+    <value>高級搜索 - 常規</value>
+    <comment>3.40h</comment>
+  </data>
+  <data name="Com_AdvSearch2" xml:space="preserve">
+    <value>高級搜索 - 處理中的任務</value>
+    <comment>3.40h</comment>
+  </data>
+  <data name="Com_Agent" xml:space="preserve">
+    <value>代理人</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="Com_AgentPost" xml:space="preserve">
+    <value>(代填)</value>
+  </data>
+  <data name="Com_All" xml:space="preserve">
+    <value>全部</value>
+    <comment>3.07</comment>
+  </data>
+  <data name="Com_AllTasks" xml:space="preserve">
+    <value>所有流程</value>
+  </data>
+  <data name="Com_Approved" xml:space="preserve">
+    <value>已批准</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_AssignOwner" xml:space="preserve">
+    <value>改變處理人</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Auto" xml:space="preserve">
+    <value>自動</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="Com_BatchApprove" xml:space="preserve">
+    <value>批量同意</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="Com_Close" xml:space="preserve">
+    <value>關閉</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_CreateDate" xml:space="preserve">
+    <value>創建日期</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Com_CreateTaskRule" xml:space="preserve">
+    <value>新建</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="Com_CurStep" xml:space="preserve">
+    <value>當前步驟</value>
+    <comment>3.50j</comment>
+  </data>
+  <data name="Com_Delete" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="Com_Deleted" xml:space="preserve">
+    <value>已刪除</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_DraftDesc" xml:space="preserve">
+    <value>說明</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Com_DraftName" xml:space="preserve">
+    <value>草稿</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Com_DynConsign" xml:space="preserve">
+    <value>加簽</value>
+    <comment>3.20j</comment>
+  </data>
+  <data name="Com_EmptyFlowDesc" xml:space="preserve">
+    <value>暫無說明。</value>
+  </data>
+  <data name="Com_Female" xml:space="preserve">
+    <value>女</value>
+  </data>
+  <data name="Com_FlowChart" xml:space="preserve">
+    <value>(流程圖)</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="Com_FullName" xml:space="preserve">
+    <value>全名</value>
+  </data>
+  <data name="Com_GetShareTask" xml:space="preserve">
+    <value>獲取</value>
+  </data>
+  <data name="Com_HRID" xml:space="preserve">
+    <value>員工編號</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="Com_Initiator" xml:space="preserve">
+    <value>所有人</value>
+  </data>
+  <data name="Com_Jump" xml:space="preserve">
+    <value>調度</value>
+  </data>
+  <data name="Com_Login" xml:space="preserve">
+    <value>登錄(zh-chs)</value>
+  </data>
+  <data name="Com_Male" xml:space="preserve">
+    <value>男</value>
+  </data>
+  <data name="Com_ModifyDate" xml:space="preserve">
+    <value>修改日期</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Com_MyTaskList" xml:space="preserve">
+    <value>待辦任務</value>
+  </data>
+  <data name="Com_NavPageTotal1" xml:space="preserve">
+    <value>共</value>
+  </data>
+  <data name="Com_NavPageTotal2" xml:space="preserve">
+    <value>條</value>
+  </data>
+  <data name="Com_None" xml:space="preserve">
+    <value>無</value>
+  </data>
+  <data name="Com_NTLogin" xml:space="preserve">
+    <value>域用戶登錄</value>
+  </data>
+  <data name="Com_OK" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="Com_OptUser" xml:space="preserve">
+    <value>實際處理人</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Owner" xml:space="preserve">
+    <value>擁有人</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Participant" xml:space="preserve">
+    <value>處理人</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Password" xml:space="preserve">
+    <value>密碼</value>
+  </data>
+  <data name="Com_PickbackRestart" xml:space="preserve">
+    <value>取回</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_PostAt" xml:space="preserve">
+    <value>發起時間</value>
+  </data>
+  <data name="Com_PostByAgent1" xml:space="preserve">
+    <value>由</value>
+  </data>
+  <data name="Com_PostByAgent2" xml:space="preserve">
+    <value>代填</value>
+  </data>
+  <data name="Com_ProcessAt" xml:space="preserve">
+    <value>處理時間</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Processing" xml:space="preserve">
+    <value>處理中</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_ProcessName" xml:space="preserve">
+    <value>流程名稱</value>
+  </data>
+  <data name="Com_Public" xml:space="preserve">
+    <value>公開</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_ReceadRestart" xml:space="preserve">
+    <value>退回重填</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_ReceiveAt" xml:space="preserve">
+    <value>收到時間</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Reject" xml:space="preserve">
+    <value>拒絕</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Rejected" xml:space="preserve">
+    <value>已拒絕</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_ReportMsg" xml:space="preserve">
+    <value>本頁供用戶擴展，以添加自己的報表。</value>
+  </data>
+  <data name="Com_SaveModify" xml:space="preserve">
+    <value>保存修改</value>
+  </data>
+  <data name="Com_SavePwd" xml:space="preserve">
+    <value>修改密碼</value>
+  </data>
+  <data name="Com_Search" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="Com_ShareTask" xml:space="preserve">
+    <value>共用任務</value>
+  </data>
+  <data name="Com_SN" xml:space="preserve">
+    <value>流水號</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_StartBySystem" xml:space="preserve">
+    <value>系統啟動</value>
+  </data>
+  <data name="Com_Status" xml:space="preserve">
+    <value>狀態</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_StepName" xml:space="preserve">
+    <value>步驟名</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_Abort" xml:space="preserve">
+    <value>撤銷申請</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_Agent" xml:space="preserve">
+    <value>委託</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_AssignOwner" xml:space="preserve">
+    <value>改變處理人</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_Continue" xml:space="preserve">
+    <value>恢復任務</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_Delete" xml:space="preserve">
+    <value>刪除任務</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_DirectSend" xml:space="preserve">
+    <value>直送</value>
+    <comment>3.20k</comment>
+  </data>
+  <data name="Com_SysAct_Jump" xml:space="preserve">
+    <value>調度</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_PickBackRestart" xml:space="preserve">
+    <value>提交人取回</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_RecedeBack" xml:space="preserve">
+    <value>退回</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Com_SysAct_RecedeRestart" xml:space="preserve">
+    <value>撤回重填</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_Reject" xml:space="preserve">
+    <value>拒絕</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_TimeoutJump" xml:space="preserve">
+    <value>超時跳轉</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="Com_SysTaskOpt" xml:space="preserve">
+    <value>任務操作</value>
+  </data>
+  <data name="Com_TaskContinue" xml:space="preserve">
+    <value>恢復</value>
+  </data>
+  <data name="Com_TaskDelegate" xml:space="preserve">
+    <value>委託</value>
+  </data>
+  <data name="Com_TaskDesc" xml:space="preserve">
+    <value>摘要資訊</value>
+  </data>
+  <data name="Com_TaskPasue" xml:space="preserve">
+    <value>暫停</value>
+  </data>
+  <data name="Com_TaskRestart" xml:space="preserve">
+    <value>重啟</value>
+  </data>
+  <data name="Com_TaskShare" xml:space="preserve">
+    <value>共用</value>
+  </data>
+  <data name="Com_TaskStop" xml:space="preserve">
+    <value>中止</value>
+  </data>
+  <data name="Com_Trace" xml:space="preserve">
+    <value>狀態</value>
+  </data>
+  <data name="Com_UnknownStatus" xml:space="preserve">
+    <value>未知狀態</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="DataBrowser_Msg_AtleastSelOne" xml:space="preserve">
+    <value>請選擇資料項目！</value>
+    <comment>3.20p</comment>
+  </data>
+  <data name="DATALIST_AtleastSelOne" xml:space="preserve">
+    <value>請至少選擇一個資料項目</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Error_LoginADUserNotExist" xml:space="preserve">
+    <value>AD用戶“{0}”不存在或未被引入！</value>
+    <comment>3.30a</comment>
+  </data>
+  <data name="Error_LoginFailed" xml:space="preserve">
+    <value>用戶名或密碼有誤！</value>
+  </data>
+  <data name="FlowChartTrace" xml:space="preserve">
+    <value>在流程圖中顯示</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="GetBack_Msg1" xml:space="preserve">
+    <value>您的任務正由{0}代理！&lt;br&gt;點擊“{1}”取消外出狀態！</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="GetBack_Msg2" xml:space="preserve">
+    <value>您當前處於外出狀態！&lt;br&gt;點擊“{0}”取消外出狀態！</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="GetBack_Submit" xml:space="preserve">
+    <value>取消外出</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="GetBack_Title" xml:space="preserve">
+    <value>您當前狀態為外出！</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="HumanStep_StatusRunning" xml:space="preserve">
+    <value>處理中</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="IEEXCEL_Caption" xml:space="preserve">
+    <value>打開Excel文件警告</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_Step1" xml:space="preserve">
+    <value>打開IE“Internet 選項”</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_Step2" xml:space="preserve">
+    <value>打開IE“Intranet 安全”選項</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_Step3" xml:space="preserve">
+    <value>勾選一下項</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_StepTitle" xml:space="preserve">
+    <value>如何允許從IE打開Excel檔</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_Warn1" xml:space="preserve">
+    <value>您當前IE的安全性原則，不允許從網頁打開Excel檔；</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_WarnTitle" xml:space="preserve">
+    <value>警告</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="JS_Abort_Confirm" xml:space="preserve">
+    <value>您確定要撤銷申請？</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Abort_Msg" xml:space="preserve">
+    <value>{0}個申請已撤銷！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Agent_Msg" xml:space="preserve">
+    <value>{0}個任務已委託給：{1}！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_AssignOwner_Msg" xml:space="preserve">
+    <value>{0}個任務已設定處理人為：{1}！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_BatchApprove_Msg" xml:space="preserve">
+    <value>{0}個任務已同意！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Common_PlsSelOneDraftAtLeast" xml:space="preserve">
+    <value>請選擇草稿！</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="JS_Common_PlsSelOneTaskAtLeast" xml:space="preserve">
+    <value>請至少選擇一個任務。</value>
+  </data>
+  <data name="JS_Common_PlsSelOneTaskOnly" xml:space="preserve">
+    <value>只能選擇一個任務。</value>
+  </data>
+  <data name="JS_Common_PlsSelTask" xml:space="preserve">
+    <value>請選擇一個任務。</value>
+  </data>
+  <data name="JS_Continue_Msg" xml:space="preserve">
+    <value>{0}個任務已恢復！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Delete_Confirm" xml:space="preserve">
+    <value>您確定要刪除申請？被刪除的申請只有管理員可以取回！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Delete_Msg" xml:space="preserve">
+    <value>{0}個申請已刪除！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_DeleteDraft_Confirm" xml:space="preserve">
+    <value>草稿一旦刪除，將無法恢復！您確定要刪除選定的草稿？</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="JS_DeleteDraft_Msg" xml:space="preserve">
+    <value>{0}個草稿已刪除。</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="JS_Jump_Msg" xml:space="preserve">
+    <value>任務調度成功！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Jump_PlsSelFromStep" xml:space="preserve">
+    <value>請至少選擇一個要調度的步驟。</value>
+  </data>
+  <data name="JS_Jump_PlsSelOneTagStepOnly" xml:space="preserve">
+    <value>只能選擇一個調度目標步驟。</value>
+  </data>
+  <data name="JS_Jump_PlsSelTagStep" xml:space="preserve">
+    <value>請選擇調度目標步驟。</value>
+  </data>
+  <data name="JS_PickBackRestart_Confirm" xml:space="preserve">
+    <value>您確定要取回申請嗎？</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_PickBackRestart_Msg" xml:space="preserve">
+    <value>{0}個申請已取回！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Public_Msg" xml:space="preserve">
+    <value>{0}個任務已公開給：{1}！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_RecedeBack_Msg" xml:space="preserve">
+    <value>任務已退回給：\r\n{0}\r\n窗口將被關閉！</value>
+    <comment>3.10m</comment>
+  </data>
+  <data name="JS_RecedeBack_PlsSelTagStep" xml:space="preserve">
+    <value>請選擇要退回到的步驟。</value>
+    <comment>3.10m</comment>
+  </data>
+  <data name="JS_RecedeRestart_Confirm" xml:space="preserve">
+    <value>您確定要將任務退回給提交人？</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_RecedeRestart_Msg" xml:space="preserve">
+    <value>{0}個任務已退回給提交人！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Reject_Confirm" xml:space="preserve">
+    <value>您確定要拒絕申請？</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Reject_Msg" xml:space="preserve">
+    <value>{0}個任務已拒絕！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_RFC_ResponseStatus" xml:space="preserve">
+    <value>服務端返回狀態：{0}</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_RFC_XMLHttpReqFailed" xml:space="preserve">
+    <value>創建XMLHttpRequest失敗，請與管理員聯繫!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_SelectProcessSelectOne" xml:space="preserve">
+    <value>請至少選擇一個流程！</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="JS_SendTo_NoSelectedTask" xml:space="preserve">
+    <value>請選擇一個任務。</value>
+  </data>
+  <data name="JS_Share_IncludeNoShareItem" xml:space="preserve">
+    <value>選中任務中包含了非共用項。</value>
+  </data>
+  <data name="JS_ShareTaskGet_Msg" xml:space="preserve">
+    <value>已獲取{0}個共用任務！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_ShareTaskPut_Msg" xml:space="preserve">
+    <value>{0}個共用任務已放回！</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Sign_IncorrentPwd" xml:space="preserve">
+    <value>密碼不正確！</value>
+    <comment>3.06</comment>
+  </data>
+  <data name="Jump_BtnOK" xml:space="preserve">
+    <value>調度</value>
+  </data>
+  <data name="Jump_PageCaption" xml:space="preserve">
+    <value>任務調度</value>
+  </data>
+  <data name="Jump_StepName" xml:space="preserve">
+    <value>步驟名</value>
+  </data>
+  <data name="Jump_StepParticipant" xml:space="preserve">
+    <value>處理人</value>
+  </data>
+  <data name="Jump_Title" xml:space="preserve">
+    <value>請選擇“要調度”和“調度到”的步驟，按“調度”按鈕調度任務。</value>
+  </data>
+  <data name="Jump_TitleFromSteps" xml:space="preserve">
+    <value>要執行調度的步驟</value>
+  </data>
+  <data name="Jump_ToStep" xml:space="preserve">
+    <value>將選中步驟調度到</value>
+  </data>
+  <data name="JumpCfm_Caption" xml:space="preserve">
+    <value>調度確認</value>
+  </data>
+  <data name="JumpCfm_Fail_Caption" xml:space="preserve">
+    <value>調度失敗</value>
+  </data>
+  <data name="JumpCfm_Fail_Msg1" xml:space="preserve">
+    <value>委託調度時發生錯誤！</value>
+  </data>
+  <data name="JumpCfm_Fail_Msg2" xml:space="preserve">
+    <value>失敗原因：</value>
+  </data>
+  <data name="JumpCfm_Success_Caption" xml:space="preserve">
+    <value>調度成功</value>
+  </data>
+  <data name="JumpCfm_Success_Msg" xml:space="preserve">
+    <value>任務已成功調度！</value>
+  </data>
+  <data name="Leave_AutoSentTo" xml:space="preserve">
+    <value>外出時將任務轉發給</value>
+  </data>
+  <data name="Leave_Caption" xml:space="preserve">
+    <value>外出設置</value>
+  </data>
+  <data name="Leave_ChkPeriod" xml:space="preserve">
+    <value>只在以下時間段內外出</value>
+    <comment>3.20g</comment>
+  </data>
+  <data name="Leave_CurAccount" xml:space="preserve">
+    <value>當前登錄帳號</value>
+  </data>
+  <data name="Leave_FromDate" xml:space="preserve">
+    <value>開始時間</value>
+    <comment>3.20g</comment>
+  </data>
+  <data name="Leave_Period" xml:space="preserve">
+    <value>外出時間</value>
+    <comment>3.20g</comment>
+  </data>
+  <data name="Leave_RdoNotAutoSend" xml:space="preserve">
+    <value>不轉發</value>
+  </data>
+  <data name="Leave_Title" xml:space="preserve">
+    <value>我要外出</value>
+  </data>
+  <data name="Leave_ToDate" xml:space="preserve">
+    <value>結束時間</value>
+    <comment>3.20g</comment>
+  </data>
+  <data name="LeaveRdoAutoSend" xml:space="preserve">
+    <value>轉發給</value>
+  </data>
+  <data name="LeaveSub_ConfirmRule" xml:space="preserve">
+    <value>查看任務規則</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="LeaveSub_Exit" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="LeaveSub_OKMessage" xml:space="preserve">
+    <value>外出期間您的任務將按您定義的任務規則轉發！</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="LeaveSub_OKMsgNotSend" xml:space="preserve">
+    <value>外出期間不轉發任務。</value>
+  </data>
+  <data name="LeaveSub_OKMsgSendTo" xml:space="preserve">
+    <value>外出期間您的任務將轉發給：</value>
+  </data>
+  <data name="LeaveSub_OKTitle" xml:space="preserve">
+    <value>外出設置成功！</value>
+  </data>
+  <data name="Menu_Admin" xml:space="preserve">
+    <value>管理員</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Menu_Draft" xml:space="preserve">
+    <value>草稿</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Menu_GetBack" xml:space="preserve">
+    <value>取消外出</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="Menu_History" xml:space="preserve">
+    <value>業務查詢</value>
+  </data>
+  <data name="Menu_Home" xml:space="preserve">
+    <value>首頁</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Menu_InitRequest" xml:space="preserve">
+    <value>填寫新表單</value>
+  </data>
+  <data name="Menu_Leave" xml:space="preserve">
+    <value>外出</value>
+  </data>
+  <data name="Menu_Logout" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="Menu_MyAccountMgr" xml:space="preserve">
+    <value>帳號</value>
+  </data>
+  <data name="Menu_MyProcessed" xml:space="preserve">
+    <value>歷史處理</value>
+    <comment>3.50k</comment>
+  </data>
+  <data name="Menu_MyRequest" xml:space="preserve">
+    <value>歷史申請</value>
+  </data>
+  <data name="Menu_Report" xml:space="preserve">
+    <value>報表</value>
+  </data>
+  <data name="Menu_TaskList" xml:space="preserve">
+    <value>待處理任務</value>
+  </data>
+  <data name="MINST_Caption" xml:space="preserve">
+    <value>手動安裝組件</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Help1" xml:space="preserve">
+    <value>如果還是不能解決問題，請聯繫本公司的管理員。</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_HelpTitle" xml:space="preserve">
+    <value>我需要協助</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step1" xml:space="preserve">
+    <value>下載組件壓縮包</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step1Desc" xml:space="preserve">
+    <value>下載XFormShell.zip</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step2" xml:space="preserve">
+    <value>解壓文件</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step2Desc" xml:space="preserve">
+    <value>將下載的檔解壓到一個資料夾下（例如:My Documents）</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step3" xml:space="preserve">
+    <value>運行Install.bat安裝組件</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step3Desc" xml:space="preserve">
+    <value>按兩下Install.bat執行安裝（注意不能在解壓包中直接運行Install.bat）</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_StepTitle" xml:space="preserve">
+    <value>如何手動安裝XFormShell組件</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Warn1" xml:space="preserve">
+    <value>您電腦當前的安全性原則，不允許自動安裝XFormShell；</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Warn2" xml:space="preserve">
+    <value>XFormShell是FlowPortal.net開發的XForm表單的用戶端支援元件，運行FlowPortal.net的表單必需安裝該組件；</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Warn3" xml:space="preserve">
+    <value>上海易正資訊技術有限公司擔保該程式不包含惡意程式碼，不會破環您的電腦系統，也不會獲取您的私人資訊。</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_WarnTitle" xml:space="preserve">
+    <value>警告</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MSG_ChgPwd_Caption" xml:space="preserve">
+    <value>修改密碼成功</value>
+  </data>
+  <data name="MSG_ChgPwd_Msg" xml:space="preserve">
+    <value>使用者密碼已修改。</value>
+  </data>
+  <data name="MSG_ChgPwd_NewPwdErr" xml:space="preserve">
+    <value>二次輸入的密碼不一致，請重新輸入！</value>
+  </data>
+  <data name="MSG_ChgUserInfo_Success" xml:space="preserve">
+    <value>使用者資訊-修改成功！</value>
+  </data>
+  <data name="OrgTree_Title" xml:space="preserve">
+    <value>目錄</value>
+  </data>
+  <data name="PageTitle_Login" xml:space="preserve">
+    <value>登錄</value>
+  </data>
+  <data name="Post_MissForm" xml:space="preserve">
+    <value>流程的開始節步驟未指定表單，請與管理員聯繫。</value>
+  </data>
+  <data name="PostResult_HasSentToOtherUsers" xml:space="preserve">
+    <value>提交已成功！業務流水號：{0}&lt;/br&gt;您提交的表單已傳送給：{1}。{2}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PostResult_InWaitingOtherUsers" xml:space="preserve">
+    <value>提交已成功！業務流水號：{0}&lt;/br&gt;正在等待以下人員處理：{1}。{2}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PostResult_RecedeRestarted" xml:space="preserve">
+    <value>提交已成功！業務流水號：{0}&lt;/br&gt;您提交的表單已退回給：{1}。{2}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PostResult_TaskFinishedApproved" xml:space="preserve">
+    <value>提交已成功！業務流水號：{0}&lt;/br&gt;流程已結束（承認）。{1}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PostResult_TaskFinishedRejected" xml:space="preserve">
+    <value>提交已成功！業務流水號：{0}&lt;/br&gt;流程已結束（拒絕）。{1}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PostResult_TaskInWaiting" xml:space="preserve">
+    <value>提交已成功！業務流水號：{0}。{1}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PreportCaption_ProcessUsage" xml:space="preserve">
+    <value>流程使用情況</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="PreportCaption_StepProcessPerformance" xml:space="preserve">
+    <value>處理效率統計-平均耗時（工作時間）</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="PreportCaption_SystemUsage" xml:space="preserve">
+    <value>系統使用情況</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="Process_MissForm" xml:space="preserve">
+    <value>本步驟未指定表單，請與管理員聯繫。</value>
+  </data>
+  <data name="ProcessTree_Title" xml:space="preserve">
+    <value>目錄</value>
+  </data>
+  <data name="Public_BtnOK" xml:space="preserve">
+    <value>公開</value>
+  </data>
+  <data name="Public_Caption" xml:space="preserve">
+    <value>選擇任務公開人</value>
+  </data>
+  <data name="Public_Title" xml:space="preserve">
+    <value>請選擇任務要公開給的用戶，按“下一步”將賦予該用戶查看任務的許可權。</value>
+  </data>
+  <data name="Read_MissForm" xml:space="preserve">
+    <value>本流程沒有可用的表單，請與管理員聯繫。</value>
+  </data>
+  <data name="RecedeBack_BackToForm" xml:space="preserve">
+    <value>回到表單</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="RecedeBack_Caption" xml:space="preserve">
+    <value>退回任務</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="RecedeBack_ColOpt" xml:space="preserve">
+    <value>操作</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="RecedeBack_Confirm" xml:space="preserve">
+    <value>您確定要退回表單？</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="RecedeBack_Opt" xml:space="preserve">
+    <value>退回</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="RecedeBack_Title" xml:space="preserve">
+    <value>選擇退回到的步驟：</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="ReceiveNotifys" xml:space="preserve">
+    <value>接收選中的通知</value>
+    <comment>3.05</comment>
+  </data>
+  <data name="Report_ChangeChartType" xml:space="preserve">
+    <value>切換圖形</value>
+    <comment>3.40j</comment>
+  </data>
+  <data name="SelMember_Caption" xml:space="preserve">
+    <value>選擇成員</value>
+  </data>
+  <data name="SelMember_Msg_AtleastSelOne" xml:space="preserve">
+    <value>請選擇成員</value>
+  </data>
+  <data name="SelMember_SelOneOnly" xml:space="preserve">
+    <value>只能選擇一個成員</value>
+  </data>
+  <data name="SelMember_Title" xml:space="preserve">
+    <value>請選擇成員。</value>
+  </data>
+  <data name="SelOU_Caption" xml:space="preserve">
+    <value>選擇部門</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="SelOU_Title" xml:space="preserve">
+    <value>請選擇一個部門。</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="SelProcess_Caption" xml:space="preserve">
+    <value>選擇流程</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="SelProcess_Title" xml:space="preserve">
+    <value>請選擇流程</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="SelUser_Caption" xml:space="preserve">
+    <value>選擇用戶</value>
+  </data>
+  <data name="SelUser_Title" xml:space="preserve">
+    <value>請選擇一個用戶。</value>
+  </data>
+  <data name="SendTo_BtnCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="SendTo_BtnOK" xml:space="preserve">
+    <value>委託</value>
+  </data>
+  <data name="SendTo_Caption" xml:space="preserve">
+    <value>委託任務</value>
+  </data>
+  <data name="SendTo_Title" xml:space="preserve">
+    <value>請選擇委託人，按“委託”按鈕委託任務。</value>
+  </data>
+  <data name="SendTo_WarnMultiSelect" xml:space="preserve">
+    <value>不能選擇多個委託人。</value>
+  </data>
+  <data name="SendTo_WarnNoSelect" xml:space="preserve">
+    <value>請選擇委託人。</value>
+  </data>
+  <data name="SendToSelStep_BtnCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="SendToSelStep_BtnOK" xml:space="preserve">
+    <value>下一步</value>
+  </data>
+  <data name="SendToSelStep_Caption" xml:space="preserve">
+    <value>選擇委託步驟</value>
+  </data>
+  <data name="SendToSelStep_Participant" xml:space="preserve">
+    <value>處理人</value>
+  </data>
+  <data name="SendToSelStep_StepName" xml:space="preserve">
+    <value>步驟名</value>
+  </data>
+  <data name="SendToSelStep_Title" xml:space="preserve">
+    <value>請選擇要委託的步驟，按“下一步”選擇委託人。</value>
+  </data>
+  <data name="SendToSelStep_WarnNoSelect" xml:space="preserve">
+    <value>請選擇要委託的步驟。</value>
+  </data>
+  <data name="SendToSub_Caption" xml:space="preserve">
+    <value>委託確認</value>
+  </data>
+  <data name="SendToSub_FailMsg1" xml:space="preserve">
+    <value>委託任務時發生錯誤！</value>
+  </data>
+  <data name="SendToSub_FailMsg2" xml:space="preserve">
+    <value>失敗原因：</value>
+  </data>
+  <data name="SendToSub_FailTitle" xml:space="preserve">
+    <value>委託失敗</value>
+  </data>
+  <data name="SendToSub_SuccessMsg" xml:space="preserve">
+    <value>任務已委託給：</value>
+  </data>
+  <data name="SendToSub_SuccessTitle" xml:space="preserve">
+    <value>委託成功</value>
+  </data>
+  <data name="ShareStep_WaitPick" xml:space="preserve">
+    <value>等待獲取</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="SignDlg_Caption" xml:space="preserve">
+    <value>簽名</value>
+    <comment>3.06</comment>
+  </data>
+  <data name="TaskListTree_Title" xml:space="preserve">
+    <value>目錄</value>
+  </data>
+  <data name="TaskRule_Caption" xml:space="preserve">
+    <value>已設置 {0} 條任務規則</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRule_Disabled" xml:space="preserve">
+    <value>無效</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRule_Enabled" xml:space="preserve">
+    <value>有效</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Btn_Add" xml:space="preserve">
+    <value>添加</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Btn_Delete" xml:space="preserve">
+    <value>刪除</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Btn_Save" xml:space="preserve">
+    <value>保存規則</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Delegator" xml:space="preserve">
+    <value>給誰處理</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Delegator_DisplayString" xml:space="preserve">
+    <value>代理人（按順序應用）</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Enabled" xml:space="preserve">
+    <value>有效</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessDefine" xml:space="preserve">
+    <value>哪些流程</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessDefine_All" xml:space="preserve">
+    <value>全部</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessDefine_Exclude" xml:space="preserve">
+    <value>除以下流程外</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessDefine_Include" xml:space="preserve">
+    <value>僅以下流程</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessList_Condition" xml:space="preserve">
+    <value>附加條件</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessList_ProcessName" xml:space="preserve">
+    <value>流程</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_RuleType" xml:space="preserve">
+    <value>規則類型</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Status" xml:space="preserve">
+    <value>是否有效</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ToolBar_Back" xml:space="preserve">
+    <value>後退</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ToolBar_Save" xml:space="preserve">
+    <value>保存規則</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleList_Memo" xml:space="preserve">
+    <value>代理人</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleList_RuleName" xml:space="preserve">
+    <value>規則（按順序應用）</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleList_Status" xml:space="preserve">
+    <value>狀態</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_Date" xml:space="preserve">
+    <value>日期</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_HandleBy" xml:space="preserve">
+    <value>處理人</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_Index" xml:space="preserve">
+    <value>序號</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_Memo" xml:space="preserve">
+    <value>處理意見</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_Owner" xml:space="preserve">
+    <value>擁有人</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_Process" xml:space="preserve">
+    <value>執行處理</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_StepID" xml:space="preserve">
+    <value>步驟號</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="Title_FlowTree" xml:space="preserve">
+    <value>流程目錄</value>
+  </data>
+  <data name="Trace_Caption" xml:space="preserve">
+    <value>任務狀態跟蹤(TaskID:{0})</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_Initiator" xml:space="preserve">
+    <value>提交人：</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_ProcessingSteps" xml:space="preserve">
+    <value>處理中的過程</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_Routing" xml:space="preserve">
+    <value>處理過程</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_SN" xml:space="preserve">
+    <value>流水號：</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_Status" xml:space="preserve">
+    <value>狀態：</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_StepID" xml:space="preserve">
+    <value>編號</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Transfer_Confirm" xml:space="preserve">
+    <value>您確定要將任務委託給“{0}”處理？</value>
+    <comment>3.30c</comment>
+  </data>
+</root>

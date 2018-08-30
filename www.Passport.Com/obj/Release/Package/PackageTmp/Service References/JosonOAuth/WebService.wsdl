@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://58.251.35.132:8000/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://58.251.35.132:8000/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://58.251.35.132:8000/">
+      <s:element name="DisableAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMAccountName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DisableAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMAccountName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EnableAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMAccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetPasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAccountLockedOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMAccountName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAccountLockedOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsAccountLockedOutResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsEmailAccountLockedOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMAccountName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsEmailAccountLockedOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsEmailAccountLockedOutResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnLockEmailAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMAccountName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnLockEmailAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnLockEmailAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetEmailPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sAMAccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetEmailPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetEmailPasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmailOAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmailOAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEmailOAuthResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Entity" type="tns:OUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmployeeID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectGUID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sAMAccountName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="userPrincipalName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GivenName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="initials" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="maxPwdAge" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BadPwdCount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastLogOn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastLogOff" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BadPassWordTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PwdLastSet" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserAccountControl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastLogonTimestamp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ObjectCategory" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DistinguishedName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberOf" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GPLink" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LogOnCount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LockOutTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountExpires" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreationTime" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WhenCreated" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="WhenChanged" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDisabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPassWordExpired" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPasswordNeverExpire" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsNoPasswordRequired" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxPasswordAge" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="SurplusPasswordExpirationDays" nillable="true" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordLastSet" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PasswordExpirationDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Co" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="St" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="L" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="streetAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postOfficeBox" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Department" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Manager" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DirectReports" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtherMailBox" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelephoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtherHomePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtherMobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IPPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtherIpPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Pager" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtherPager" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="facsimileTelephoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="otherFacsimileTelephoneNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="physicalDeliveryOfficeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="wWWHomePage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dSCorePropagationData" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="objectCategory" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sAMAccountType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="primaryGroupID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="countryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="codePage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="instanceType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="houseIdentifier" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Info" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAccount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetOAuthResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Entity" type="tns:OUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OAuth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassport" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OAuthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OAuthResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Entity" type="tns:OUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAccount" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="m" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkTimeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemvalue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskLst">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="itemvalue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskLstResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DisableAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableAccount" />
+  </wsdl:message>
+  <wsdl:message name="DisableAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableAccount" />
+  </wsdl:message>
+  <wsdl:message name="EnableAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPassword" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsAccountLockedOutSoapIn">
+    <wsdl:part name="parameters" element="tns:IsAccountLockedOut" />
+  </wsdl:message>
+  <wsdl:message name="IsAccountLockedOutSoapOut">
+    <wsdl:part name="parameters" element="tns:IsAccountLockedOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsEmailAccountLockedOutSoapIn">
+    <wsdl:part name="parameters" element="tns:IsEmailAccountLockedOut" />
+  </wsdl:message>
+  <wsdl:message name="IsEmailAccountLockedOutSoapOut">
+    <wsdl:part name="parameters" element="tns:IsEmailAccountLockedOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnLockEmailAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:UnLockEmailAccount" />
+  </wsdl:message>
+  <wsdl:message name="UnLockEmailAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:UnLockEmailAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetEmailPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:SetEmailPassword" />
+  </wsdl:message>
+  <wsdl:message name="SetEmailPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:SetEmailPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailOAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmailOAuth" />
+  </wsdl:message>
+  <wsdl:message name="GetEmailOAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmailOAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOAuth" />
+  </wsdl:message>
+  <wsdl:message name="GetOAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="OAuthSoapIn">
+    <wsdl:part name="parameters" element="tns:OAuth" />
+  </wsdl:message>
+  <wsdl:message name="OAuthSoapOut">
+    <wsdl:part name="parameters" element="tns:OAuthResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkTime" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContact" />
+  </wsdl:message>
+  <wsdl:message name="GetContactSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskLstSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskLst" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskLstSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableAccountHttpGetIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DisableAccountHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="EnableAccountHttpGetIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnableAccountHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordHttpGetIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+    <wsdl:part name="strPassport" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="IsAccountLockedOutHttpGetIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsAccountLockedOutHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="IsEmailAccountLockedOutHttpGetIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsEmailAccountLockedOutHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UnLockEmailAccountHttpGetIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UnLockEmailAccountHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetEmailPasswordHttpGetIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+    <wsdl:part name="strPassport" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetEmailPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkTimeHttpGetIn">
+    <wsdl:part name="strAccount" type="s:string" />
+    <wsdl:part name="m" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkTimeHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetContactHttpGetIn">
+    <wsdl:part name="itemvalue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskLstHttpGetIn">
+    <wsdl:part name="itemvalue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskLstHttpGetOut" />
+  <wsdl:message name="DisableAccountHttpPostIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DisableAccountHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="EnableAccountHttpPostIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EnableAccountHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordHttpPostIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+    <wsdl:part name="strPassport" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="IsAccountLockedOutHttpPostIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsAccountLockedOutHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="IsEmailAccountLockedOutHttpPostIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="IsEmailAccountLockedOutHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="UnLockEmailAccountHttpPostIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UnLockEmailAccountHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="SetEmailPasswordHttpPostIn">
+    <wsdl:part name="sAMAccountName" type="s:string" />
+    <wsdl:part name="strPassport" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetEmailPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkTimeHttpPostIn">
+    <wsdl:part name="strAccount" type="s:string" />
+    <wsdl:part name="m" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkTimeHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetContactHttpPostIn">
+    <wsdl:part name="itemvalue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetContactHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskLstHttpPostIn">
+    <wsdl:part name="itemvalue" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskLstHttpPostOut" />
+  <wsdl:portType name="WebServiceSoap">
+    <wsdl:operation name="DisableAccount">
+      <wsdl:input message="tns:DisableAccountSoapIn" />
+      <wsdl:output message="tns:DisableAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableAccount">
+      <wsdl:input message="tns:EnableAccountSoapIn" />
+      <wsdl:output message="tns:EnableAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <wsdl:input message="tns:SetPasswordSoapIn" />
+      <wsdl:output message="tns:SetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountLockedOut">
+      <wsdl:input message="tns:IsAccountLockedOutSoapIn" />
+      <wsdl:output message="tns:IsAccountLockedOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsEmailAccountLockedOut">
+      <wsdl:input message="tns:IsEmailAccountLockedOutSoapIn" />
+      <wsdl:output message="tns:IsEmailAccountLockedOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnLockEmailAccount">
+      <wsdl:input message="tns:UnLockEmailAccountSoapIn" />
+      <wsdl:output message="tns:UnLockEmailAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEmailPassword">
+      <wsdl:input message="tns:SetEmailPasswordSoapIn" />
+      <wsdl:output message="tns:SetEmailPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailOAuth">
+      <wsdl:input message="tns:GetEmailOAuthSoapIn" />
+      <wsdl:output message="tns:GetEmailOAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOAuth">
+      <wsdl:input message="tns:GetOAuthSoapIn" />
+      <wsdl:output message="tns:GetOAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OAuth">
+      <wsdl:input message="tns:OAuthSoapIn" />
+      <wsdl:output message="tns:OAuthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkTime">
+      <wsdl:input message="tns:GetWorkTimeSoapIn" />
+      <wsdl:output message="tns:GetWorkTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <wsdl:input message="tns:GetContactSoapIn" />
+      <wsdl:output message="tns:GetContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskLst">
+      <wsdl:input message="tns:GetTaskLstSoapIn" />
+      <wsdl:output message="tns:GetTaskLstSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpGet">
+    <wsdl:operation name="DisableAccount">
+      <wsdl:input message="tns:DisableAccountHttpGetIn" />
+      <wsdl:output message="tns:DisableAccountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableAccount">
+      <wsdl:input message="tns:EnableAccountHttpGetIn" />
+      <wsdl:output message="tns:EnableAccountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <wsdl:input message="tns:SetPasswordHttpGetIn" />
+      <wsdl:output message="tns:SetPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountLockedOut">
+      <wsdl:input message="tns:IsAccountLockedOutHttpGetIn" />
+      <wsdl:output message="tns:IsAccountLockedOutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsEmailAccountLockedOut">
+      <wsdl:input message="tns:IsEmailAccountLockedOutHttpGetIn" />
+      <wsdl:output message="tns:IsEmailAccountLockedOutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnLockEmailAccount">
+      <wsdl:input message="tns:UnLockEmailAccountHttpGetIn" />
+      <wsdl:output message="tns:UnLockEmailAccountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEmailPassword">
+      <wsdl:input message="tns:SetEmailPasswordHttpGetIn" />
+      <wsdl:output message="tns:SetEmailPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkTime">
+      <wsdl:input message="tns:GetWorkTimeHttpGetIn" />
+      <wsdl:output message="tns:GetWorkTimeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <wsdl:input message="tns:GetContactHttpGetIn" />
+      <wsdl:output message="tns:GetContactHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskLst">
+      <wsdl:input message="tns:GetTaskLstHttpGetIn" />
+      <wsdl:output message="tns:GetTaskLstHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceHttpPost">
+    <wsdl:operation name="DisableAccount">
+      <wsdl:input message="tns:DisableAccountHttpPostIn" />
+      <wsdl:output message="tns:DisableAccountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableAccount">
+      <wsdl:input message="tns:EnableAccountHttpPostIn" />
+      <wsdl:output message="tns:EnableAccountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <wsdl:input message="tns:SetPasswordHttpPostIn" />
+      <wsdl:output message="tns:SetPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountLockedOut">
+      <wsdl:input message="tns:IsAccountLockedOutHttpPostIn" />
+      <wsdl:output message="tns:IsAccountLockedOutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsEmailAccountLockedOut">
+      <wsdl:input message="tns:IsEmailAccountLockedOutHttpPostIn" />
+      <wsdl:output message="tns:IsEmailAccountLockedOutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnLockEmailAccount">
+      <wsdl:input message="tns:UnLockEmailAccountHttpPostIn" />
+      <wsdl:output message="tns:UnLockEmailAccountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEmailPassword">
+      <wsdl:input message="tns:SetEmailPasswordHttpPostIn" />
+      <wsdl:output message="tns:SetEmailPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkTime">
+      <wsdl:input message="tns:GetWorkTimeHttpPostIn" />
+      <wsdl:output message="tns:GetWorkTimeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <wsdl:input message="tns:GetContactHttpPostIn" />
+      <wsdl:output message="tns:GetContactHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskLst">
+      <wsdl:input message="tns:GetTaskLstHttpPostIn" />
+      <wsdl:output message="tns:GetTaskLstHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceSoap" type="tns:WebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DisableAccount">
+      <soap:operation soapAction="http://58.251.35.132:8000/DisableAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableAccount">
+      <soap:operation soapAction="http://58.251.35.132:8000/EnableAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <soap:operation soapAction="http://58.251.35.132:8000/SetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountLockedOut">
+      <soap:operation soapAction="http://58.251.35.132:8000/IsAccountLockedOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsEmailAccountLockedOut">
+      <soap:operation soapAction="http://58.251.35.132:8000/IsEmailAccountLockedOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnLockEmailAccount">
+      <soap:operation soapAction="http://58.251.35.132:8000/UnLockEmailAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEmailPassword">
+      <soap:operation soapAction="http://58.251.35.132:8000/SetEmailPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailOAuth">
+      <soap:operation soapAction="http://58.251.35.132:8000/GetEmailOAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOAuth">
+      <soap:operation soapAction="http://58.251.35.132:8000/GetOAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OAuth">
+      <soap:operation soapAction="http://58.251.35.132:8000/OAuth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkTime">
+      <soap:operation soapAction="http://58.251.35.132:8000/GetWorkTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <soap:operation soapAction="http://58.251.35.132:8000/GetContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskLst">
+      <soap:operation soapAction="http://58.251.35.132:8000/GetTaskLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceSoaps" type="tns:WebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DisableAccount">
+      <soap12:operation soapAction="http://58.251.35.132:8000/DisableAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableAccount">
+      <soap12:operation soapAction="http://58.251.35.132:8000/EnableAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <soap12:operation soapAction="http://58.251.35.132:8000/SetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountLockedOut">
+      <soap12:operation soapAction="http://58.251.35.132:8000/IsAccountLockedOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsEmailAccountLockedOut">
+      <soap12:operation soapAction="http://58.251.35.132:8000/IsEmailAccountLockedOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnLockEmailAccount">
+      <soap12:operation soapAction="http://58.251.35.132:8000/UnLockEmailAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEmailPassword">
+      <soap12:operation soapAction="http://58.251.35.132:8000/SetEmailPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmailOAuth">
+      <soap12:operation soapAction="http://58.251.35.132:8000/GetEmailOAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOAuth">
+      <soap12:operation soapAction="http://58.251.35.132:8000/GetOAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OAuth">
+      <soap12:operation soapAction="http://58.251.35.132:8000/OAuth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkTime">
+      <soap12:operation soapAction="http://58.251.35.132:8000/GetWorkTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <soap12:operation soapAction="http://58.251.35.132:8000/GetContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskLst">
+      <soap12:operation soapAction="http://58.251.35.132:8000/GetTaskLst" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpGet" type="tns:WebServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="DisableAccount">
+      <http:operation location="/DisableAccount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableAccount">
+      <http:operation location="/EnableAccount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <http:operation location="/SetPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountLockedOut">
+      <http:operation location="/IsAccountLockedOut" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsEmailAccountLockedOut">
+      <http:operation location="/IsEmailAccountLockedOut" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnLockEmailAccount">
+      <http:operation location="/UnLockEmailAccount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEmailPassword">
+      <http:operation location="/SetEmailPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkTime">
+      <http:operation location="/GetWorkTime" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <http:operation location="/GetContact" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskLst">
+      <http:operation location="/GetTaskLst" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceHttpPost" type="tns:WebServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="DisableAccount">
+      <http:operation location="/DisableAccount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableAccount">
+      <http:operation location="/EnableAccount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <http:operation location="/SetPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountLockedOut">
+      <http:operation location="/IsAccountLockedOut" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsEmailAccountLockedOut">
+      <http:operation location="/IsEmailAccountLockedOut" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnLockEmailAccount">
+      <http:operation location="/UnLockEmailAccount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEmailPassword">
+      <http:operation location="/SetEmailPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkTime">
+      <http:operation location="/GetWorkTime" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <http:operation location="/GetContact" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskLst">
+      <http:operation location="/GetTaskLst" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService">
+    <wsdl:port name="WebServiceSoap" binding="tns:WebServiceSoap">
+      <soap:address location="http://58.251.35.132:8000/oauth/WebService/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceSoaps" binding="tns:WebServiceSoaps">
+      <soap12:address location="http://58.251.35.132:8000/oauth/WebService/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpGet" binding="tns:WebServiceHttpGet">
+      <http:address location="http://58.251.35.132:8000/oauth/WebService/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceHttpPost" binding="tns:WebServiceHttpPost">
+      <http:address location="http://58.251.35.132:8000/oauth/WebService/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

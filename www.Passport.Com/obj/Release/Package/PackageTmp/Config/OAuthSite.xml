@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"  standalone="yes"?>
+
+<NewDataSet>
+
+  <JosonPost>
+    <SiteName>HR系统</SiteName>
+    <Description>员工考勤工资发放核算系统</Description>
+    <SiteURL>http://www.ehr.com/SSOLogin.aspx</SiteURL>
+  </JosonPost>
+  
+  <JosonPost>
+    <SiteName>电子流</SiteName>
+    <Description>流程审批发起</Description>
+    <SiteURL>http://BPM.SDT.com/SSOLogin.aspx</SiteURL>
+  </JosonPost>
+
+  <JosonPost>
+    <SiteName>ehr.SDT.com</SiteName>
+    <Description>ehr.SDT.com</Description>
+    <SiteURL>http://ehr.SDT.com/SSOLogin.aspx</SiteURL>
+  </JosonPost>
+
+  <JosonPost>
+    <SiteName>Joson</SiteName>
+    <Description>Joson，是一个MVC测试系统</Description>
+    <SiteURL>http://www.Joson.com/SSOLogin/index</SiteURL>
+  </JosonPost>
+
+  <JosonPost>
+    <SiteName>Josonjiang</SiteName>
+    <Description>Josonjiang is a test SSO Website</Description>
+    <SiteURL>http://www.JosonJiang.com/SSOLogin.aspx</SiteURL>
+  </JosonPost>
+
+  <JosonPost>
+    <SiteName>Josons</SiteName>
+    <Description>Josons 是一个MVC的测试单点登录系统</Description>
+    <SiteURL>http://www.Josons.com/SSOLogin/</SiteURL>
+  </JosonPost>
+
+  <JosonPost>
+    <SiteName>Oauth</SiteName>
+    <Description>Oauth单点登录测试系统(MVC ppl)</Description>
+    <SiteURL>http://www.Oauth.com/SSOLogin/Index</SiteURL>
+  </JosonPost>
+
+  <!--退出设置-->
+  
+ <Joson>
+    <username>{UserName}</username>
+    <password>{Joson}</password>
+    <httpGet>http://ehr.sdt.com/sso/SSOLogout</httpGet>
+  </Joson>
+
+  <Joson>
+    <username>{Joson}</username>
+    <password>{password}</password>
+    <httpGet>http://EHR.SDT.com/Login.aspx</httpGet>
+  </Joson>
+
+  <Joson>
+    <username>{Joson}</username>
+    <password>{password}</password>
+    <httpGet>http://BPM.SDT.com/SSOLogout.aspx</httpGet>
+  </Joson>
+
+
+</NewDataSet>
+

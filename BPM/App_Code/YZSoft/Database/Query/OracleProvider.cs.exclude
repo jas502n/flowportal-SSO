@@ -1,0 +1,771 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Text;
+using System.IO;
+using System.Drawing;
+using System.Data.OracleClient;
+using System.Threading;
+using System.Collections.Generic;
+using BPM;
+
+/// <summary>
+/// OracleProvider 的摘要说明
+
+
+
+/// </summary>
+public class OracleProvider : QueryProviderBase, IQueryProvider
+{
+    private static Dictionary <string, string> handlingtimeMap = null;
+    static OracleProvider()
+    {
+        OracleProvider.handlingtimeMap = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+        OracleProvider.handlingtimeMap.Add("USEDMINUTESWORK", "NVL(USEDMINUTESWORK,-1)");
+        OracleProvider.handlingtimeMap.Add("USEDMINUTESWORKMAX", "NVL(USEDMINUTESWORKMAX,-1)");
+    }
+
+    public OracleProvider(HttpContext context)
+        : base(context)
+    {
+    }
+
+    public virtual string SortStringAppLog
+    {
+        get
+        {
+            return GetSortString("LogDate DESC",null,"ROWID");
+        }
+    }
+
+    public override string GenPeriodCond(string fieldName, DateTime date1, DateTime date2)
+    {
+        return String.Format("({0}>=TO_DATE('{1}','YYYY-MM-DD HH24:MI:SS') AND {0}<TO_DATE('{2}','YYYY-MM-DD HH24:MI:SS'))",
+            fieldName,
+            YZStringHelper.DateToStringL(date1),
+            YZStringHelper.DateToStringL(date2));
+    }
+
+    public IDbConnection OpenConnection()
+    {
+        OracleConnection cn = new OracleConnection();
+
+        cn.ConnectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BPMDB"].ConnectionString;
+        cn.Open();
+        return cn;
+    }
+
+    public JsonItemCollection GetFactorys(IDbConnection cn)
+    {
+        JsonItemCollection factorys = new JsonItemCollection();
+        using (OracleCommand cmd = new OracleCommand())
+        {
+            cmd.Connection = cn as OracleConnection;
+            cmd.CommandText = "SELECT * FROM ISYSFACTORY";
+
+            using (YZReader reader = new YZReader(cmd.ExecuteReader()))
+            {
+                while (reader.Read())
+                {
+                    JsonItem factory = new JsonItem();
+                    factorys.Add(factory);
+
+                    factory.Attributes["ID"] = reader.ReadInt32("ID");
+                    factory.Attributes["Name"] = reader.ReadString("Name");
+                    factory.Attributes["MapX"] = reader.ReadInt32("MapX");
+                    factory.Attributes["MapY"] = reader.ReadInt32("MapY");
+                }
+            }
+        }
+        return factorys;
+    }
+
+    public DataTable Query2Table(string datasourceName, string query, string resultTableName)
+    {
+        using (OracleConnection cn = new OracleConnection())
+        {
+            cn.ConnectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings[datasourceName].ConnectionString;
+            cn.Open();
+
+            using (OracleCommand cmd = new OracleCommand())
+            {
+                cmd.Connection = cn;
+                cmd.CommandText = query;
+
+                using (OracleDataReader reader = cmd.ExecuteReader())
+                {
+                    DataTable table = new DataTable(resultTableName);
+                    table.Load(reader);
+                    return table;
+                }
+            }
+        }
+    }
+
+    public IDataReader GetAttachmentsInfo(IDbConnection cn, string[] fileids)
+    {
+        List<string> ids = new List<string>();
+        for (int i = 0; i < fileids.Length; i++)
+            ids.Add("N'" + fileids[i] + "'");
+
+        string filter = ids.Count == 0 ? "1=0" : String.Format("WHERE FILEID IN({0})", String.Join(",", ids.ToArray()));
+        string query = String.Format("SELECT * FROM YZAPPATTACHMENT {0}", filter);
+
+        using (OracleCommand cmd = new OracleCommand())
+        {
+            cmd.Connection = cn as OracleConnection;
+            cmd.CommandText = query;
+
+            return cmd.ExecuteReader();
+        }
+    }
+
+    public void InsertAttachmentInfo(IDbConnection cn, Attachment attInfo)
+    {
+        using (OracleCommand cmd = new OracleCommand())
+        {
+            cmd.Connection = cn as OracleConnection;
+            cmd.CommandText = "INSERT INTO YZAPPATTACHMENT(FILEID,NAME,EXT,\"SIZE\",LASTUPDATE,OWNERACCOUNT) VALUES(:FILEID,:NAME,:EXT,:SIZEVAL,:LASTUPDATE,:OWNERACCOUNT)";
+            cmd.Parameters.Add(":FILEID", OracleType.NVarChar).Value = attInfo.FileID;
+            cmd.Parameters.Add(":NAME", OracleType.NVarChar).Value = attInfo.Name;
+            cmd.Parameters.Add(":EXT", OracleType.NVarChar).Value = attInfo.Ext;
+            cmd.Parameters.Add(":SIZEVAL", OracleType.Int32).Value = attInfo.Size;
+            cmd.Parameters.Add(":LASTUPDATE", OracleType.DateTime).Value = attInfo.LastUpdate;
+            cmd.Parameters.Add(":OWNERACCOUNT", OracleType.NVarChar).Value = attInfo.OwnerAccount;
+
+            cmd.ExecuteNonQuery();
+        }
+    }
+
+    public byte[] Excel2Image(MemoryStream stream, int timeout,out Size size, out string error)
+    {
+        error = null;
+        size = new Size(0, 0);
+        string itemGuid = Guid.NewGuid().ToString();
+
+        try
+        {
+            byte[] bytes = null;
+            using (OracleConnection cn = new OracleConnection())
+            {
+                cn.ConnectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["BPMDB"].ConnectionString;
+                cn.Open();
+
+                using (OracleCommand cmd = new OracleCommand())
+                {
+                    cmd.Connection = cn;
+                    cmd.CommandText = "INSERT INTO YZAPPFILECONVERT(ITEMGUID,FILEBODY,CREATEDATE,PROCESSED) VALUES(:ITEMGUID,:FILEBODY,:NOW,0)";
+                    cmd.Parameters.Add(":ITEMGUID", OracleType.NVarChar).Value = itemGuid;
+                    cmd.Parameters.Add(":FILEBODY", OracleType.Blob).Value = stream.ToArray();
+                    cmd.Parameters.Add(":NOW", OracleType.DateTime).Value = DateTime.Now;
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                bool readed = false;
+				int tickFrom = Environment.TickCount;
+                while (!readed)
+                {
+					if (Environment.TickCount - tickFrom >= timeout)
+                        throw new Exception(Resources.YZStrings.Aspx_Excel2Image_Timeout);
+
+                    Thread.Sleep(50);
+
+                    using (OracleCommand cmd = new OracleCommand())
+                    {
+                        cmd.Connection = cn;
+                        cmd.CommandText = "SELECT ERRORMSG,IMAGE,WIDTH,HEIGHT FROM YZAPPFILECONVERT WHERE ITEMGUID=:ITEMGUID AND PROCESSED=1";
+                        cmd.Parameters.Add(":ITEMGUID", OracleType.NVarChar).Value = itemGuid;
+
+                        using (YZReader reader = new YZReader(cmd.ExecuteReader()))
+                        {
+                            if (reader.Read())
+                            {
+                                readed = true;
+                                error = reader.ReadString(0);
+                                bytes = (byte[])(Convert.IsDBNull(reader.Reader[1]) ? null : reader.Reader[1]);
+                                size.Width = reader.ReadInt32(2);
+                                size.Height = reader.ReadInt32(3);
+                            }
+                        }
+                    }
+                }
+
+                using (OracleCommand cmd = new OracleCommand())
+                {
+                    cmd.Connection = cn;
+                    cmd.CommandText = "DELETE FROM YZAPPFILECONVERT WHERE ITEMGUID=:ITEMGUID";
+                    cmd.Parameters.Add(":ITEMGUID", OracleType.NVarChar).Value = itemGuid;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            return bytes;
+        }
+        catch (Exception exp)
+        {
+            error = exp.Message;
+            return null;
+        }
+    }
+
+    public virtual IDbCommand HandlingTimeStepCommand
+    {
+        get
+        {
+            GridPageInfo gridPageInfo = new GridPageInfo(this.Context);
+            OracleCommand cmd = new OracleCommand();
+
+            //获得查询条件 每一年的的执行计划不一样例如：2012,2013
+            string filter = String.Format("EXTSTEPYEAR={0} AND HUMANSTEP=1 AND POSTED=0 AND AUTOPROCESS=0 AND FINISHAT IS NOT NULL AND NODENAME!='sysTaskOpt'", Convert.ToInt32(this.GetParam("Year")));
+
+            if (!NameCompare.EquName(this.GetParam("PeriodType"), "year"))
+            {
+                filter = this.CombinCond(filter, "RECEIVEAT>=:Date1 AND RECEIVEAT<:Date2");
+                cmd.Parameters.Add(":Date1", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date1"));
+                cmd.Parameters.Add(":Date2", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date2"));
+            }
+
+            string processName = this.GetParam("ProcessName");
+            if (!String.IsNullOrEmpty(processName))
+            {
+                filter = this.CombinCond(filter, "PROCESSNAME=:ProcessName");
+                cmd.Parameters.Add(":ProcessName", OracleType.NVarChar).Value = processName;
+            }
+
+            if (!String.IsNullOrEmpty(filter))
+                filter = " WHERE " + filter;
+
+            string filterGrouped = null;
+            string processCount = this.GetParam("ProcessCount");
+            if (!String.IsNullOrEmpty(processCount))
+            {
+                filterGrouped = this.CombinCond(filterGrouped, "COUNTS>=:ProcessCount");
+                cmd.Parameters.Add(":ProcessCount", OracleType.Number).Value = Convert.ToInt32(processCount);
+            }
+
+            string hours = this.GetParam("Hours");
+            if (!String.IsNullOrEmpty(hours))
+            {
+                filterGrouped = this.CombinCond(filterGrouped, "USEDMINUTESWORK>=:Minutes");
+                cmd.Parameters.Add(":Minutes", OracleType.Number).Value = Convert.ToInt32(hours) * 60;
+            }
+
+            if (!String.IsNullOrEmpty(filterGrouped))
+                filterGrouped = " WHERE " + filterGrouped;
+
+            //获得排序子句
+            string sort = this.GetSortString("NVL(USEDMINUTESWORK,0) DESC", OracleProvider.handlingtimeMap, null);
+
+            //输出列
+            StringBuilder fields = new StringBuilder();
+            fields.Append("PROCESSNAME,");
+            fields.Append("NODENAME,");
+            fields.Append("round(Avg(USEDMINUTESWORK),0) USEDMINUTESWORK,");
+            fields.Append("max(USEDMINUTESWORK) USEDMINUTESWORKMax,");
+            fields.Append("round(Avg(USEDMINUTES),0) UsedMinutes,");
+            fields.Append("max(USEDMINUTES) UsedMinutesMax,");
+            fields.Append("Count(*) COUNTS");
+
+            //查询语句
+            string query = "WITH A AS(SELECT {0} FROM BPMINSTPROCSTEPS {1} GROUP BY PROCESSNAME,NODENAME)," +
+                "B AS(SELECT A.*,count(*) over() as TotalRows FROM A {3} ORDER BY {2})," +
+                "X AS(SELECT B.*,ROWNUM AS RN__ FROM B WHERE ROWNUM<=:EndRowIndex)," +
+                "Y AS(SELECT * FROM X WHERE RN__>=:StartRowIndex)" +
+                "SELECT * FROM Y";
+
+            cmd.CommandText = String.Format(query, fields.ToString(), filter, sort, filterGrouped);
+            cmd.Parameters.Add(":StartRowIndex", OracleType.Number).Value = gridPageInfo.RowNumStart;
+            cmd.Parameters.Add(":EndRowIndex", OracleType.Number).Value = gridPageInfo.RowNumEnd;
+
+            return cmd;
+        }
+    }
+
+    public virtual IDbCommand HandlingTimeUserCommand
+    {
+        get
+        {
+            GridPageInfo gridPageInfo = new GridPageInfo(this.Context);
+            OracleCommand cmd = new OracleCommand();
+            string searctType = this.GetParam("SearchType");
+
+            //获得查询条件 每一年的的执行计划不一样例如：2012,2013
+            string filter = String.Format("EXTSTEPYEAR={0} AND HUMANSTEP=1 AND POSTED=0 AND AUTOPROCESS=0 AND FINISHAT IS NOT NULL AND NODENAME!='sysTaskOpt'", Convert.ToInt32(this.GetParam("Year")));
+
+            if (!NameCompare.EquName(this.GetParam("PeriodType"), "year"))
+            {
+                filter = this.CombinCond(filter, "RECEIVEAT>=:Date1 AND RECEIVEAT<:Date2");
+                cmd.Parameters.Add(":Date1", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date1"));
+                cmd.Parameters.Add(":Date2", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date2"));
+            }
+
+            if (searctType == "AdvancedSearch")
+            {
+                string processName = this.GetParam("ProcessName");
+                if (!String.IsNullOrEmpty(processName))
+                {
+                    filter = this.CombinCond(filter, "ProcessName=:ProcessName");
+                    cmd.Parameters.Add(":ProcessName", OracleType.NVarChar).Value = processName;
+                }
+
+                string nodeName = this.GetParam("NodeName");
+                if (!String.IsNullOrEmpty(nodeName))
+                {
+                    filter = this.CombinCond(filter, "NodeName=:NodeName");
+                    cmd.Parameters.Add(":NodeName", OracleType.NVarChar).Value = nodeName;
+                }
+            }
+
+            string account = this.GetParam("Account");
+            if (!String.IsNullOrEmpty(account))
+            {
+                filter = this.CombinCond(filter, "OWNERACCOUNT=:Account");
+                cmd.Parameters.Add(":Account", OracleType.NVarChar).Value = account;
+            }
+
+            if (!String.IsNullOrEmpty(filter))
+                filter = " WHERE " + filter;
+
+            //获得排序子句
+            string sort = this.GetSortString("NVL(USEDMINUTESWORK,0) DESC", OracleProvider.handlingtimeMap,null);
+
+            //输出列
+            StringBuilder fields = new StringBuilder();
+            fields.Append("OWNERACCOUNT,");
+            fields.Append("PROCESSNAME,");
+            fields.Append("NODENAME,");
+            fields.Append("round(Avg(USEDMINUTESWORK),0) USEDMINUTESWORK,");
+            fields.Append("max(USEDMINUTESWORK) USEDMINUTESWORKMax,");
+            fields.Append("round(Avg(USEDMINUTES),0) UsedMinutes,");
+            fields.Append("max(USEDMINUTES) UsedMinutesMax,");
+            fields.Append("Count(*) COUNTS");
+
+            //查询语句
+            string query = "WITH A AS(SELECT {0} FROM BPMINSTPROCSTEPS {1} GROUP BY OWNERACCOUNT,PROCESSNAME,NODENAME)," +
+                "B AS(SELECT A.*,count(*) over() as TotalRows FROM A ORDER BY {2})," +
+                "X AS(SELECT B.*,ROWNUM AS RN__ FROM B WHERE ROWNUM<=:EndRowIndex)," +
+                "Y AS(SELECT * FROM X WHERE RN__>=:StartRowIndex)" +
+                "SELECT * FROM Y";
+
+            cmd.CommandText = String.Format(query, fields.ToString(), filter, sort);
+            cmd.Parameters.Add(":StartRowIndex", OracleType.Number).Value = gridPageInfo.RowNumStart;
+            cmd.Parameters.Add(":EndRowIndex", OracleType.Number).Value = gridPageInfo.RowNumEnd;
+
+            return cmd;
+        }
+    }
+
+    public virtual IDbCommand HandlingTimeDetailCommand
+    {
+        get
+        {
+            GridPageInfo gridPageInfo = new GridPageInfo(this.Context);
+            OracleCommand cmd = new OracleCommand();
+            string searctType = this.GetParam("SearchType");
+
+            //获得查询条件 每一年的的执行计划不一样例如：2012,2013
+            string filter = String.Format("EXTSTEPYEAR={0} AND HUMANSTEP=1 AND POSTED=0 AND AUTOPROCESS=0 AND FINISHAT IS NOT NULL AND NODENAME!='sysTaskOpt'", Convert.ToInt32(this.GetParam("Year")));
+
+            if (!NameCompare.EquName(this.GetParam("PeriodType"), "year"))
+            {
+                filter = this.CombinCond(filter, "RECEIVEAT>=:Date1 AND RECEIVEAT<:Date2");
+                cmd.Parameters.Add(":Date1", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date1"));
+                cmd.Parameters.Add(":Date2", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date2"));
+            }
+
+            if (searctType == "AdvancedSearch")
+            {
+                string processName = this.GetParam("ProcessName");
+                if (!String.IsNullOrEmpty(processName))
+                {
+                    filter = this.CombinCond(filter, "PROCESSNAME=:ProcessName");
+                    cmd.Parameters.Add(":ProcessName", OracleType.NVarChar).Value = processName;
+                }
+
+                string nodeName = this.GetParam("NODENAME");
+                if (!String.IsNullOrEmpty(nodeName))
+                {
+                    filter = this.CombinCond(filter, "NODENAME=:NodeName");
+                    cmd.Parameters.Add(":NodeName", OracleType.NVarChar).Value = nodeName;
+                }
+
+                string account = this.GetParam("Account");
+                if (!String.IsNullOrEmpty(account))
+                {
+                    filter = this.CombinCond(filter, "OWNERACCOUNT=:Account");
+                    cmd.Parameters.Add(":Account", OracleType.NVarChar).Value = account;
+                }
+            }
+
+            if (!String.IsNullOrEmpty(filter))
+                filter = " WHERE " + filter;
+
+            //获得排序子句
+            string sort = this.GetSortString("NVL(USEDMINUTESWORK,0) DESC", OracleProvider.handlingtimeMap, "STEPID DESC");
+
+            //输出列
+            StringBuilder fields = new StringBuilder();
+            fields.Append("TASKID,");
+            fields.Append("STEPID,");
+            fields.Append("PROCESSNAME,");
+            fields.Append("NODENAME,");
+            fields.Append("OWNERACCOUNT,");
+            fields.Append("HANDLERACCOUNT,");
+            fields.Append("RECEIVEAT,");
+            fields.Append("FINISHAT,");
+            fields.Append("TIMEOUTNOTIFYCOUNT,");
+            fields.Append("TIMEOUTDEADLINE,");
+            fields.Append("(case when FINISHAT>TIMEOUTDEADLINE then 1 else 0 end) Timeouted,");
+            fields.Append("USEDMINUTESWORK,");
+            fields.Append("USEDMINUTES");
+
+            //查询语句
+            string query = "WITH A AS(SELECT {0} FROM BPMInstProcSteps {1})," +
+                "B AS(SELECT A.*,count(*) over() as TotalRows FROM A ORDER BY {2})," +
+                "X AS(SELECT B.*,ROWNUM AS RN__ FROM B WHERE ROWNUM<=:EndRowIndex)," +
+                "Y AS(SELECT * FROM X WHERE RN__>=:StartRowIndex)" +
+                "SELECT * FROM Y";
+
+            cmd.CommandText = String.Format(query, fields.ToString(), filter, sort);
+            cmd.Parameters.Add(":StartRowIndex", OracleType.Number).Value = gridPageInfo.RowNumStart;
+            cmd.Parameters.Add(":EndRowIndex", OracleType.Number).Value = gridPageInfo.RowNumEnd;
+
+            return cmd;
+        }
+    }
+
+    public virtual IDbCommand TimeoutStepCommand
+    {
+        get
+        {
+            GridPageInfo gridPageInfo = new GridPageInfo(this.Context);
+            OracleCommand cmd = new OracleCommand();
+
+            //获得查询条件 每一年的的执行计划不一样例如：2012,2013
+            string filter = String.Format("EXTSTEPYEAR={0} AND HUMANSTEP=1 AND POSTED=0 AND AUTOPROCESS=0 AND FINISHAT IS NOT NULL AND NODENAME!='sysTaskOpt'", Convert.ToInt32(this.GetParam("Year")));
+
+            if (!NameCompare.EquName(this.GetParam("PeriodType"), "year"))
+            {
+                filter = this.CombinCond(filter, "RECEIVEAT>=:Date1 AND RECEIVEAT<:Date2");
+                cmd.Parameters.Add(":Date1", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date1"));
+                cmd.Parameters.Add(":Date2", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date2"));
+            }
+
+            string processName = this.GetParam("ProcessName");
+            if (!String.IsNullOrEmpty(processName))
+            {
+                filter = this.CombinCond(filter, "PROCESSNAME=:ProcessName");
+                cmd.Parameters.Add(":ProcessName", OracleType.NVarChar).Value = processName;
+            }
+
+            if (!String.IsNullOrEmpty(filter))
+                filter = " WHERE " + filter;
+
+            string filterGrouped = null;
+            string processCount = this.GetParam("ProcessCount");
+            if (!String.IsNullOrEmpty(processCount))
+            {
+                filterGrouped = this.CombinCond(filterGrouped, "COUNTS>=:ProcessCount");
+                cmd.Parameters.Add(":ProcessCount", OracleType.Number).Value = Convert.ToInt32(processCount);
+            }
+
+            string percent = this.GetParam("Percent");
+            if (!String.IsNullOrEmpty(percent))
+            {
+                filterGrouped = this.CombinCond(filterGrouped, "TIMEOUTPERCENT>=:Percent");
+                cmd.Parameters.Add(":Percent", OracleType.Number).Value = Convert.ToInt32(percent) * 10;
+            }
+
+            if (!String.IsNullOrEmpty(filterGrouped))
+                filterGrouped = " WHERE " + filterGrouped;
+
+            //获得排序子句
+            string sort = this.GetSortString("TIMEOUTCOUNT DESC");
+
+            //输出列
+            StringBuilder fields = new StringBuilder();
+            fields.Append("PROCESSNAME,");
+            fields.Append("NODENAME,");
+            fields.Append("sum(case when FINISHAT>TIMEOUTDEADLINE then 1 else 0 end) TIMEOUTCOUNT,");
+            fields.Append("round(sum(case when FINISHAT>TIMEOUTDEADLINE then 1 else 0 end)*1000/Count(*),0) TIMEOUTPERCENT,");
+            fields.Append("Count(*) COUNTS");
+
+            //查询语句
+            string query = "WITH A AS(SELECT {0} FROM BPMINSTPROCSTEPS {1} GROUP BY PROCESSNAME,NODENAME)," +
+                "B AS(SELECT A.*,count(*) over() as TotalRows FROM A {3} ORDER BY {2})," +
+                "X AS(SELECT B.*,ROWNUM AS RN__ FROM B WHERE ROWNUM<=:EndRowIndex)," +
+                "Y AS(SELECT * FROM X WHERE RN__>=:StartRowIndex)" +
+                "SELECT * FROM Y";
+
+            cmd.CommandText = String.Format(query, fields.ToString(), filter, sort, filterGrouped);
+            cmd.Parameters.Add(":StartRowIndex", OracleType.Number).Value = gridPageInfo.RowNumStart;
+            cmd.Parameters.Add(":EndRowIndex", OracleType.Number).Value = gridPageInfo.RowNumEnd;
+
+            return cmd;
+        }
+    }
+
+    public virtual IDbCommand TimeoutUserCommand
+    {
+        get
+        {
+            GridPageInfo gridPageInfo = new GridPageInfo(this.Context);
+            OracleCommand cmd = new OracleCommand();
+            string searctType = this.GetParam("SearchType");
+
+            //获得查询条件 每一年的的执行计划不一样例如：2012,2013
+            string filter = String.Format("EXTSTEPYEAR={0} AND HUMANSTEP=1 AND POSTED=0 AND AUTOPROCESS=0 AND FINISHAT IS NOT NULL AND NODENAME!='sysTaskOpt'", Convert.ToInt32(this.GetParam("Year")));
+            string filterGrouped = null;
+
+            if (!NameCompare.EquName(this.GetParam("PeriodType"), "year"))
+            {
+                filter = this.CombinCond(filter, "RECEIVEAT>=:Date1 AND RECEIVEAT<:Date2");
+                cmd.Parameters.Add(":Date1", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date1"));
+                cmd.Parameters.Add(":Date2", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date2"));
+            }
+
+            if (searctType == "AdvancedSearch")
+            {
+                //从超时统计跳转而来，此时只列出超时的步骤
+                filterGrouped = this.CombinCond(filterGrouped, "TIMEOUTCOUNT >= 1");
+
+                string processName = this.GetParam("ProcessName");
+                if (!String.IsNullOrEmpty(processName))
+                {
+                    filter = this.CombinCond(filter, "PROCESSNAME=:ProcessName");
+                    cmd.Parameters.Add(":ProcessName", OracleType.NVarChar).Value = processName;
+                }
+
+                string nodeName = this.GetParam("NodeName");
+                if (!String.IsNullOrEmpty(nodeName))
+                {
+                    filter = this.CombinCond(filter, "NODENAME=:NodeName");
+                    cmd.Parameters.Add(":NodeName", OracleType.NVarChar).Value = nodeName;
+                }
+            }
+
+            string account = this.GetParam("Account");
+            if (!String.IsNullOrEmpty(account))
+            {
+                filter = this.CombinCond(filter, "OWNERACCOUNT=:Account");
+                cmd.Parameters.Add(":Account", OracleType.NVarChar).Value = account;
+            }
+
+            if (!String.IsNullOrEmpty(filter))
+                filter = " WHERE " + filter;
+
+            if (!String.IsNullOrEmpty(filterGrouped))
+                filterGrouped = " WHERE " + filterGrouped;
+
+            //获得排序子句
+            string sort = this.GetSortString("TIMEOUTCOUNT DESC");
+
+            //输出列
+            StringBuilder fields = new StringBuilder();
+            fields.Append("OwnerAccount,");
+            fields.Append("ProcessName,");
+            fields.Append("NodeName,");
+            fields.Append("sum(case when FinishAt>TimeoutDeadline then 1 else 0 end) TIMEOUTCOUNT,");
+            fields.Append("round(sum(case when FinishAt>TimeoutDeadline then 1 else 0 end)*1000/Count(*),0) TIMEOUTPERCENT,");
+            fields.Append("Count(*) COUNTS");
+
+            //查询语句
+            string query = "WITH A AS(SELECT {0} FROM BPMINSTPROCSTEPS {1} GROUP BY OWNERACCOUNT,PROCESSNAME,NODENAME)," +
+                "B AS(SELECT A.*,count(*) over() as TotalRows FROM A {3} ORDER BY {2})," +
+                "X AS(SELECT B.*,ROWNUM AS RN__ FROM B WHERE ROWNUM<=:EndRowIndex)," +
+                "Y AS(SELECT * FROM X WHERE RN__>=:StartRowIndex)" +
+                "SELECT * FROM Y";
+
+            cmd.CommandText = String.Format(query, fields.ToString(), filter, sort, filterGrouped);
+            cmd.Parameters.Add(":StartRowIndex", OracleType.Number).Value = gridPageInfo.RowNumStart;
+            cmd.Parameters.Add(":EndRowIndex", OracleType.Number).Value = gridPageInfo.RowNumEnd;
+
+            return cmd;
+        }
+    }
+
+    public virtual IDbCommand TimeoutDetailCommand
+    {
+        get
+        {
+            GridPageInfo gridPageInfo = new GridPageInfo(this.Context);
+            OracleCommand cmd = new OracleCommand();
+            string searctType = this.GetParam("SearchType");
+
+            //获得查询条件 每一年的的执行计划不一样例如：2012,2013
+            string filter = String.Format("EXTSTEPYEAR={0} AND HUMANSTEP=1 AND POSTED=0 AND AUTOPROCESS=0 AND FINISHAT IS NOT NULL AND NODENAME!='sysTaskOpt'", Convert.ToInt32(this.GetParam("Year")));
+
+            if (!NameCompare.EquName(this.GetParam("PeriodType"), "year"))
+            {
+                filter = this.CombinCond(filter, "RECEIVEAT>=:Date1 AND RECEIVEAT<:Date2");
+                cmd.Parameters.Add(":Date1", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date1"));
+                cmd.Parameters.Add(":Date2", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date2"));
+            }
+
+            if (searctType == "AdvancedSearch")
+            {
+                filter = this.CombinCond(filter, "FINISHAT>TIMEOUTDEADLINE");
+
+                string processName = this.GetParam("ProcessName");
+                if (!String.IsNullOrEmpty(processName))
+                {
+                    filter = this.CombinCond(filter, "PROCESSNAME=:ProcessName");
+                    cmd.Parameters.Add(":ProcessName", OracleType.NVarChar).Value = processName;
+                }
+
+                string nodeName = this.GetParam("NodeName");
+                if (!String.IsNullOrEmpty(nodeName))
+                {
+                    filter = this.CombinCond(filter, "NODENAME=:NodeName");
+                    cmd.Parameters.Add(":NodeName", OracleType.NVarChar).Value = nodeName;
+                }
+
+                string account = this.GetParam("Account");
+                if (!String.IsNullOrEmpty(account))
+                {
+                    filter = this.CombinCond(filter, "OWNERACCOUNT=:Account");
+                    cmd.Parameters.Add(":Account", OracleType.NVarChar).Value = account;
+                }
+            }
+
+            if (!String.IsNullOrEmpty(filter))
+                filter = " WHERE " + filter;
+
+            //获得排序子句
+            string sort = this.GetSortString("NVL(USEDMINUTESWORK,0) DESC", OracleProvider.handlingtimeMap, "STEPID DESC");
+
+            //输出列
+            StringBuilder fields = new StringBuilder();
+            fields.Append("TASKID,");
+            fields.Append("STEPID,");
+            fields.Append("PROCESSNAME,");
+            fields.Append("NODENAME,");
+            fields.Append("OWNERACCOUNT,");
+            fields.Append("HANDLERACCOUNT,");
+            fields.Append("RECEIVEAT,");
+            fields.Append("FINISHAT,");
+            fields.Append("TIMEOUTNOTIFYCOUNT,");
+            fields.Append("TIMEOUTDEADLINE,");
+            fields.Append("(case when FINISHAT>TIMEOUTDEADLINE then 1 else 0 end) TIMEOUTED,");
+            fields.Append("USEDMINUTESWORK,");
+            fields.Append("USEDMINUTES");
+
+            //查询语句
+            string query = "WITH A AS(SELECT {0} FROM BPMINSTPROCSTEPS {1})," +
+                "B AS(SELECT A.*,count(*) over() as TotalRows FROM A ORDER BY {2})," +
+                "X AS(SELECT B.*,ROWNUM AS RN__ FROM B WHERE ROWNUM<=:EndRowIndex)," +
+                "Y AS(SELECT * FROM X WHERE RN__>=:StartRowIndex)" +
+                "SELECT * FROM Y";
+
+            cmd.CommandText = String.Format(query, fields.ToString(), filter, sort);
+            cmd.Parameters.Add(":StartRowIndex", OracleType.Number).Value = gridPageInfo.RowNumStart;
+            cmd.Parameters.Add(":EndRowIndex", OracleType.Number).Value = gridPageInfo.RowNumEnd;
+
+            return cmd;
+        }
+    }
+
+    public virtual IDbCommand SystemUsageCommand
+    {
+        get
+        {
+            OracleCommand cmd = new OracleCommand();
+
+            //获得查询条件 每一年的的执行计划不一样例如：2012,2013
+            string filter = String.Format("ExtYear={0}", Convert.ToInt32(this.GetParam("Year")));
+
+            if (!String.IsNullOrEmpty(filter))
+                filter = " WHERE " + filter;
+
+            //查询语句
+            string query =
+                "WITH " +
+                "A AS(SELECT STATE,to_char(CREATEAT,'mm') MONTH,Count(*) COUNTS FROM BPMINSTTASKS {0} GROUP BY STATE,to_char(CREATEAT,'mm'))," +
+                "B AS(SELECT STATE," +
+                "max(case when MONTH=1 then COUNTS else 0 end) Month1," +
+                "max(case when MONTH=2 then COUNTS else 0 end) Month2," +
+                "max(case when MONTH=3 then COUNTS else 0 end) Month3," +
+                "max(case when MONTH=4 then COUNTS else 0 end) Month4," +
+                "max(case when MONTH=5 then COUNTS else 0 end) Month5," +
+                "max(case when MONTH=6 then COUNTS else 0 end) Month6," +
+                "max(case when MONTH=7 then COUNTS else 0 end) Month7," +
+                "max(case when MONTH=8 then COUNTS else 0 end) Month8," +
+                "max(case when MONTH=9 then COUNTS else 0 end) Month9," +
+                "max(case when MONTH=10 then COUNTS else 0 end) Month10," +
+                "max(case when MONTH=11 then COUNTS else 0 end) Month11," +
+                "max(case when MONTH=12 then COUNTS else 0 end) Month12," +
+                "sum(COUNTS) Total FROM A GROUP BY STATE)" +
+                "SELECT * FROM B";
+
+            cmd.CommandText = String.Format(query, filter);
+            return cmd;
+        }
+    }
+
+    public virtual IDbCommand ProcessUsageCommand
+    {
+        get
+        {
+            GridPageInfo gridPageInfo = new GridPageInfo(this.Context);
+            OracleCommand cmd = new OracleCommand();
+
+            //获得查询条件 每一年的的执行计划不一样例如：2012,2013
+            string filter = String.Format("EXTYEAR={0}", Convert.ToInt32(this.GetParam("Year")));
+
+            if (!NameCompare.EquName(this.GetParam("PeriodType"), "year"))
+            {
+                filter = this.CombinCond(filter, "CreateAt>=:Date1 AND CreateAt<:Date2");
+                cmd.Parameters.Add(":Date1", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date1"));
+                cmd.Parameters.Add(":Date2", OracleType.DateTime).Value = Convert.ToDateTime(this.GetParam("Date2"));
+            }
+
+            if (!String.IsNullOrEmpty(filter))
+                filter = " WHERE " + filter;
+
+            string filterGrouped = null;
+            string instanceCount = this.GetParam("InstanceCount");
+            if (!String.IsNullOrEmpty(instanceCount))
+            {
+                filterGrouped = this.CombinCond(filterGrouped, "Total>=:InstanceCount");
+                cmd.Parameters.Add(":InstanceCount", OracleType.Number).Value = Convert.ToInt32(instanceCount);
+            }
+
+            if (!String.IsNullOrEmpty(filterGrouped))
+                filterGrouped = " WHERE " + filterGrouped;
+
+            //获得排序子句
+            string sort = this.GetSortString("Total DESC");
+
+            //查询语句
+            string query =
+                "WITH A AS(SELECT PROCESSNAME,STATE,COUNT(*) Counts FROM BPMINSTTASKS {0} GROUP BY PROCESSNAME,STATE)," +
+                "B AS(SELECT PROCESSNAME," +
+                "max(case State when 'Approved' then Counts else 0 end) Approved," +
+                "max(case State when 'Running' then Counts else 0 end) Running," +
+                "max(case State when 'Rejected' then Counts else 0 end) Rejected," +
+                "max(case State when 'Aborted' then Counts else 0 end) Aborted," +
+                "max(case State when 'Deleted' then Counts else 0 end) Deleted," +
+                "sum(Counts) Total " +
+                "FROM A GROUP BY PROCESSNAME)," +
+                "C AS(SELECT B.*,count(*) over() as TotalRows FROM B {2} ORDER BY {1})," +
+                "X AS(SELECT C.*,ROWNUM AS RN__ FROM C WHERE ROWNUM<=:EndRowIndex)," +
+                "Y AS(SELECT * FROM X WHERE RN__>=:StartRowIndex)" +
+                "SELECT * FROM Y";
+
+            cmd.CommandText = String.Format(query, filter, sort, filterGrouped);
+            cmd.Parameters.Add(":StartRowIndex", OracleType.Number).Value = gridPageInfo.RowNumStart;
+            cmd.Parameters.Add(":EndRowIndex", OracleType.Number).Value = gridPageInfo.RowNumEnd;
+
+            return cmd;
+        }
+    }
+
+}

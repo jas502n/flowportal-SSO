@@ -1,0 +1,21 @@
+﻿#dialog {position:absolute; padding:10px; z-index:200; background:#fff}
+#dialog-header {display:block; position:relative; padding:3px 6px 7px; height:14px; font-size:14px; font-weight:bold}
+#dialog-title {float:left}
+#dialog-close {float:right; cursor:pointer; margin:3px 3px 0 0; height:11px; width:11px; background:url(../images/dialog/dialog_close.gif) no-repeat}
+#dialog-content {display:block; position:relative;padding:6px; color:#666666; font-size:13px}
+#dialog-mask {position:absolute; top:0; left:0; min-height:100%; width:100%; height:100%; background:#FFF; opacity:.75; filter:alpha(opacity=75); z-index:100}
+.errorframe {width:425px; }
+.error {height:160px; width:411px;background:#fff url(../images/dialog/error_bg.jpg) bottom right no-repeat; border:1px solid #924949; border-top:none}
+.errorheader {width:411px; background:url(../images/dialog/error_header.gif) repeat-x; color:#6f2c2c; border:1px solid #924949; border-bottom:none}
+.warningframe {width:425px; }
+.warning {height:160px; width:411px;background:#fff url(../images/dialog/warning_bg.jpg) bottom right no-repeat; border:1px solid #c5a524; border-top:none}
+.warningheader {width:411px; background:url(../images/dialog/warning_header.gif) repeat-x; color:#957c17; border:1px solid #c5a524; border-bottom:none}
+.successframe {width:425px; }
+.success {height:160px; width:411px;background:#fff url(../images/dialog/success_bg.jpg) bottom right no-repeat; border:1px solid #60a174; border-top:none}
+.successheader {width:411px; background:url(../images/dialog/success_header.gif) repeat-x; color:#3c7f51; border:1px solid #60a174; border-bottom:none}
+.promptframe {width:425px; }
+.prompt {height:160px; width:411px;background:#fff url(../images/dialog/prompt_bg.jpg) bottom right no-repeat; border:1px solid #4f6d81; border-top:none}
+.promptheader {width:411px; background:url(../images/dialog/prompt_header.gif) repeat-x; color:#355468; border:1px solid #4f6d81; border-bottom:none}
+.subcfmpwdframe {width:245px; }
+.subcfmpwd {height:100px; width:231px;background:#fff url(../images/dialog/prompt_bg.jpg) bottom right no-repeat; border:1px solid #4f6d81; border-top:none}
+.subcfmpwdheader {width:231px; background:url(../images/dialog/prompt_header.gif) repeat-x; color:#355468; border:1px solid #4f6d81; border-bottom:none}

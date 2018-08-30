@@ -1,0 +1,7 @@
+E:\Joson\SSO-Site\SiteC\bin\SSO.SiteC.dll
+E:\Joson\SSO-Site\SiteC\bin\SSO.SiteC.XmlSerializers.dll
+E:\Joson\SSO-Site\SiteC\bin\SSO.SiteC.pdb
+E:\Joson\SSO-Site\SiteC\obj\Release\SiteC.csprojResolveAssemblyReference.cache
+E:\Joson\SSO-Site\SiteC\obj\Release\SSO.SiteC.dll
+E:\Joson\SSO-Site\SiteC\obj\Release\SSO.SiteC.pdb
+E:\Joson\SSO-Site\SiteC\obj\Release\SSO.SiteC.XmlSerializers.dll

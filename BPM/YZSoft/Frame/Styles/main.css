@@ -1,0 +1,294 @@
+﻿@import url(core.css);
+
+.x-tree-node-leaf .folder{
+	background-image:url(../../ExtJS/images/default/tree/folder.gif);
+}
+
+.x-grid3-cell-over {
+    background-color:#efefef;
+    background-image:url(../images/default/grid/row-over.gif);
+}
+
+.x-grid3-cell-selected{
+	background-color: #b8cfee !important;
+	background-image: none;
+	color:#000;
+}
+
+.x-grid3-body .x-grid3-check-col-td-disabled{
+    background-color: #f5f5f5;
+}
+
+.x-grid3-body .x-grid3-check-col-td-disabled .x-grid3-cell-inner {
+    padding: 1px 0 0 0 !important;
+}
+
+.x-grid3-check-col-td-disabled .x-grid3-check-col{
+}
+
+.x-grid3-check-col-td-disabled .x-grid3-check-col-on{
+}
+
+.folder
+{
+	background-image:url(../../ExtJS/images/default/tree/folder.gif) !important;
+}
+
+.largeblist {
+    background-image: url(../images/largeuser.gif) !important;
+}
+
+.yz-tab-header-plain {
+    position:relative;
+    background-color:white;
+}
+
+.yz-tab-banner {
+	height: 30px;
+}
+
+.yz-tab-header-cnt
+{
+    position:absolute;
+	bottom: 0px;
+	right:0px;
+	left:0px;
+    overflow:hidden;
+}
+
+.yz-tab-div-wrap {
+    overflow: hidden;
+    position: relative;
+}
+
+.x-tab-scrolling .yz-tab-div-wrap {
+    margin-left:18px;
+    margin-right:18px;
+}
+
+.x-tab-scroller-right,.x-tab-scroller-left{
+    height:25px;
+    top:auto;
+    bottom:0px;
+}
+
+.yz-tab-div {
+	position:relative;
+}
+
+.yz-tab-div .x-clear{
+    clear:right;
+}
+
+.yz-tab-div a {
+	display: block;
+	float: left;
+	padding-left: 20px;
+	height: 30px;
+	background-image: url(../images/main_tab.png);
+	background-repeat: no-repeat;
+	background-position: 0px -65px;
+	margin-left: -20px;
+	overflow:hidden;
+	_background-image:none;
+}
+
+.yz-tab-div span {
+	float: left;
+	padding-right: 30px;
+	line-height: 25px;
+	height: 30px;
+	padding-top: 5px;
+	cursor: pointer;
+	background-image: url(../images/main_tab.png);
+	background-repeat: no-repeat;
+	background-position: right -95px;
+	color: #036;
+	font-weight: bold;
+	text-decoration: none;
+	position: relative;
+	z-index: 0;
+	padding-left: 10px;
+	overflow:hidden;
+	_background-image:none;
+}
+
+.yz-tab-div div.lft
+{
+	display:none;
+	_display:block;
+	width:960px;
+	height:305;
+	position:absolute;
+	left:0px;
+	top:-65px;
+	_background-image:none;
+	_filter : progid:DXImageTransform.Microsoft.AlphaImageLoader (sizingMethod='corp',src='YZSoft/Frame/images/main_tab.png');
+	z-index:-1;	
+}
+
+.yz-tab-div div.rgt
+{
+	display:none;
+	_display:block;
+	width:960px;
+	height:305;
+	position:absolute;
+	right:0px;
+	top:-95px;
+	_background-image:none;
+	_filter : progid:DXImageTransform.Microsoft.AlphaImageLoader (sizingMethod='corp',src='YZSoft/Frame/images/main_tab.png');
+	z-index:-1;	
+}
+
+.yz-tab-div a:hover div.lft
+{
+	left:0px;
+	top:-185px;
+}
+
+.yz-tab-div a:hover div.rgt
+{
+	right:0px;
+	top:-215px;
+}
+
+.yz-tab-div .yz-tab-first div.lft
+{
+	left:0px;
+	top:-125px;
+}
+
+.yz-tab-div .yz-tab-first:hover div.lft
+{
+	left:0px;
+	top:-245px;
+}
+
+.yz-tab-div .x-tab-strip-active div.lft
+{
+	right:0px;
+	top:-5px;
+}
+
+.yz-tab-div .x-tab-strip-active div.rgt {
+	right:0px;
+	top:-35px;
+}
+
+.yz-tab-div .x-tab-strip-active:hover div.lft{
+	right:0px;
+	top:-5px;
+}
+
+.yz-tab-div .x-tab-strip-active:hover div.rgt
+{
+	right:0px;
+	top:-35px;
+}
+
+.yz-tab-div a:hover {
+	background-position: 0px -185px;
+	text-decoration: none;
+}
+
+.yz-tab-div a:hover span {
+	background-position: right -215px;
+}
+
+.yz-tab-div .yz-tab-first 
+{
+	background-position: 0px -125px;
+	position: relative;
+}
+
+.yz-tab-div .yz-tab-first:hover {
+	background-position: 0px -245px;
+}
+
+.yz-tab-div .x-tab-strip-active {
+	background-position: 0px -5px;
+	z-index: 1;
+	position: relative;
+}
+
+.yz-tab-div .x-tab-strip-active span {
+	background-position: right -35px;
+	color: #000;
+}
+
+.yz-tab-div .x-tab-strip-active:hover {
+	background-position: 0px -5px;
+}
+
+.yz-tab-div .x-tab-strip-active:hover span {
+	background-position: right -35px;
+	color: #000;
+}
+
+.yz_err_dlg_cap
+{
+	background-image: url(../../ExtJS/images/default/window/icon-error.gif) !important;
+	padding-left: 42px;
+	padding-top:2px;
+	padding-bottom:10px;
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+SPAN.AgentName
+{
+	font-size: 11px;
+	color: #ff9900;
+	font-weight: normal;
+}
+
+.x-form-field-wrap .x-form-seluser-trigger {
+    background-image: url(../../ExtJS/images/default/form/search-trigger.gif);
+}
+
+.x-form-field-wrap .x-form-browser-trigger {
+    background-image: url(../images/trigger-browser.gif);
+}
+
+.x-form-field-wrap .x-form-advsearch-trigger-search {
+    background-image: url(../images/search-trigger-m.jpg);
+}
+
+.x-form-field-wrap .x-form-advsearch-trigger-adv {
+    background-image: url(../images/advsearch-trigger.gif);
+}
+
+.yz-panel-tbat-tb .x-panel-tbar
+{
+	border-top: #8db2e3 1px solid;
+}
+
+.x-grid3-td-processName .topic {
+    padding-left:28px;
+    padding-top:8px;
+    height:25px;
+    background:transparent url(../images/writeform.gif) no-repeat 0 2px;
+}
+
+.x-grid3-td-processName .topic A {
+    font-weight:bold;
+}
+
+.x-grid3-td-processName .topic .ver
+{
+    margin-left:3px;
+    color:#a0a0a0;
+    font-weight:normal;
+}
+
+.x-grid3-td-postOption .topic {
+    padding-top:8px;
+    padding-right:15px;
+}
+
+.x-grid3-td-postOption .topic A {
+    color:#555;
+}
+
+

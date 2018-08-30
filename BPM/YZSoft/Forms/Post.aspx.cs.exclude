@@ -1,0 +1,46 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using BPM;
+using BPM.Client;
+
+public partial class Forms_Post : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!YZAuthHelper.IsAuthenticated)
+        {
+            FormsAuthentication.RedirectToLoginPage();
+            return;
+        }
+
+        string processName = this.Request.QueryString["pn"];
+        string ownerMemberFullName = this.Request.QueryString["owner"];
+
+        PostInfo postInfo;
+
+        using(BPMConnection cn = new BPMConnection())
+        {
+            cn.WebOpen();
+            Version version = cn.GetGlobalObjectLastVersion(StoreZoneType.Process, processName);
+            postInfo = BPMProcess.GetPostInfo(cn, processName, version, ownerMemberFullName);
+        }
+
+        if (String.IsNullOrEmpty(postInfo.FormFile))
+        {
+            throw new Exception(Resources.YZStrings.Aspx_Post_MissForm);
+        }
+        else
+        {
+            YZUrlBuilder urlBuilder = YZUtility.GetFormRedirectUrl(this.Page, postInfo.FormFile);
+            this.Response.Redirect(urlBuilder.ToString(), true);
+        }
+    }
+}

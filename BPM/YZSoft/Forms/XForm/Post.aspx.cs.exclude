@@ -1,0 +1,56 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using BPM;
+using BPM.Client;
+
+public partial class Forms_Post : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!AspxHelper.IsAuthenticated)
+            FormsAuthentication.RedirectToLoginPage();
+
+        string processName = this.Request.QueryString["pn"];
+        string ownerMemberFullName = this.Request.QueryString["owner"];
+
+        string formFile;
+        bool isPostByAgent;
+        LinkCollection links;
+        SystemLinkCollection systemLinks;
+        NodePermision nodePermision;
+
+        BPMConnection cn = new BPMConnection();
+        try
+        {
+            cn.WebOpen(this.Page);
+
+            BPMProcess.GetPostInfo(cn, processName, ownerMemberFullName, out formFile, out isPostByAgent, out links, out systemLinks, out nodePermision);
+        }
+        finally
+        {
+            cn.Close();
+        }
+
+        if (String.IsNullOrEmpty(formFile))
+        {
+            throw new Exception(Resources.BPMResource.Post_MissForm);
+        }
+        else
+        {
+            if (formFile.IndexOf('?') != -1)
+                this.Server.Transfer(this.ResolveClientUrl("../Forms/") + formFile + "&" + this.Request.QueryString.ToString(), false);
+            else
+                this.Server.Transfer(this.ResolveClientUrl("../Forms/") + formFile + "?" + this.Request.QueryString.ToString(), false);
+
+            this.Response.End();
+        }
+    }
+}

@@ -1,0 +1,108 @@
+﻿form {padding:5px;}
+/*body{ font: 9pt/22px Arial, Tahoma, "宋体"; }
+body *{ font-size: 9pt;}*/
+.x-grid3-header{ font-size:1pt}
+.x-window-tl,.x-panel-header,.x-tree-node,.x-tab-strip-text,.yz-tab-banner,.x-grid3-row td,.x-grid3-hd-row td,.x-menu-item,.x-panel-body-html,.yz-sp-titlepanel .x-plain-body,.yz-sp-titlepanel .x-panel-body{ font: 9pt/22px Arial, Tahoma, "宋体";}
+.x-window-tl,.x-panel-header,.x-tree-node,.x-tab-strip-text,.yz-tab-banner,.x-grid3-row td,.x-grid3-hd-row td,.x-menu-item,.x-panel-body-html,.yz-sp-titlepanel .x-plain-body,.yz-sp-titlepanel .x-panel-body *{ font-size: 9pt;}
+.x-panel-body-html {line-height:16px;}
+.x-grid3-row td{line-height:13px;}
+.x-grid3-hd-row td{line-height:15px;}
+.x-panel-header {line-height:13px;}
+.x-window-tl .x-window-header {color: #15428B;font: bold 9pt/22px Arial, Tahoma, "宋体";line-height:15px;}
+.x-toolbar div,.x-toolbar label,.x-toolbar td,.x-btn button,.x-tab-strip span.x-tab-strip-text,.x-small-editor .x-form-field{	font-size:9pt;}
+.ext-ie6 .x-toolbar div{font-size:11px;}
+ 
+.yz-border-layout-borderlr .x-layout-split-west,.yz-border-layout-borderlr .x-layout-split-east { width: 5px;background-color:#ccd9e8;border-left: #8db2e3 1px solid;border-right: #8db2e3 1px solid; }
+.yz-border-layout-borderr .x-layout-split-west { width: 5px;background-color:#ccd9e8;border-right: #8db2e3 1px solid; }
+.yz-border-layout-borderm .x-layout-split-west,.yz-border-layout-borderm .x-layout-split-east { width: 5px;background-color:#f5f5f5;border-left: #99bbe8 1px solid;border-right: #99bbe8 1px solid}
+div.x-period-panel {padding-left:1px;padding-right:5px;border-bottom:solid 1px #cccccc;height:25px;}
+.x-form-text{ margin:0px 0px}
+
+.ext-ie8 .x-form-text{ margin:0px 0px;padding-top:2px}
+.ext-strict .ext-ie8 .x-form-display-field{padding-top:4px;}
+
+.ext-ie .x-toolbar-cell .x-form-text{top:0px}
+.ext-strict .ext-ie .x-toolbar-cell .x-form-text{top:1px}
+.ext-ie6 .x-toolbar-cell .x-form-text{top:-1px}
+.ext-strict .ext-ie6 .x-toolbar-cell .x-form-text{top:0px}
+
+td.x-date-mp-month {width:26%}
+
+.x-btn-normal .x-btn-tl{background-position: -6px 0;}
+.x-btn-normal .x-btn-tr{background-position: -9px 0;}
+.x-btn-normal .x-btn-tc{background-position: 0 -9px;}
+.x-btn-normal .x-btn-ml{background-position: -6px -24px;}
+.x-btn-normal .x-btn-mr{background-position: -9px -24px;}
+.x-btn-normal .x-btn-mc{background-position: 0 -2168px;}
+.x-btn-normal .x-btn-bl{background-position: -6px -3px;}
+.x-btn-normal .x-btn-br{background-position: -9px -3px;}
+.x-btn-normal .x-btn-bc{background-position: 0 -18px;}
+
+.layout-float-left div {float:left}
+.blist {background-image: url(../images/user.gif) !important;}
+
+.ttrace-comments{margin-left: 80px;margin-right: 15px;margin-top: 0px;margin-bottom: 3px;padding-left: 3px;color: #555;background-color: #ffffcc; border:1px solid #cccc99}
+*p.ttrace-comments{margin-right: 3px;}
+table.ChartTraceTipTable{padding: 0px;margin: 0px;font-family: Tahoma;font-size: 12px;border-collapse: separate;background-color:#cccccc;width:100%;}
+table.ChartTraceTipTable TD{background-color: #ffffff;padding-left: 2px;padding-right: 2px;white-space:nowrap;color: red;}
+table.ChartTraceTipTable TR.head TD{background-color: #ffff99;color: black}
+table.ChartTraceTipTable TR.processing TD{color: green;}
+
+.excel-report .x-panel-body{padding-left:5px;}
+.yz-sp-titlepanel .x-plain-bwrap,.yz-sp-titlepanel .x-plain-body{ background-color:#dfe8f6}
+.yz-sp-titlepanel .x-plain-body{line-height:14px; margin-top:3px; margin-bottom:3px; margin-left:3px}
+.x-layout-split{background-color:#ccd9e8}
+.ext-ie .x-btn BUTTON {padding-top:0px}
+
+.yz-stepraiser
+{
+    color:green;
+    font-weight:normal;
+}
+
+.TaskRowRuning .x-grid3-cell
+{
+	font-weight:bold;
+}
+
+.TaskRowGray .x-grid3-cell
+{
+	color:#999999;
+}
+
+.x-grid3-body .TaskRowGray .x-grid3-cell a
+{
+	color:#999999;
+}
+
+.TaskRowRejected .x-grid3-cell
+{
+	color:#ff6600;
+}
+
+.x-grid3-body .TaskRowRejected .x-grid3-cell a
+{
+	color:#ff6600;
+}
+
+.ProcessRow p {
+    margin:1px 20px 5px 33px !important;
+    color:#555;
+}
+
+.yz-tasktrace-summary .x-panel-body
+{
+    position:relative;
+    background-color:#f5f5fa;
+    border-bottom: #8db2e3 1px solid;
+    padding-top:4px;
+    padding-left:3px;
+    font: 9pt/22px Arial, Tahoma
+}
+
+.yz-tasktrace-summary .x-panel-body .ver
+{
+    position:absolute;
+    right:10px;
+    top:4px;
+}

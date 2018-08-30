@@ -1,0 +1,130 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using SAP.Connector;
+
+
+
+public partial class FormSupport_DNList : ListBase
+{
+    private string inputkey;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        TableRow hrow = CreateHeaderRow();
+        this.Table1.Rows.Add(hrow);
+        
+        hrow.Cells.Add(CreateCheckColumn());
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("工单号", 180));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("工单数量", 130));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("上介组件号", 180));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+
+
+        string removeNo = this.Request.QueryString["Col1"];
+        string rowProject = this.Request.QueryString["Col2"];
+        string upNo = this.Request.QueryString["Col3"];
+
+        DataTable mytable = GetSapData(removeNo, rowProject, upNo);
+
+        foreach (DataRow myrow in mytable.Rows)
+        {
+            inputkey = "Col1=" + myrow["AUFNR"].ToString().Trim() + ";Col2=" + myrow["PSMNG"].ToString().Trim() + ";Col3=" + myrow["MATNR"].ToString().Trim() + ";";
+            TableRow row = CreateItemRow();
+            row.CssClass = "ListItemRowH";
+            this.Table1.Rows.Add(row);
+            row.Cells.Add(CreateCheckCell2(inputkey));
+            row.Cells.Add(CreateCell(myrow["AUFNR"].ToString().Trim(), 2));
+            row.Cells.Add(CreateCell(myrow["PSMNG"].ToString().Trim(), 2));
+            row.Cells.Add(CreateCell(myrow["MATNR"].ToString().Trim(), 2));
+        }
+
+    }
+
+
+
+    protected TableCell CreateCheckCell2(string mykey)
+    {
+        TableCell cell = new TableCell();
+        CheckBox checkBox = new CheckBox();
+        cell.Controls.Add(checkBox);
+        cell.CssClass = "CHK";
+        cell.Text = "<input id=\"" + mykey + "\" type=\"checkbox\" onclick=\"checkrow(this);\">";
+        cell.ColumnSpan = 2;
+        return cell;
+    }
+
+
+    protected DataTable GetData(string removeNo,string rowProject,string upNo)
+    {
+        DataTable SapTable;
+        string charout;
+        string strError;
+        int num = 0;
+
+        Destination sapDes = new Destination();
+        sapDes.Client = (short)Convert.ToInt16(200);
+        sapDes.SystemNumber = (short)Convert.ToInt16(00);
+        sapDes.Username = "IT10";
+        //sapDes.Password = "123";
+        sapDes.Password = "init00";
+        sapDes.AppServerHost = "172.20.1.31";
+
+
+
+
+        //SAPBPMInter.BPM_DN_Num dataProxy = new SAPBPMInter.BPM_DN_Num();
+        SAP_DN.BPM_DN_Num dataProxy = new SAP_DN.BPM_DN_Num();
+
+
+        dataProxy.Connection = SAP.Connector.Connection.GetConnectionFromPool(sapDes);
+
+        //SAPBPMInter.AFPOTable zzTable = new SAPBPMInter.AFPOTable();
+        SAP_DN.AFPOTable zzTable = new SAP_DN.AFPOTable();
+
+        dataProxy.Z_Rfc_0004(removeNo, rowProject, upNo, num, out charout, out strError, ref zzTable);
+
+        SapTable = zzTable.ToADODataTable();
+
+
+        dataProxy.Connection.Close();
+        dataProxy.Connection = null;
+        //输出参数message全部成功，返回值Y；失败 返回值 E ； CHAR1_OUT 当message为 e时，char1_out有具体的错误信息
+
+        if (strError == "E")
+        {
+            this.Page.Response.Write("<script>alert(\"从SAP检索数据失败，原因:\"+'" + charout + "')</script>");
+           
+        }
+     
+        return SapTable;
+    }
+
+    /// <summary>
+    /// created By zzm
+    /// </summary>
+    /// <param name="removeNo"></param>
+    /// <param name="rowProject"></param>
+    /// <param name="upNo"></param>
+    /// <returns></returns>
+    protected DataTable GetSapData(string removeNo, string rowProject, string upNo) 
+    {
+        SapRFCHelper saph = new SapRFCHelper();
+        string rfcName = "Z_RFC_0004";
+        string[] param = { "CHAR1_IN|" + removeNo, "CHAR2_IN|" + rowProject, "CHAR3_IN|" + upNo, "CHAR4_IN|0"};
+
+        DataTable dt = saph.GetRfcOutTable("PRD", param, rfcName, "IT_OUT");
+        return dt;
+    }
+
+}

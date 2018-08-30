@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B772DAA3-06EB-4E34-AB13-99676DAD55B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Joson.SSO.OAuth</RootNamespace>
+    <AssemblyName>Joson.SSO.OAuth</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.MicroKernel">
+      <HintPath>..\Net.Release\Castle\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\Net.Release\Castle\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuthBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Net.Common\Net.Encrypt\DESEncrypt.cs" />
+    <Compile Include="Net.Common\Net.Encrypt\DESProvider.cs" />
+    <Compile Include="Net.Common\Net.Encrypt\MD5Provider.cs" />
+    <Compile Include="Net.Common\Net.Encrypt\RSAProvider.cs" />
+    <Compile Include="Net.Common\Net.List\IListToData.cs" />
+    <Compile Include="Net.Common\Net.Request\GetRequest.cs" />
+    <Compile Include="Net.Common\Net.Request\HttpCookies.cs" />
+    <Compile Include="Net.Common\Net.Request\HttpRequest.cs" />
+    <Compile Include="Net.Common\Net.Request\JosonIP.cs" />
+    <Compile Include="Net.Common\Net.String\StringFormat.cs" />
+    <Compile Include="Net.Common\Net.String\StringHelper.cs" />
+    <Compile Include="Net.Common\Net.String\StringJoiner.cs" />
+    <Compile Include="Net.Common\Net.SystemWin\PerfCounter.cs" />
+    <Compile Include="Net.Common\Net.SystemWin\SysInfo.cs" />
+    <Compile Include="Net.Common\Net.SystemWin\SystemWin.cs" />
+    <Compile Include="Net.Common\Net.System\ExecuteDOS.cs" />
+    <Compile Include="Net.Common\Net.System\SystemAppConfig.cs" />
+    <Compile Include="Net.Common\Net.System\SystemError.cs" />
+    <Compile Include="Net.Common\Net.System\SystemException.cs" />
+    <Compile Include="Net.Common\Net.System\SystemTools.cs" />
+    <Compile Include="Net.Common\Net.Validation\BaseValidate.cs" />
+    <Compile Include="Net.Common\Net.Validation\CheckString.cs" />
+    <Compile Include="Net.Common\Net.Validation\DataValidate.cs" />
+    <Compile Include="Net.Common\Net.Validation\PageValidate.cs" />
+    <Compile Include="Net.Common\Net.WebHelper\HttpHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Net.Common\Net.WebHelper\HttpRequestHander.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Net.Common\Net.WebHelper\HttpRequestWebServices.cs" />
+    <Compile Include="OAuthTokenInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TokenManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Net.Common\Net.Convert\" />
+    <Folder Include="Net.Common\Net.Json\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,5 @@
+D:\SSO\SSO\Passport\obj\Debug\ResolveAssemblyReference.cache
+D:\SSO\SSO\Passport\bin\SSO.Passport.dll
+D:\SSO\SSO\Passport\bin\SSO.Passport.pdb
+D:\SSO\SSO\Passport\obj\Debug\SSO.Passport.dll
+D:\SSO\SSO\Passport\obj\Debug\SSO.Passport.pdb

@@ -1,0 +1,108 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using SAP.Connector;
+
+public partial class FormSupport_SAP_SalesArea : ListBase
+{
+    private string inputkey;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        TableRow hrow = CreateHeaderRow();
+        this._table1.Rows.Add(hrow);
+
+        hrow.Cells.Add(CreateCheckColumn());
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("销售组织", 80));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("分销渠道", 50));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("产品组", 50));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("描述", 300));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        string key = string.IsNullOrEmpty(Request.QueryString["Col5"]) ? "" : Request.QueryString["Col5"].Trim();
+        DataTable mytable = GetSapData(key);
+        foreach (DataRow myrow in mytable.Rows)
+        {
+            inputkey = "Col1=" + myrow["VKORG"].ToString().Trim() + ";Col2=" + myrow["VTWEG"].ToString().Trim() + ";Col3=" + myrow["SPART"].ToString().Trim() + ";Col4=" + myrow["VTEXT"].ToString().Trim() + ";";
+            TableRow row = CreateItemRow();
+            row.CssClass = "ListItemRowH";
+            this._table1.Rows.Add(row);
+            row.Cells.Add(CreateCheckCell2(inputkey));
+            row.Cells.Add(CreateCell(myrow["VKORG"].ToString().Trim(), 2));
+            row.Cells.Add(CreateCell(myrow["VTWEG"].ToString().Trim(), 2));
+            row.Cells.Add(CreateCell(myrow["SPART"].ToString().Trim(), 2));
+            row.Cells.Add(CreateCell(myrow["VTEXT"].ToString().Trim(), 2));
+        }
+    }
+
+    protected TableCell CreateCheckCell2(string mykey)
+    {
+        TableCell cell = new TableCell();
+        CheckBox checkBox = new CheckBox();
+        cell.Controls.Add(checkBox);
+        cell.CssClass = "CHK";
+        cell.Text = "<input id=\"" + mykey + "\" type=\"checkbox\" onclick=\"checkrow(this);\">";
+        cell.ColumnSpan = 2;
+        return cell;
+    }
+/*
+    protected DataTable GetData(string key)
+    {
+        DataTable SapTable;
+        string strError;
+        Destination sapDes = new Destination();
+        sapDes.Client = (short)Convert.ToInt16(200);
+        sapDes.SystemNumber = (short)Convert.ToInt16(00);
+        sapDes.Username = "IT09";
+        sapDes.Password = "123";
+        sapDes.AppServerHost = "172.20.1.31";
+
+        Z_RFC_0027.SAPProxy1 dataProxy = new Z_RFC_0027.SAPProxy1();
+        try
+        {
+            dataProxy.Connection = SAP.Connector.Connection.GetConnectionFromPool(sapDes);
+            Z_RFC_0027.ZSD_SALESAREA_STRTable zzTable = new Z_RFC_0027.ZSD_SALESAREA_STRTable();
+            dataProxy.Z_Rfc_0027(key, ref zzTable);
+
+            SapTable = zzTable.ToADODataTable();
+
+        }
+        catch (Exception ex)
+        {
+            throw new Exception("从SAP检索数据失败，原因：" + ex.Message);
+        }
+        finally
+        {
+            dataProxy.Connection.Close();
+            dataProxy.Connection = null;
+        }
+        return SapTable;
+    }
+*/
+
+    /// <summary>
+    /// created by zzm
+    /// </summary>
+    /// <param name="key"></param>
+    /// <returns></returns>
+    protected DataTable GetSapData(string key) 
+    {
+        SapRFCHelper saph = new SapRFCHelper();
+        string[] param = { "KUNNR|" + key };
+        string rfcName = "Z_RFC_0027";
+
+        DataTable dt = saph.GetRfcOutTable("PRD", param, rfcName, "ITABOUT");
+        return dt;
+    }
+}

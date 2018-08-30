@@ -1,0 +1,12 @@
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\bin\Debug\Northwind.sl3
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\bin\Debug\SqliteLinqTest.exe.config
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\bin\Debug\SqliteLinqTest.exe
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\bin\Debug\SqliteLinqTest.pdb
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\bin\Debug\EntityFramework.dll
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\bin\Debug\System.Data.SQLite.dll
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\bin\Debug\EntityFramework.xml
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\bin\Debug\System.Data.SQLite.xml
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\obj\Debug\SqliteLinqTest.exe
+C:\Users\Joson\Desktop\SqliteLinqTest\SqliteLinqTest\obj\Debug\SqliteLinqTest.pdb

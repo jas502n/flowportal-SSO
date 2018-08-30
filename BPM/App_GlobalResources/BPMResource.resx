@@ -1,0 +1,1492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActiveUser_LastActive" xml:space="preserve">
+    <value>Last Active Date</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="ActMgr_ActMgr" xml:space="preserve">
+    <value>Account Manager</value>
+  </data>
+  <data name="ActMgr_Birthday" xml:space="preserve">
+    <value>Birthday</value>
+  </data>
+  <data name="ActMgr_CostCenter" xml:space="preserve">
+    <value>Cost Center</value>
+  </data>
+  <data name="ActMgr_DateHired" xml:space="preserve">
+    <value>Date Hired</value>
+  </data>
+  <data name="ActMgr_Desc" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="ActMgr_EMail" xml:space="preserve">
+    <value>EMail</value>
+  </data>
+  <data name="ActMgr_HRID" xml:space="preserve">
+    <value>HRID</value>
+  </data>
+  <data name="ActMgr_HTel" xml:space="preserve">
+    <value>Home Tel</value>
+  </data>
+  <data name="ActMgr_Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="ActMgr_NewPwd" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="ActMgr_NewPwdCfm" xml:space="preserve">
+    <value>Confirm New Password</value>
+  </data>
+  <data name="ActMgr_Office" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="ActMgr_OrgPwd" xml:space="preserve">
+    <value>Old Password</value>
+  </data>
+  <data name="ActMgr_Sex" xml:space="preserve">
+    <value>Sex</value>
+  </data>
+  <data name="ActMgr_Tel" xml:space="preserve">
+    <value>Tel</value>
+  </data>
+  <data name="ActMgr_WebSite" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="ActMsg_Menu_ChgPWD" xml:space="preserve">
+    <value>Change Passowrd</value>
+  </data>
+  <data name="ActMsg_Menu_Delegation" xml:space="preserve">
+    <value>Delegation</value>
+    <comment>3.20o</comment>
+  </data>
+  <data name="ActMsg_Menu_SetupMails" xml:space="preserve">
+    <value>Receive Notify</value>
+    <comment>3.05</comment>
+  </data>
+  <data name="ActMsg_Menu_TaskRule" xml:space="preserve">
+    <value>Task Rules</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="ActMsg_Menu_UserInfo" xml:space="preserve">
+    <value>User Information</value>
+  </data>
+  <data name="Admin_CtrlAU_Caption1" xml:space="preserve">
+    <value>All active users : {0}, {1} users you can access</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Action" xml:space="preserve">
+    <value>Activity</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Caption1" xml:space="preserve">
+    <value>[Total Items {0}]</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_ClientIP" xml:space="preserve">
+    <value>Client IP</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Date" xml:space="preserve">
+    <value>Date</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Failed" xml:space="preserve">
+    <value>Failed</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Param1" xml:space="preserve">
+    <value>Memo1</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Param2" xml:space="preserve">
+    <value>Memo2</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Response" xml:space="preserve">
+    <value>Response(s)</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Result" xml:space="preserve">
+    <value>Result</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_Succeed" xml:space="preserve">
+    <value>Succeed</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlLog_User" xml:space="preserve">
+    <value>User</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_CtrlSU_Caption1" xml:space="preserve">
+    <value>{0} Users Login in last 30 Days</value>
+    <comment>3.50m</comment>
+  </data>
+  <data name="Admin_MenuCS_ActiveUsers" xml:space="preserve">
+    <value>Online Users</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MenuCS_Caption" xml:space="preserve">
+    <value>Status Reports</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MenuCS_SystemUsers" xml:space="preserve">
+    <value>30 Days Login Users</value>
+    <comment>3.50m</comment>
+  </data>
+  <data name="Admin_MenuLog_AppLog" xml:space="preserve">
+    <value>Application Log</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MenuLog_Caption" xml:space="preserve">
+    <value>Log Repoers</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MenuPerformance_Node" xml:space="preserve">
+    <value>Process Performance</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="Admin_MenuUsage_Process" xml:space="preserve">
+    <value>Process Usage</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="Admin_MenuUsage_System" xml:space="preserve">
+    <value>System Usage</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="Admin_MMenu_CurStatus" xml:space="preserve">
+    <value>Svr Status</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MMenu_Log" xml:space="preserve">
+    <value>App Log</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Admin_MMenu_ProcessPerformance" xml:space="preserve">
+    <value>Performance</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="Admin_MMenu_SystemUsage" xml:space="preserve">
+    <value>Sys Usage</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="AdvS_Back" xml:space="preserve">
+    <value>Back</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_Date" xml:space="preserve">
+    <value>Date</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_DateDate" xml:space="preserve">
+    <value>Date</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_DateDesc" xml:space="preserve">
+    <value>Submit date</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_DatePeriod" xml:space="preserve">
+    <value>Period</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_KeyWord" xml:space="preserve">
+    <value>Keywords</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_KeyWordDesc" xml:space="preserve">
+    <value>Search for keywords</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_PostUser" xml:space="preserve">
+    <value>Account</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_PostUserDesc" xml:space="preserve">
+    <value>Post user account is</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_ProcessName" xml:space="preserve">
+    <value>Process Name</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_ProcessNameDesc" xml:space="preserve">
+    <value>Process name is</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_RecpUser" xml:space="preserve">
+    <value>Processing By</value>
+    <comment>3.40h</comment>
+  </data>
+  <data name="AdvS_RecpUserDesc" xml:space="preserve">
+    <value>Current processing user account</value>
+    <comment>3.40h</comment>
+  </data>
+  <data name="AdvS_Reset" xml:space="preserve">
+    <value>Reset</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_Search" xml:space="preserve">
+    <value>Search</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_SN" xml:space="preserve">
+    <value>Serial No.</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_SNDesc" xml:space="preserve">
+    <value>Serial number begin with</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_Status" xml:space="preserve">
+    <value>Status</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_StatusApproved" xml:space="preserve">
+    <value>Approved</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_StatusDesc" xml:space="preserve">
+    <value>Task status is</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_StatusRejected" xml:space="preserve">
+    <value>Rejected</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AdvS_StatusRunning" xml:space="preserve">
+    <value>Running</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="AgentPostSelMember_BtnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="AgentPostSelMember_BtnNext" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="AgentPostSelMember_Caption" xml:space="preserve">
+    <value>Select a user</value>
+  </data>
+  <data name="AgentPostSelMember_Title" xml:space="preserve">
+    <value>Post request for which user?</value>
+  </data>
+  <data name="AgentPostSelMember_WarnMultiSelect" xml:space="preserve">
+    <value>Please select one user only.</value>
+  </data>
+  <data name="AgentPostSelMember_WarnNoSelect" xml:space="preserve">
+    <value>Please select a user.</value>
+  </data>
+  <data name="AssignOwner_BtnOK" xml:space="preserve">
+    <value>Change Owner</value>
+  </data>
+  <data name="AssignOwner_Caption" xml:space="preserve">
+    <value>Select New Owner</value>
+  </data>
+  <data name="AssignOwner_Title" xml:space="preserve">
+    <value>Please select a member, press 'Change Owner' to change owner.</value>
+  </data>
+  <data name="AssignOwnerSelStep_Caption" xml:space="preserve">
+    <value>Select Step</value>
+  </data>
+  <data name="AssignOwnerSelStep_Title" xml:space="preserve">
+    <value>Please select a step, press 'Next Step' to change owner</value>
+  </data>
+  <data name="AutoStep_StatusWaiting" xml:space="preserve">
+    <value>Waiting</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="Com_Abort" xml:space="preserve">
+    <value>Abort</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Aborted" xml:space="preserve">
+    <value>Aborted</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="Com_Action" xml:space="preserve">
+    <value>Action</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_ActiveUsers" xml:space="preserve">
+    <value>{0} Users Online</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="Com_AdvSearch" xml:space="preserve">
+    <value>Advanced Search</value>
+    <comment>3.40h</comment>
+  </data>
+  <data name="Com_AdvSearch1" xml:space="preserve">
+    <value>Advanced Search - General</value>
+    <comment>3.40h</comment>
+  </data>
+  <data name="Com_AdvSearch2" xml:space="preserve">
+    <value>Advanced Search - Processing Tasks</value>
+    <comment>3.40h</comment>
+  </data>
+  <data name="Com_Agent" xml:space="preserve">
+    <value>Delegation</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="Com_AgentPost" xml:space="preserve">
+    <value>(Delegation)</value>
+  </data>
+  <data name="Com_All" xml:space="preserve">
+    <value>all</value>
+    <comment>3.07</comment>
+  </data>
+  <data name="Com_AllTasks" xml:space="preserve">
+    <value>All Tasks</value>
+  </data>
+  <data name="Com_Approved" xml:space="preserve">
+    <value>Approved</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_AssignOwner" xml:space="preserve">
+    <value>Change Owner</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Auto" xml:space="preserve">
+    <value>Auto</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="Com_BatchApprove" xml:space="preserve">
+    <value>Batch Approve</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Com_Close" xml:space="preserve">
+    <value>Close</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_CreateDate" xml:space="preserve">
+    <value>Create</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Com_CreateTaskRule" xml:space="preserve">
+    <value>Create New Rule</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="Com_CurStep" xml:space="preserve">
+    <value>Current Step</value>
+    <comment>3.50j</comment>
+  </data>
+  <data name="Com_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Com_Deleted" xml:space="preserve">
+    <value>Deleted</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_DraftDesc" xml:space="preserve">
+    <value>Description</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Com_DraftName" xml:space="preserve">
+    <value>Name</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Com_DynConsign" xml:space="preserve">
+    <value>Additional Sign</value>
+    <comment>3.20j</comment>
+  </data>
+  <data name="Com_EmptyFlowDesc" xml:space="preserve">
+    <value>no description</value>
+  </data>
+  <data name="Com_Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <data name="Com_FlowChart" xml:space="preserve">
+    <value>(Flowchart)</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="Com_FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Com_GetShareTask" xml:space="preserve">
+    <value>Get</value>
+  </data>
+  <data name="Com_HRID" xml:space="preserve">
+    <value>HRID</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="Com_HRID1" xml:space="preserve">
+    <value>員工編號</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="Com_Initiator" xml:space="preserve">
+    <value>Task Owner</value>
+  </data>
+  <data name="Com_Jump" xml:space="preserve">
+    <value>Jump</value>
+  </data>
+  <data name="Com_Login" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="Com_Male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="Com_ModifyDate" xml:space="preserve">
+    <value>Modify</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Com_MyTaskList" xml:space="preserve">
+    <value>My Tasks</value>
+  </data>
+  <data name="Com_NavPageTotal1" xml:space="preserve">
+    <value>Total Items </value>
+  </data>
+  <data name="Com_NavPageTotal2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Com_None" xml:space="preserve">
+    <value>none</value>
+  </data>
+  <data name="Com_NTLogin" xml:space="preserve">
+    <value>Use NT Account</value>
+  </data>
+  <data name="Com_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Com_OptUser" xml:space="preserve">
+    <value>Processed by</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Owner" xml:space="preserve">
+    <value>Owner</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Participant" xml:space="preserve">
+    <value>Participant</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Com_PickbackRestart" xml:space="preserve">
+    <value>Pickback</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_PostAt" xml:space="preserve">
+    <value>Start At</value>
+  </data>
+  <data name="Com_PostByAgent1" xml:space="preserve">
+    <value>Start by :</value>
+  </data>
+  <data name="Com_PostByAgent2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Com_ProcessAt" xml:space="preserve">
+    <value>Process at</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Processing" xml:space="preserve">
+    <value>Running</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_ProcessName" xml:space="preserve">
+    <value>Process Name</value>
+  </data>
+  <data name="Com_Public" xml:space="preserve">
+    <value>Publish</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_ReceadRestart" xml:space="preserve">
+    <value>Return to Initiator</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_ReceiveAt" xml:space="preserve">
+    <value>Received at</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Reject" xml:space="preserve">
+    <value>Reject</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_Rejected" xml:space="preserve">
+    <value>Rejected</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_ReportMsg" xml:space="preserve">
+    <value>This is a reserve page, user can add custom report in this page.</value>
+  </data>
+  <data name="Com_SaveModify" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Com_SavePwd" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="Com_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Com_ShareTask" xml:space="preserve">
+    <value>Share Tasks</value>
+  </data>
+  <data name="Com_SN" xml:space="preserve">
+    <value>Serial No.</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_StartBySystem" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="Com_Status" xml:space="preserve">
+    <value>Status</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_StepName" xml:space="preserve">
+    <value>Step Name</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_Abort" xml:space="preserve">
+    <value>Abort</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_Agent" xml:space="preserve">
+    <value>Assign</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_AssignOwner" xml:space="preserve">
+    <value>Change Owner</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_Continue" xml:space="preserve">
+    <value>Continue</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_Delete" xml:space="preserve">
+    <value>Delete</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_DirectSend" xml:space="preserve">
+    <value>Direct Send</value>
+    <comment>3.20k</comment>
+  </data>
+  <data name="Com_SysAct_Jump" xml:space="preserve">
+    <value>Jump</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_PickBackRestart" xml:space="preserve">
+    <value>Pickback</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_RecedeBack" xml:space="preserve">
+    <value>Send Back</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Com_SysAct_RecedeRestart" xml:space="preserve">
+    <value>Return to Initiator</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_Reject" xml:space="preserve">
+    <value>Reject</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Com_SysAct_TimeoutJump" xml:space="preserve">
+    <value>Timeout Jump</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="Com_SysTaskOpt" xml:space="preserve">
+    <value>Task Operator</value>
+  </data>
+  <data name="Com_TaskContinue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
+  <data name="Com_TaskDelegate" xml:space="preserve">
+    <value>Assign</value>
+  </data>
+  <data name="Com_TaskDesc" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="Com_TaskPasue" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="Com_TaskRestart" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="Com_TaskShare" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="Com_TaskStop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="Com_Trace" xml:space="preserve">
+    <value>Trace</value>
+  </data>
+  <data name="Com_UnknownStatus" xml:space="preserve">
+    <value>Unknown Status</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="DataBrowser_Msg_AtleastSelOne" xml:space="preserve">
+    <value>Please select at least one item!</value>
+    <comment>3.20p</comment>
+  </data>
+  <data name="DATALIST_AtleastSelOne" xml:space="preserve">
+    <value>Please select one item at least</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Error_LoginADUserNotExist" xml:space="preserve">
+    <value>AD user "{0}" not exist or not be imported!</value>
+    <comment>3.30a</comment>
+  </data>
+  <data name="Error_LoginFailed" xml:space="preserve">
+    <value>Incorrect user name or password!</value>
+  </data>
+  <data name="FlowChartTrace" xml:space="preserve">
+    <value>Show flowchart</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="GetBack_Msg1" xml:space="preserve">
+    <value>Your tasks being auto transfer to :&lt;br&gt;{0}&lt;br&gt;Please click '{1}' to cancel leaving setting!</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="GetBack_Msg2" xml:space="preserve">
+    <value>Your are now setting as leaving!&lt;br&gt;Please click '{0}' to cancel leaving state!</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="GetBack_Submit" xml:space="preserve">
+    <value>Got Back</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="GetBack_Title" xml:space="preserve">
+    <value>You are setted as leaving!</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="HumanStep_StatusRunning" xml:space="preserve">
+    <value>Processing</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="IEEXCEL_Caption" xml:space="preserve">
+    <value>Open Excel File Warning</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_Step1" xml:space="preserve">
+    <value>Open IE "Internet Option"</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_Step2" xml:space="preserve">
+    <value>Open IE "Intranet Security" Option</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_Step3" xml:space="preserve">
+    <value>Make following item checked</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_StepTitle" xml:space="preserve">
+    <value>How to allow open Excel file from IE</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_Warn1" xml:space="preserve">
+    <value>Your IE security setting not allow to open excel file from web page.</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="IEEXCEL_WarnTitle" xml:space="preserve">
+    <value>Warning</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="JS_Abort_Confirm" xml:space="preserve">
+    <value>Cancel the process. After you abort a process, only you and the administrator can re-start it.\nAre you sure to abort the process?</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Abort_Msg" xml:space="preserve">
+    <value>{0} are aborted!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Agent_Msg" xml:space="preserve">
+    <value>{0} tasks are assigned to : {1}!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_AssignOwner_Msg" xml:space="preserve">
+    <value>{0} tasks owner are changed as : {1}!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_BatchApprove_Msg" xml:space="preserve">
+    <value>{0} tasks are approvered!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Common_PlsSelOneDraftAtLeast" xml:space="preserve">
+    <value>Please select draft!</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="JS_Common_PlsSelOneTaskAtLeast" xml:space="preserve">
+    <value>Please select one task at least.</value>
+  </data>
+  <data name="JS_Common_PlsSelOneTaskOnly" xml:space="preserve">
+    <value>Please select one task only.</value>
+  </data>
+  <data name="JS_Common_PlsSelTask" xml:space="preserve">
+    <value>Please select a task.</value>
+  </data>
+  <data name="JS_Continue_Msg" xml:space="preserve">
+    <value>{0} tasks are restored!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Delete_Confirm" xml:space="preserve">
+    <value>Delete a process, requires administration authorization.\nAre you sure to delete?</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Delete_Msg" xml:space="preserve">
+    <value>{0} tasks are deleted!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_DeleteDraft_Confirm" xml:space="preserve">
+    <value>After draft deleted, it can not restore! are you sure to delete selected dtafts?</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="JS_DeleteDraft_Msg" xml:space="preserve">
+    <value>{0} drafts deleted.</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="JS_Jump_Msg" xml:space="preserve">
+    <value>Task jump succeed!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Jump_PlsSelFromStep" xml:space="preserve">
+    <value>Please select jump from step.</value>
+  </data>
+  <data name="JS_Jump_PlsSelOneTagStepOnly" xml:space="preserve">
+    <value>Please select one jump target step only.</value>
+  </data>
+  <data name="JS_Jump_PlsSelTagStep" xml:space="preserve">
+    <value>Please select jump target step.</value>
+  </data>
+  <data name="JS_PickBackRestart_Confirm" xml:space="preserve">
+    <value>Pickback a precess to initiator. After it has been pickbacked, the initiator can re-start it again.\nAre you sure to pickback?</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_PickBackRestart_Msg" xml:space="preserve">
+    <value>{0} requests are pickbacked!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Public_Msg" xml:space="preserve">
+    <value>{0} tasks are published to : {1}!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_RecedeBack_Msg" xml:space="preserve">
+    <value>Task have been returned to:\r\n{0}\r\nWindow will be close!</value>
+    <comment>3.10m</comment>
+  </data>
+  <data name="JS_RecedeBack_PlsSelTagStep" xml:space="preserve">
+    <value>Please select a step!</value>
+    <comment>3.10m</comment>
+  </data>
+  <data name="JS_RecedeRestart_Confirm" xml:space="preserve">
+    <value>Send the process back to the initiator. After it has been returned, the initiator can re-start it again\nAre you sure to recede back task to initiator?</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_RecedeRestart_Msg" xml:space="preserve">
+    <value>{0} tasks are receded back to initiator!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Reject_Confirm" xml:space="preserve">
+    <value>Reject a process, After you reject a process, the process will finished as rejected.\nAre you sure to reject?</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Reject_Msg" xml:space="preserve">
+    <value>{0} task are rejected!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_RFC_ResponseStatus" xml:space="preserve">
+    <value>HttpRequest return : {0}</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_RFC_XMLHttpReqFailed" xml:space="preserve">
+    <value>Create XMLHttpRequest failed, please contact with administrator!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_SelectProcessSelectOne" xml:space="preserve">
+    <value>Please select a process!</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="JS_SendTo_NoSelectedTask" xml:space="preserve">
+    <value>Please select a task.</value>
+  </data>
+  <data name="JS_Share_IncludeNoShareItem" xml:space="preserve">
+    <value>There are not share item include in your selection.</value>
+  </data>
+  <data name="JS_ShareTaskGet_Msg" xml:space="preserve">
+    <value>{0} tasks are got!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_ShareTaskPut_Msg" xml:space="preserve">
+    <value>{0} task are shared!</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="JS_Sign_IncorrentPwd" xml:space="preserve">
+    <value>Incorrect Password!</value>
+    <comment>3.06</comment>
+  </data>
+  <data name="Jump_BtnOK" xml:space="preserve">
+    <value>Jump</value>
+  </data>
+  <data name="Jump_PageCaption" xml:space="preserve">
+    <value>Jump</value>
+  </data>
+  <data name="Jump_StepName" xml:space="preserve">
+    <value>Step Name</value>
+  </data>
+  <data name="Jump_StepParticipant" xml:space="preserve">
+    <value>Participant</value>
+  </data>
+  <data name="Jump_Title" xml:space="preserve">
+    <value>Please select "jump from" and "jump to" step, press "Jump" to perform jump</value>
+  </data>
+  <data name="Jump_TitleFromSteps" xml:space="preserve">
+    <value>Select jump from step</value>
+  </data>
+  <data name="Jump_ToStep" xml:space="preserve">
+    <value>Select jump to step</value>
+  </data>
+  <data name="JumpCfm_Caption" xml:space="preserve">
+    <value>Jump Confirm</value>
+  </data>
+  <data name="JumpCfm_Fail_Caption" xml:space="preserve">
+    <value>Jump Failed</value>
+  </data>
+  <data name="JumpCfm_Fail_Msg1" xml:space="preserve">
+    <value>Task jump failed!</value>
+  </data>
+  <data name="JumpCfm_Fail_Msg2" xml:space="preserve">
+    <value>Reason</value>
+  </data>
+  <data name="JumpCfm_Success_Caption" xml:space="preserve">
+    <value>Jump Succeed</value>
+  </data>
+  <data name="JumpCfm_Success_Msg" xml:space="preserve">
+    <value>Task jump succeed!</value>
+  </data>
+  <data name="Leave_AutoSentTo" xml:space="preserve">
+    <value>In leaving period</value>
+  </data>
+  <data name="Leave_Caption" xml:space="preserve">
+    <value>Leaving Setting</value>
+  </data>
+  <data name="Leave_ChkPeriod" xml:space="preserve">
+    <value>Out only between below period</value>
+    <comment>3.20g</comment>
+  </data>
+  <data name="Leave_CurAccount" xml:space="preserve">
+    <value>Current User : </value>
+  </data>
+  <data name="Leave_FromDate" xml:space="preserve">
+    <value>From Date</value>
+    <comment>3.20g</comment>
+  </data>
+  <data name="Leave_Period" xml:space="preserve">
+    <value>Out Period</value>
+    <comment>3.20g</comment>
+  </data>
+  <data name="Leave_RdoNotAutoSend" xml:space="preserve">
+    <value>Keep tasks in my worklist, I will process them myself when get back</value>
+  </data>
+  <data name="Leave_Title" xml:space="preserve">
+    <value>Leaving Setting</value>
+  </data>
+  <data name="Leave_ToDate" xml:space="preserve">
+    <value>To Date</value>
+    <comment>3.20g</comment>
+  </data>
+  <data name="LeaveRdoAutoSend" xml:space="preserve">
+    <value>Auto transfer my task to</value>
+  </data>
+  <data name="LeaveSub_ConfirmRule" xml:space="preserve">
+    <value>Task Rules</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="LeaveSub_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="LeaveSub_OKMessage" xml:space="preserve">
+    <value>In leaving period, Your tasks will transfer by the task rules you defined!</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="LeaveSub_OKMsgNotSend" xml:space="preserve">
+    <value>In leaving period, Your tasks will keep in your worklist.</value>
+  </data>
+  <data name="LeaveSub_OKMsgSendTo" xml:space="preserve">
+    <value>In leaving period, Your tasks will auto transfer to :</value>
+  </data>
+  <data name="LeaveSub_OKTitle" xml:space="preserve">
+    <value>Leave Setting Succeed!</value>
+  </data>
+  <data name="Menu_Admin" xml:space="preserve">
+    <value>Admin</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Menu_Draft" xml:space="preserve">
+    <value>Drafts</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Menu_GetBack" xml:space="preserve">
+    <value>Get Back</value>
+    <comment>3.08</comment>
+  </data>
+  <data name="Menu_History" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Menu_Home" xml:space="preserve">
+    <value>Home</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="Menu_InitRequest" xml:space="preserve">
+    <value>Write Form</value>
+  </data>
+  <data name="Menu_Leave" xml:space="preserve">
+    <value>Leave</value>
+  </data>
+  <data name="Menu_Logout" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
+  <data name="Menu_MyAccountMgr" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="Menu_MyProcessed" xml:space="preserve">
+    <value>Processed</value>
+    <comment>3.50k</comment>
+  </data>
+  <data name="Menu_MyRequest" xml:space="preserve">
+    <value>My Request</value>
+  </data>
+  <data name="Menu_Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="Menu_TaskList" xml:space="preserve">
+    <value>Worklist</value>
+  </data>
+  <data name="MINST_Caption" xml:space="preserve">
+    <value>Install XFormShell Component</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Help1" xml:space="preserve">
+    <value>Please contact administrator to more help.</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_HelpTitle" xml:space="preserve">
+    <value>More Help</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step1" xml:space="preserve">
+    <value>Download</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step1Desc" xml:space="preserve">
+    <value>Downaload XFormShell.zip</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step2" xml:space="preserve">
+    <value>Unzip Downloaded Package</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step2Desc" xml:space="preserve">
+    <value>Unzip downloaded package to a folder(for example : My Documents).</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step3" xml:space="preserve">
+    <value>Install</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Step3Desc" xml:space="preserve">
+    <value>Double click Install.bat to install the component(please make sure you not run Install.bat in rar file directory).</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_StepTitle" xml:space="preserve">
+    <value>Install XFormShell component manually</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Warn1" xml:space="preserve">
+    <value>Your computer security policy not allow XFormShell component to install automatically.</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Warn2" xml:space="preserve">
+    <value>XFormShell is a client component of XForm(FlowPortal.net extarned asp.net web form), It is necessary for run XForm.</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_Warn3" xml:space="preserve">
+    <value>YZSoft assure XFormShell is use for XForm only, it will not damage your computer and not collect your personal information.</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MINST_WarnTitle" xml:space="preserve">
+    <value>Warning</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="MSG_ChgPwd_Caption" xml:space="preserve">
+    <value>Change Password Succeed</value>
+  </data>
+  <data name="MSG_ChgPwd_Msg" xml:space="preserve">
+    <value>Password has changed!</value>
+  </data>
+  <data name="MSG_ChgPwd_NewPwdErr" xml:space="preserve">
+    <value>New password and confirm password are not identical, please enter again!</value>
+  </data>
+  <data name="MSG_ChgUserInfo_Success" xml:space="preserve">
+    <value>Update user information succeed!</value>
+  </data>
+  <data name="OrgTree_Title" xml:space="preserve">
+    <value>Organization Tree</value>
+  </data>
+  <data name="PageTitle_Login" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="Post_MissForm" xml:space="preserve">
+    <value>Start step has not valid form, please contact with process administrator</value>
+  </data>
+  <data name="PostResult_HasSentToOtherUsers" xml:space="preserve">
+    <value>Submit succeed! Serial Number : {0}&lt;/br&gt;Task is transfered to : {1}.{2}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PostResult_InWaitingOtherUsers" xml:space="preserve">
+    <value>Submit succeed! Serial Number : {0}&lt;/br&gt;Task is waiting for other user process : {1}{2}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PostResult_RecedeRestarted" xml:space="preserve">
+    <value>Submit succeed! Serial Number : {0}&lt;/br&gt;Task is recede back to : {1}.{2}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PostResult_TaskFinishedApproved" xml:space="preserve">
+    <value>Submit succeed! Serial Number : {0}&lt;/br&gt;Task is approved！{1}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PostResult_TaskFinishedRejected" xml:space="preserve">
+    <value>Submit succeed! Serial Number : {0}&lt;/br&gt;Task is rejected！{1}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PostResult_TaskInWaiting" xml:space="preserve">
+    <value>Submit succeed! Serial Number : {0}.{1}</value>
+    <comment>3.40f</comment>
+  </data>
+  <data name="PreportCaption_ProcessUsage" xml:space="preserve">
+    <value>Process Usage</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="PreportCaption_StepProcessPerformance" xml:space="preserve">
+    <value>Process Performance</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="PreportCaption_SystemUsage" xml:space="preserve">
+    <value>System Usage</value>
+    <comment>3.11c</comment>
+  </data>
+  <data name="Process_MissForm" xml:space="preserve">
+    <value>This step has not valid form, please contact whth process administrator</value>
+  </data>
+  <data name="ProcessTree_Title" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Public_BtnOK" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="Public_Caption" xml:space="preserve">
+    <value>Task Publish</value>
+  </data>
+  <data name="Public_Title" xml:space="preserve">
+    <value>Please select a user, press "Publish" to give the user read permision.</value>
+  </data>
+  <data name="Read_MissForm" xml:space="preserve">
+    <value>This stp has not valid form, please contact with process administrator</value>
+  </data>
+  <data name="RecedeBack_BackToForm" xml:space="preserve">
+    <value>Back</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="RecedeBack_Caption" xml:space="preserve">
+    <value>Send Task Back</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="RecedeBack_ColOpt" xml:space="preserve">
+    <value>Option</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="RecedeBack_Confirm" xml:space="preserve">
+    <value>Are you sure to send task back?</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="RecedeBack_Opt" xml:space="preserve">
+    <value>Send</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="RecedeBack_Title" xml:space="preserve">
+    <value>Send the task back to step:</value>
+    <comment>3.10</comment>
+  </data>
+  <data name="ReceiveNotifys" xml:space="preserve">
+    <value>Receive Selected Notify</value>
+    <comment>3.05</comment>
+  </data>
+  <data name="Report_ChangeChartType" xml:space="preserve">
+    <value>Change Chart Type</value>
+    <comment>3.40j</comment>
+  </data>
+  <data name="SelMember_Caption" xml:space="preserve">
+    <value>Select Member</value>
+  </data>
+  <data name="SelMember_Msg_AtleastSelOne" xml:space="preserve">
+    <value>Please select member</value>
+  </data>
+  <data name="SelMember_SelOneOnly" xml:space="preserve">
+    <value>Please select one member only</value>
+  </data>
+  <data name="SelMember_Title" xml:space="preserve">
+    <value>Select Member.</value>
+  </data>
+  <data name="SelOU_Caption" xml:space="preserve">
+    <value>Select OU</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="SelOU_Title" xml:space="preserve">
+    <value>Please select a ou.</value>
+    <comment>3.09</comment>
+  </data>
+  <data name="SelProcess_Caption" xml:space="preserve">
+    <value>Select Process</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="SelProcess_Title" xml:space="preserve">
+    <value>Select process</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="SelUser_Caption" xml:space="preserve">
+    <value>Select User</value>
+  </data>
+  <data name="SelUser_Title" xml:space="preserve">
+    <value>Please select a user.</value>
+  </data>
+  <data name="SendTo_BtnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="SendTo_BtnOK" xml:space="preserve">
+    <value>Assign</value>
+  </data>
+  <data name="SendTo_Caption" xml:space="preserve">
+    <value>Assign Task</value>
+  </data>
+  <data name="SendTo_Title" xml:space="preserve">
+    <value>Please select a user, press "Assign" to assign task to selected user</value>
+  </data>
+  <data name="SendTo_WarnMultiSelect" xml:space="preserve">
+    <value>Please select one user only</value>
+  </data>
+  <data name="SendTo_WarnNoSelect" xml:space="preserve">
+    <value>Please select assign to user</value>
+  </data>
+  <data name="SendToSelStep_BtnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="SendToSelStep_BtnOK" xml:space="preserve">
+    <value>Next Step</value>
+  </data>
+  <data name="SendToSelStep_Caption" xml:space="preserve">
+    <value>Select Assign Step</value>
+  </data>
+  <data name="SendToSelStep_Participant" xml:space="preserve">
+    <value>Participant</value>
+  </data>
+  <data name="SendToSelStep_StepName" xml:space="preserve">
+    <value>Step name</value>
+  </data>
+  <data name="SendToSelStep_Title" xml:space="preserve">
+    <value>Please select a step, press 'Next Step' to assign to a user.</value>
+  </data>
+  <data name="SendToSelStep_WarnNoSelect" xml:space="preserve">
+    <value>Please select a step to assign</value>
+  </data>
+  <data name="SendToSub_Caption" xml:space="preserve">
+    <value>Assign Task Confirm</value>
+  </data>
+  <data name="SendToSub_FailMsg1" xml:space="preserve">
+    <value>Error occurd when assign task</value>
+  </data>
+  <data name="SendToSub_FailMsg2" xml:space="preserve">
+    <value>Reason : </value>
+  </data>
+  <data name="SendToSub_FailTitle" xml:space="preserve">
+    <value>Assign Task Failed</value>
+  </data>
+  <data name="SendToSub_SuccessMsg" xml:space="preserve">
+    <value>Task has assigned to : </value>
+  </data>
+  <data name="SendToSub_SuccessTitle" xml:space="preserve">
+    <value>Assign Task Success</value>
+  </data>
+  <data name="ShareStep_WaitPick" xml:space="preserve">
+    <value>In Share List</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="SignDlg_Caption" xml:space="preserve">
+    <value>Signature</value>
+    <comment>3.06</comment>
+  </data>
+  <data name="TaskListTree_Title" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="TaskRule_Caption" xml:space="preserve">
+    <value>{0} Task Rules Defined</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRule_Disabled" xml:space="preserve">
+    <value>Disabled</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRule_Enabled" xml:space="preserve">
+    <value>Enabled</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Btn_Add" xml:space="preserve">
+    <value>Add</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Btn_Delete" xml:space="preserve">
+    <value>Remove</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Btn_Save" xml:space="preserve">
+    <value>Save</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Delegator" xml:space="preserve">
+    <value>To Who</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Delegator_DisplayString" xml:space="preserve">
+    <value>Delegator(Applay by order)</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Enabled" xml:space="preserve">
+    <value>Enabled</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessDefine" xml:space="preserve">
+    <value>Which Process</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessDefine_All" xml:space="preserve">
+    <value>All process</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessDefine_Exclude" xml:space="preserve">
+    <value>All process except selection</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessDefine_Include" xml:space="preserve">
+    <value>Only selected process</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessList_Condition" xml:space="preserve">
+    <value>Other Condition</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ProcessList_ProcessName" xml:space="preserve">
+    <value>Process</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_RuleType" xml:space="preserve">
+    <value>Rule Type</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_Status" xml:space="preserve">
+    <value>Status</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ToolBar_Back" xml:space="preserve">
+    <value>Back</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleEditor_ToolBar_Save" xml:space="preserve">
+    <value>Save Rule Define</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleList_Memo" xml:space="preserve">
+    <value>Delegetor</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleList_RuleName" xml:space="preserve">
+    <value>Task Rule(Applay by order)</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskRuleList_Status" xml:space="preserve">
+    <value>Status</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_Date" xml:space="preserve">
+    <value>Date</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_HandleBy" xml:space="preserve">
+    <value>Handle by</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_Index" xml:space="preserve">
+    <value>Index</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_Memo" xml:space="preserve">
+    <value>Memo</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_Owner" xml:space="preserve">
+    <value>Owner</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_Process" xml:space="preserve">
+    <value>Process</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="TaskTrace_StepID" xml:space="preserve">
+    <value>Step ID</value>
+    <comment>3.40i</comment>
+  </data>
+  <data name="Title_FlowTree" xml:space="preserve">
+    <value>Processes</value>
+  </data>
+  <data name="Trace_Caption" xml:space="preserve">
+    <value>Task Trace(TaskID:{0})</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_Initiator" xml:space="preserve">
+    <value>Initiator : </value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_ProcessingSteps" xml:space="preserve">
+    <value>Processing Steps</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_Routing" xml:space="preserve">
+    <value>Process Routing</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_SN" xml:space="preserve">
+    <value>Serial No. : </value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_Status" xml:space="preserve">
+    <value>Status : </value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Trace_StepID" xml:space="preserve">
+    <value>No.</value>
+    <comment>3.04</comment>
+  </data>
+  <data name="Transfer_Confirm" xml:space="preserve">
+    <value>Are you sure to assign task to user:{0}?</value>
+    <comment>3.30c</comment>
+  </data>
+</root>

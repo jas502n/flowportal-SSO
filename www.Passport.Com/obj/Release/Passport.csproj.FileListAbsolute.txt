@@ -1,0 +1,14 @@
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\bin\SSO.Passport.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\bin\SSO.Passport.pdb
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\bin\DigitalHR.BLL.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\bin\DigitalHR.DBUtility.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\bin\DigitalHR.Model.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\bin\DigitalHR.SQLServerDAL.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\bin\DigitalHR.Web.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\bin\Joson.SSOSite.OAuth.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\bin\Net.ADHelper.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\bin\Net.Common.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\bin\Joson.SSOSite.OAuth.pdb
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\obj\Release\Passport.csprojResolveAssemblyReference.cache
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\obj\Release\SSO.Passport.dll
+H:\360云盘同步版\文档\SSO\SSO-Site\Passport\obj\Release\SSO.Passport.pdb

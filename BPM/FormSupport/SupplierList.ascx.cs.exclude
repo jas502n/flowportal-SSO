@@ -1,0 +1,71 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
+using SAP.Connector;
+
+public partial class FormSupport_SupplierList : ListBase
+{
+    private string inputkey;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        TableRow hrow = CreateHeaderRow();
+        this._table1.Rows.Add(hrow);
+
+        hrow.Cells.Add(CreateCheckColumn());
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("SAP供应商名称", 200));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+        hrow.Cells.Add(CreateColumn("SAP供应商编号", 130));
+        hrow.Cells.Add(CreateSepratorColumn());
+
+
+        if (!string.IsNullOrEmpty(Request.Form["suppliername"]))
+        {
+			string suppliername = string.IsNullOrEmpty(Request.Form["suppliername"].Trim()) ? "" : Request.Form["suppliername"].Trim();
+			DataTable mytable = GetSapData(suppliername); //GetData(customername);
+            foreach(DataRow myrow in mytable.Rows)
+            {
+				inputkey = "Col1=" + myrow["NAME1"].ToString().Trim() + ";Col2=" + myrow["LIFNR"].ToString().Trim() +  ";";
+                TableRow row = CreateItemRow();
+                row.CssClass = "ListItemRowH";
+                this._table1.Rows.Add(row);
+                row.Cells.Add(CreateCheckCell2(inputkey));
+                row.Cells.Add(CreateCell(myrow["NAME1"].ToString().Trim(), 2));
+				row.Cells.Add(CreateCell(myrow["LIFNR"].ToString().Trim(), 2));
+            }
+        }
+    }
+
+    protected TableCell CreateCheckCell2(string mykey)
+    {
+        TableCell cell = new TableCell();
+        CheckBox checkBox = new CheckBox();
+        cell.Controls.Add(checkBox);
+        cell.CssClass = "CHK";
+        cell.Text = "<input id=\"" + mykey + "\" type=\"checkbox\" onclick=\"checkrow(this);\">";
+        cell.ColumnSpan = 2;
+        return cell;
+    }
+
+    /// <summary>
+    /// CREATED BY ZZM
+    /// </summary>
+    /// <param name="strCustomerName"></param>
+    /// <returns></returns>
+    protected DataTable GetSapData(string strSupplierName)
+    {
+        SapRFCHelper saph = new SapRFCHelper();
+		string[] param = { "NAME1|" + strSupplierName,"EKORG|PO01"};
+		string rfcName = "Z_RFC_READVENDOR";
+
+        DataTable dt = saph.GetRfcOutTable("PRD", param, rfcName, "I_LIFNR");
+        return dt;
+    }
+
+}

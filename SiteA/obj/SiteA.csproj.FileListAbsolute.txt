@@ -1,0 +1,5 @@
+D:\SSO\SSO\SiteA\obj\Debug\ResolveAssemblyReference.cache
+D:\SSO\SSO\SiteA\bin\SSO.SiteA.dll
+D:\SSO\SSO\SiteA\bin\SSO.SiteA.pdb
+D:\SSO\SSO\SiteA\obj\Debug\SSO.SiteA.dll
+D:\SSO\SSO\SiteA\obj\Debug\SSO.SiteA.pdb

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Joson\Desktop\Oauth\www.e.com</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AuthPage1.aspx">
+      <publishTime>05/15/2018 16:18:46</publishTime>
+    </File>
+    <File Include="AuthPage2.aspx">
+      <publishTime>09/28/2014 16:07:31</publishTime>
+    </File>
+    <File Include="bin/BPM.Client.dll">
+      <publishTime>02/26/2014 16:07:49</publishTime>
+    </File>
+    <File Include="bin/BPM.dll">
+      <publishTime>02/26/2014 16:07:48</publishTime>
+    </File>
+    <File Include="bin/Joson.SSOSite.OAuth.dll">
+      <publishTime>05/15/2018 17:14:53</publishTime>
+    </File>
+    <File Include="bin/Net.Common.dll">
+      <publishTime>10/21/2014 00:19:57</publishTime>
+    </File>
+    <File Include="bin/SiteE.dll">
+      <publishTime>05/15/2018 17:14:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>08/05/2015 12:20:31</publishTime>
+    </File>
+    <File Include="LogIn.aspx">
+      <publishTime>09/28/2014 14:52:35</publishTime>
+    </File>
+    <File Include="Quit.aspx">
+      <publishTime>09/28/2014 16:08:08</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/15/2018 12:32:50</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
