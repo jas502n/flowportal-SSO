@@ -14,6 +14,9 @@ git remote --v
 git config --list  查看配置
 git status
 
+JosonSSO        https://github.com/JosonJiang/SSO.git (fetch)
+JosonSSO        https://github.com/JosonJiang/SSO.git (push)
+
 
 ===更新GIT项目============================================================================================
 
