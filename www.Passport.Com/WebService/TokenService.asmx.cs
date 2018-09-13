@@ -49,9 +49,10 @@ namespace Joson.SSO.Passport
         }
 
 
+        /// <summary>
         /// 根据令牌获取用户凭证
         /// </summary>
-        /// <param name="tokenValue">令牌</param>
+        /// <param name="tokenValue"></param>
         /// <returns></returns>
         [WebMethod]
         public Object TokenGetCredence(string tokenValue)
@@ -72,9 +73,10 @@ namespace Joson.SSO.Passport
         }
 
 
+        /// <summary>
         /// 根据令牌获取用户凭证
         /// </summary>
-        /// <param name="tokenValue">令牌</param>
+        /// <param name="tokenValue"></param>
         /// <returns></returns>
         [WebMethod]
         public DataTable TokenGetCredencDt(string tokenValue)

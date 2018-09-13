@@ -5,8 +5,10 @@
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <LastUsedBuildConfiguration>Release</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Joson\Desktop\Oauth\www.Passport.com</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Joson\Desktop\Oauth\X.skyworthdigital.Com-8000/OAuth</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="App_Data/HrSQLite.db">
@@ -49,10 +51,16 @@
       <publishTime>08/02/2017 17:51:14</publishTime>
     </File>
     <File Include="bin/Joson.SSO.Passport.dll">
-      <publishTime>09/13/2018 10:02:08</publishTime>
+      <publishTime>09/03/2018 10:42:29</publishTime>
     </File>
     <File Include="bin/Joson.SSOSite.OAuth.dll">
       <publishTime>08/15/2018 15:27:06</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Office.Interop.Excel.dll">
+      <publishTime>08/31/2009 02:00:20</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Vbe.Interop.dll">
+      <publishTime>08/31/2009 02:00:20</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>07/19/2012 10:59:52</publishTime>
@@ -71,6 +79,12 @@
     </File>
     <File Include="bin/Net.MobileHelper.dll">
       <publishTime>09/30/2015 13:28:20</publishTime>
+    </File>
+    <File Include="bin/office.dll">
+      <publishTime>08/31/2009 02:00:22</publishTime>
+    </File>
+    <File Include="bin/SSO.Passport.dll">
+      <publishTime>11/26/2014 16:24:46</publishTime>
     </File>
     <File Include="bin/stdole.dll">
       <publishTime>04/22/2012 22:21:30</publishTime>
@@ -186,6 +200,9 @@
     <File Include="IService.aspx">
       <publishTime>08/02/2017 18:03:15</publishTime>
     </File>
+    <File Include="JosonJiang.aspx">
+      <publishTime>08/04/2015 17:09:41</publishTime>
+    </File>
     <File Include="Jscript/ACLogon.js">
       <publishTime>11/26/2014 14:12:30</publishTime>
     </File>
@@ -216,14 +233,23 @@
     <File Include="SSOWebSite.aspx">
       <publishTime>08/07/2015 11:33:58</publishTime>
     </File>
+    <File Include="TokenOAuth.asmx">
+      <publishTime>08/05/2015 16:32:35</publishTime>
+    </File>
+    <File Include="TokenService.asmx">
+      <publishTime>08/05/2015 16:32:24</publishTime>
+    </File>
     <File Include="UserLogin.aspx">
-      <publishTime>09/07/2018 18:30:51</publishTime>
+      <publishTime>01/18/2016 17:39:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/13/2018 10:50:10</publishTime>
+      <publishTime>09/03/2018 10:30:10</publishTime>
     </File>
     <File Include="WebService/OAuthHost.asmx">
       <publishTime>09/03/2018 10:26:55</publishTime>
+    </File>
+    <File Include="WebService/TokenOAuth.asmx">
+      <publishTime>08/05/2015 16:32:35</publishTime>
     </File>
     <File Include="WebService/TokenService.asmx">
       <publishTime>08/05/2015 16:32:24</publishTime>

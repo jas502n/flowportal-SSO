@@ -160,7 +160,6 @@ E:\Joson\SSO-Site\www.Josons.Com\bin\zh-Hant\System.Spatial.resources.dll
 E:\Joson\SSO-Site\www.Josons.Com\obj\Debug\www.Josons.Com.csprojResolveAssemblyReference.cache
 E:\Joson\SSO-Site\www.Josons.Com\obj\Debug\www.Josons.Com.dll
 E:\Joson\SSO-Site\www.Josons.Com\obj\Debug\www.Josons.Com.pdb
-E:\Joson\SSO-SiteX\www.Josons.Com\bin\www.Josons.Com.dll.config
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\www.Josons.Com.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\www.Josons.Com.pdb
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\Antlr3.Runtime.dll
@@ -173,13 +172,10 @@ E:\Joson\SSO-SiteX\www.Josons.Com\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\Net.Common.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\Newtonsoft.Json.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Net.Http.dll
-E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Net.Http.Formatting.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Net.Http.WebRequest.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Spatial.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Web.Helpers.dll
-E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Web.Http.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Web.Http.OData.dll
-E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Web.Http.WebHost.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Web.Mvc.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Web.Optimization.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Web.Providers.dll
@@ -198,10 +194,7 @@ E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Web.WebPages.Razor.xml
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\EntityFramework.xml
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\Newtonsoft.Json.xml
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Net.Http.xml
-E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Net.Http.Formatting.xml
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Net.Http.WebRequest.xml
-E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Web.Http.xml
-E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Web.Http.WebHost.xml
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\System.Web.Http.OData.xml
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\Microsoft.Data.Edm.xml
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\Microsoft.Data.OData.xml
@@ -214,10 +207,7 @@ E:\Joson\SSO-SiteX\www.Josons.Com\bin\zh-Hans\System.Web.WebPages.Deployment.res
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\zh-Hans\EntityFramework.resources.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\zh-Hans\System.Net.Http.resources.dll
-E:\Joson\SSO-SiteX\www.Josons.Com\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\zh-Hans\System.Net.Http.WebRequest.resources.dll
-E:\Joson\SSO-SiteX\www.Josons.Com\bin\zh-Hans\System.Web.Http.resources.dll
-E:\Joson\SSO-SiteX\www.Josons.Com\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\zh-Hans\System.Web.Optimization.resources.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\zh-Hans\System.Web.Providers.resources.dll
 E:\Joson\SSO-SiteX\www.Josons.Com\bin\zh-Hans\System.Web.Http.OData.resources.dll

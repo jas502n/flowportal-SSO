@@ -17,20 +17,19 @@ namespace Joson.SSO.Passport
     using SSOSite.OAuth;
     using System.Data;
     using System.Data.SqlClient;
-
+    using System.Web.Script.Serialization;
     using XWebManage.Models;
 
     /// <summary>
     /// WebService 的摘要说明
     /// </summary>
-    [WebService(Namespace = "http://58.251.35.132:8000/")]
+    [WebService(Namespace = "http://oauth.skyworthdigital.com")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
 
     [System.Web.Script.Services.ScriptService]
     public class WebService : System.Web.Services.WebService
     {
-
 
         public String strCookieDomain = String.Empty;
         public String OAuthLDAP = String.Empty;
@@ -48,7 +47,7 @@ namespace Joson.SSO.Passport
         static String DomainName = "172.28.0.2";
         static String UserName = "scriptroot";
         static String PassWord = "!qAz.@wSx";
-        static String RootOU = "创维数字";
+        //static String RootOU = "创维数字";
 
         public WebService()
         {
@@ -264,8 +263,9 @@ namespace Joson.SSO.Passport
         #endregion
 
 
+
         [WebMethod]
-        public DataSet GetWorkTime(String strAccount, int m)
+        public void GetWorkTime(String strAccount, int m)
         {
             DataTable table = new DataTable();
             DataSet ds = new DataSet();
@@ -321,8 +321,9 @@ namespace Joson.SSO.Passport
                                 FROM [HR_Digital].[dbo].[Attendance]
 
                                 where EmpID=@UserAccount 
-                                      and DATEDIFF(yyyy , WorkDay, getdate()) =0 
-                                      and  DATEDIFF(d, WorkDay, getdate()) >@m 
+                                      and  DATEDIFF(yyyy , WorkDay, getdate()) =0 
+                                      and  DATEDIFF(m, WorkDay, getdate()) =@m 
+                                      --and  DATEDIFF(d, WorkDay, getdate()) >@m 
                                       order by WorkDay desc";
 
 
@@ -342,12 +343,34 @@ namespace Joson.SSO.Passport
 
             ds.Tables.Add(table);
 
-            return ds;
+            //return ds;
+
+            if (Context.Request.HttpMethod.ToUpper() == "OPTIONS")
+            {
+                return;
+            }
+ 
+            //var Results = JsonAndXmlSerialization.Serialize(ds.Tables[0]);
+
+            var Results = ds.Tables[0].ToJson();
+
+            Context.Response.AppendHeader("Access-Control-Allow-Origin", "*");      // 响应类型 
+            Context.Response.AppendHeader("Access-Control-Allow-Methods", "POST");  // 响应头设置 
+            Context.Response.AppendHeader("Access-Control-Allow-Headers", "x-requested-with,content-type");
+
+            Context.Response.ContentType = "application/json;charset=gb2312";
+            Context.Response.Charset = "GB2312"; //设置字符集类型  
+            Context.Response.ContentEncoding = System.Text.Encoding.GetEncoding("GB2312");
+            Context.Response.Write(Results);
+            Context.Response.End();
+
+
         }
 
 
+
         [WebMethod]
-        public DataSet GetContact(String itemvalue)
+        public void GetContact(String itemvalue)
         {
             DataTable table = new DataTable();
             DataSet ds = new DataSet();
@@ -438,8 +461,226 @@ namespace Joson.SSO.Passport
             ds.Tables.Add(table);
             ds.Tables.Add(DtDepartment);
 
-            return ds;
+            //return ds;
+
+
+            if (Context.Request.HttpMethod.ToUpper() == "OPTIONS")
+            {
+                return;
+            }
+            Context.Response.AppendHeader("Access-Control-Allow-Origin", "*");      // 响应类型 
+            Context.Response.AppendHeader("Access-Control-Allow-Methods", "POST");  // 响应头设置 
+            Context.Response.AppendHeader("Access-Control-Allow-Headers", "x-requested-with,content-type");
+
+            Context.Response.Charset = "gb2312"; //设置字符集类型  
+            Context.Response.ContentEncoding = System.Text.Encoding.GetEncoding("gb2312");
+            Context.Response.ContentType = "application/json;charset=gb2312";
+            Context.Response.Write(ds.Tables[0].ToJson());
+            Context.Response.End();
+
+
+
+
         }
+
+
+        [WebMethod]
+        /*查询个人绩效*/
+        public void PerformanceSelectByEmpID(string sEmpID)
+        {
+            DataTable dtPerformance = new DataTable();
+
+            String strSQL = string.Format("SELECT  * FROM (SELECT EmpID,EmpName,YEAR,Quarter,Performance FROM PerformanceData WHERE EmpID='{0}' ) a pivot (MAX(Performance) for Quarter IN ([第一季度],[第二季度],[第三季度],[第四季度])) b", sEmpID);
+
+            dtPerformance = Net.DBUtility.SQLHelper.ExecuteDataTable(CommandType.Text, strSQL, null);
+            dtPerformance.TableName = "Json";
+
+            //return dtPerformance;
+
+            ResponseJoson(dtPerformance);
+
+        }
+
+
+        [WebMethod]
+        /*查询所有绩效*/
+        public void PerformanceSelectByEmpName(string sEmpName)
+        {
+            DataTable dtPerformance = new DataTable();
+
+            String strSQL = string.Format("SELECT  c.EmpID,c.EmpName,c.DeptName1,c.DeptName2,c.DeptName3,b.Year,b.第一季度,b.第二季度,b.第三季度,b.第四季度 FROM (SELECT EmpID,EmpName,YEAR,Quarter,Performance FROM PerformanceData WHERE EmpName='{0}' ) a pivot (MAX(Performance) for Quarter IN ([第一季度],[第二季度],[第三季度],[第四季度])) b inner join Employee c on b.EmpID=c.EmpID", sEmpName);
+
+            dtPerformance = Net.DBUtility.SQLHelper.ExecuteDataTable(CommandType.Text, strSQL, null);
+            dtPerformance.TableName = "Json";
+
+            // return dtPerformance;
+
+            ResponseJoson(dtPerformance);
+
+        }
+
+
+
+        [WebMethod]
+        public void YearLeaveSelect(string EmpID, string m)
+        {
+            m = String.IsNullOrWhiteSpace(m) ? "0" : m;
+            DataTable dtPerformance = new DataTable();
+
+
+            String strSQL = string.Format(@"SELECT[YearNO]
+      ,[EmpID]
+      ,[SumTime]
+      ,[UsedTime]
+      ,[UsableTime]
+      ,[EffDate]
+      ,[ExpDate]
+  FROM [YearLeave]
+
+  where EmpID = '{0}'   and  DATEDIFF(yyyy , [YearNO], getdate()) ={1}
+
+  Order By YearNO desc", EmpID, m);
+
+            dtPerformance = Net.DBUtility.SQLHelper.ExecuteDataTable(CommandType.Text, strSQL, null);
+            dtPerformance.TableName = "Json";
+
+            //return dtPerformance;
+            //return new JavaScriptSerializer().Serialize(dtPerformance.ToJson());
+
+            Context.Response.AppendHeader("Access-Control-Allow-Origin", "*");      // 响应类型 
+            Context.Response.AppendHeader("Access-Control-Allow-Methods", "POST");  // 响应头设置 
+            Context.Response.AppendHeader("Access-Control-Allow-Headers", "x-requested-with,content-type");
+
+            Context.Response.Charset = "gb2312"; //设置字符集类型  
+            Context.Response.ContentEncoding = System.Text.Encoding.GetEncoding("gb2312");
+            Context.Response.ContentType = "application/json;charset=gb2312";
+
+            Context.Response.Write(dtPerformance.ToJson());
+            Context.Response.End();
+
+
+        }
+
+
+
+
+
+
+        [WebMethod]
+        /// <summary>
+        /// 考勤明细
+        /// </summary>
+        /// <param name="EmpID"></param>
+        /// <param name="FromDate"></param>
+        /// <param name="ToDate"></param>
+        /// <returns></returns>
+        public void AttendanceSelect(string EmpID, string FromDate, string ToDate)
+        {
+
+            DataTable dtPerformance = new DataTable();
+            //String strSQL = string.Format("SELECT  PersonNO,PersonName,DeviceName,DoorNO,BrushCardTime FROM MJ.View_NormalRecord WHERE PersonNO='{0}' AND BrushCardTime >='{1}' AND BrushCardTime <='{2}' ORDER BY  BrushCardTime DESC ", EmpID, FromDate, ToDate);
+
+            //dtPerformance = Net.DBUtility.SQLHelper.ExecuteDataTable(CommandType.Text, strSQL, null);
+
+            //return dtPerformance;
+
+            FromDate = String.IsNullOrWhiteSpace(FromDate) ? DateTime.Now.ToShortDateString() : FromDate;
+            ToDate = String.IsNullOrWhiteSpace(ToDate) ? DateTime.Now.AddDays(1).ToShortDateString() : ToDate;
+
+            String StrConntion = System.Configuration.ConfigurationManager.AppSettings["SQLConn"];
+
+            using (SqlConnection con = new SqlConnection(StrConntion))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    con.Open();
+
+                    cmd.CommandText = string.Format("SELECT  PersonNO,PersonName,DeviceName,DoorNO,BrushCardTime FROM MJ.View_NormalRecord WHERE (PersonNO='{0}' OR PersonName='{0}') AND BrushCardTime >='{1}' AND BrushCardTime <='{2}' ORDER BY  BrushCardTime DESC ", EmpID, FromDate, ToDate);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd.CommandText, con);
+
+                    dtPerformance.TableName = "Json";
+                    sda.Fill(dtPerformance);
+
+                    con.Close();
+                    con.Dispose();
+
+                    //return dtPerformance;
+                    ResponseJoson(dtPerformance);
+                }
+            }
+
+
+
+        }
+
+
+        [WebMethod]
+        /// <summary>
+        ///  考勤查询
+        /// </summary>
+        /// <param name="LoginEmp"></param>
+        /// <param name="FromDate"></param>
+        /// <param name="ToDate"></param>
+        /// <param name="EmpID"></param>
+        /// <param name="EmpName"></param>
+        /// <param name="CurrentPage"></param>
+        /// <param name="PageSize"></param>
+        /// <param name="SumCount"></param>
+        /// <returns></returns>
+        public void AttendanceResult(string EmpID, string FromDate, string ToDate)
+        {
+            string EmpName = String.Empty;
+            string LoginEmp = EmpID;
+            int CurrentPage = 1;
+            int PageSize = 200;
+
+
+            FromDate = String.IsNullOrWhiteSpace(FromDate) ? DateTime.Now.ToShortDateString() : FromDate;
+            ToDate = String.IsNullOrWhiteSpace(ToDate) ? DateTime.Now.AddDays(1).ToShortDateString() : ToDate;
+
+            DataTable Dt = new DataTable();
+
+            string sqlString = "AttendSum";
+
+            SqlParameter[] prams =
+                           {
+
+                                new SqlParameter("@_strTransType", SqlDbType.VarChar, 100),
+                                new SqlParameter("@LoginEmp", SqlDbType.VarChar, 20),
+
+                                new SqlParameter("@FromDate", SqlDbType.DateTime),
+                                new SqlParameter("@ToDate", SqlDbType.DateTime),
+                                new SqlParameter("@EmpID", SqlDbType.VarChar, 10),
+                                new SqlParameter("@EmpName", SqlDbType.NVarChar, 20),
+                                new SqlParameter("@CurrentPage", SqlDbType.Int),
+                                new SqlParameter("@PageSize", SqlDbType.Int),
+                                new SqlParameter("@Counts", SqlDbType.Int)
+
+                            };
+
+
+            prams[0].Value = "SELECT";
+            prams[1].Value = LoginEmp;
+            prams[2].Value = FromDate;
+            prams[3].Value = ToDate;
+            prams[4].Value = EmpID;
+            prams[5].Value = EmpName;
+            prams[6].Value = CurrentPage;
+            prams[7].Value = PageSize;
+
+
+
+            Dt = Net.DBUtility.SQLHelper.ExecuteDataTable(CommandType.StoredProcedure, sqlString, prams);
+
+            ///SumCount = Convert.ToInt32(cmd.Parameters["@Counts"].Value);    , ref int SumCount
+
+            // return Dt;
+
+
+            ResponseJoson(Dt);
+
+        }
+
 
 
         [WebMethod]
@@ -631,6 +872,36 @@ namespace Joson.SSO.Passport
             return TokenCache.DelToken(Token);
         }
 
+
+
+        private void ResponseJoson(DataTable dtPerformance)
+        {
+
+            if (Context.Request.HttpMethod.ToUpper() == "OPTIONS")
+            {
+                return;
+            }
+
+            //Context.Response.Clear();
+            Context.Response.AppendHeader("Access-Control-Allow-Origin", "*");
+
+            // 响应类型 
+            Context.Response.AppendHeader("Access-Control-Allow-Methods", "POST");
+            // 响应头设置 
+            Context.Response.AppendHeader("Access-Control-Allow-Headers", "x-requested-with,content-type");
+            //Context.Response.Charset = "utf-8"; //设置字符集类型  
+            //Context.Response.HeaderEncoding = System.Text.Encoding.GetEncoding("utf-8");
+            //Context.Response.ContentEncoding = System.Text.Encoding.GetEncoding("gb2312");
+
+            var strJoson = dtPerformance.ToJson();
+            //strJoson = JosonConvert.ToJson(dtPerformance);
+
+            Context.Response.ContentType = "application/json;charset=gb2312";
+            Context.Response.ContentEncoding = System.Text.Encoding.Default;
+            Context.Response.Write(strJoson);
+            Context.Response.End();
+
+        }
 
     }
 }

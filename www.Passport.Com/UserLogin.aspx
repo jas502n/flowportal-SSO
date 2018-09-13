@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>欢迎来到统一认证中心服务器</title>
+    <script src="Jscript/jquery.js" type="text/javascript"></script>
 </head>
 <body>
     <form id="LoginForm" runat="server">
@@ -31,7 +32,43 @@
             <br />
             <br />
             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="登录认证" Width="89px" />
+
         </div>
     </form>
 </body>
 </html>
+
+<script>
+
+    //method: 'POST',
+    var url = "http://172.28.0.12/Api/WebService/WebService.asmx/PerformanceSelectByEmpID";
+
+  
+
+    $(function () {
+        //$.post(url, data);
+
+
+        $.ajax({
+            type: "POST",
+            url: url,//url是一个服务器以外的地址
+            data: {
+                    sEmpID: "SDT12872", m: "1"
+                },``
+
+            //data: JSON.stringify({
+            //    sEmpID: "SDT12872", m: "1"
+            //}),
+            //contentType: 'application/json',
+            //contentType: 'application/x-www-form-urlencoded',
+            dataType: "json",
+            success: function (data) {
+
+                console.log(data);
+
+
+            }
+        });
+
+    });
+</script>

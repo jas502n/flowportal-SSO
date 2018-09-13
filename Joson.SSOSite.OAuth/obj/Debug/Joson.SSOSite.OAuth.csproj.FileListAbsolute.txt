@@ -56,6 +56,6 @@ E:\Joson\SSO-SiteX\Joson.SSOSite.OAuth\bin\Debug\zh-Hans\System.Web.Razor.resour
 E:\Joson\SSO-SiteX\Joson.SSOSite.OAuth\bin\Debug\zh-Hans\System.Web.WebPages.Razor.resources.dll
 E:\Joson\SSO-SiteX\Joson.SSOSite.OAuth\bin\Debug\zh-Hans\System.Web.WebPages.resources.dll
 E:\Joson\SSO-SiteX\Joson.SSOSite.OAuth\bin\Debug\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+E:\Joson\SSO-SiteX\Joson.SSOSite.OAuth\obj\Debug\Joson.SSOSite.OAuth.csprojResolveAssemblyReference.cache
 E:\Joson\SSO-SiteX\Joson.SSOSite.OAuth\obj\Debug\Joson.SSOSite.OAuth.dll
 E:\Joson\SSO-SiteX\Joson.SSOSite.OAuth\obj\Debug\Joson.SSOSite.OAuth.pdb
-E:\Joson\SSO-SiteX\Joson.SSOSite.OAuth\obj\Debug\Joson.SSOSite.OAuth.csprojResolveAssemblyReference.cache

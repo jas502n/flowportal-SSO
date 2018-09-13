@@ -167,7 +167,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <Content Include="SSOWebSite.aspx" />
-    <Content Include="WebService\TokenOAuth.asmx" />
+    <Content Include="WebService\OAuthHost.asmx" />
     <Content Include="WebService\TokenService.asmx" />
     <Content Include="UserLogin.aspx" />
     <Content Include="Web.config">
@@ -234,8 +234,9 @@
     <Compile Include="SSOWebSite.aspx.designer.cs">
       <DependentUpon>SSOWebSite.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebService\TokenOAuth.asmx.cs">
-      <DependentUpon>TokenOAuth.asmx</DependentUpon>
+    <Compile Include="WebService\JosonXML.cs" />
+    <Compile Include="WebService\OAuthHost.asmx.cs">
+      <DependentUpon>OAuthHost.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WebService\TokenService.asmx.cs">
@@ -261,6 +262,7 @@
     <Content Include="App_Data\Northwind.sl3" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\www.Passport.Com.pubxml" />
+    <None Include="Properties\PublishProfiles\X.skyworthdigital.Com.pubxml" />
     <Content Include="Service References\JosonOAuth\WebService.wsdl" />
   </ItemGroup>
   <ItemGroup>
