@@ -97,8 +97,10 @@ git push
 
 4、删除远程 根目录文件夹下的obj文件夹,本地保留
 
-git rm -r --cached ×/Obj                    // 删除目录下的Obj文件夹
-git commit -m  "删除目录下的Obj文件夹"      // commit
+
+git rm -r --cached */obj                    // 删除目录下的Obj文件夹
+git rm -r --cached Joson.SSO.OAuth/obj
+git commit -m  "删除目录下的obj文件夹"      // commit
 git push  
 =========================本地仓库更换绑定的远程仓库====================================================================
 
