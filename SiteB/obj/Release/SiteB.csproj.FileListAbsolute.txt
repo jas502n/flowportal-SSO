@@ -1,7 +1,0 @@
-E:\Joson\SSO-Site\SiteB\bin\SSO.SiteB.dll
-E:\Joson\SSO-Site\SiteB\bin\SSO.SiteB.XmlSerializers.dll
-E:\Joson\SSO-Site\SiteB\bin\SSO.SiteB.pdb
-E:\Joson\SSO-Site\SiteB\obj\Release\SiteB.csprojResolveAssemblyReference.cache
-E:\Joson\SSO-Site\SiteB\obj\Release\SSO.SiteB.dll
-E:\Joson\SSO-Site\SiteB\obj\Release\SSO.SiteB.pdb
-E:\Joson\SSO-Site\SiteB\obj\Release\SSO.SiteB.XmlSerializers.dll

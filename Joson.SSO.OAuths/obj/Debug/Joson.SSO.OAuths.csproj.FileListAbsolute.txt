@@ -1,5 +1,0 @@
-H:\360云盘同步版\文档\SSO\SSO-Site\Joson.SSO.OAuths\bin\Debug\Joson.SSO.OAuths.dll
-H:\360云盘同步版\文档\SSO\SSO-Site\Joson.SSO.OAuths\bin\Debug\Joson.SSO.OAuths.pdb
-H:\360云盘同步版\文档\SSO\SSO-Site\Joson.SSO.OAuths\obj\Debug\Joson.SSO.OAuths.csprojResolveAssemblyReference.cache
-H:\360云盘同步版\文档\SSO\SSO-Site\Joson.SSO.OAuths\obj\Debug\Joson.SSO.OAuths.dll
-H:\360云盘同步版\文档\SSO\SSO-Site\Joson.SSO.OAuths\obj\Debug\Joson.SSO.OAuths.pdb

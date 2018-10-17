@@ -1,6 +1,0 @@
-E:\Joson\SSO-Site\SiteD\bin\SiteD.dll
-E:\Joson\SSO-Site\SiteD\bin\SiteD.pdb
-E:\Joson\SSO-Site\SiteD\bin\Net.Common.dll
-E:\Joson\SSO-Site\SiteD\obj\Release\SiteD.csprojResolveAssemblyReference.cache
-E:\Joson\SSO-Site\SiteD\obj\Release\SiteD.dll
-E:\Joson\SSO-Site\SiteD\obj\Release\SiteD.pdb

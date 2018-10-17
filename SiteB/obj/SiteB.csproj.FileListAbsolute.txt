@@ -1,5 +1,0 @@
-D:\SSO\SSO\SiteB\bin\SSO.SiteB.dll
-D:\SSO\SSO\SiteB\bin\SSO.SiteB.pdb
-D:\SSO\SSO\SiteB\obj\Debug\ResolveAssemblyReference.cache
-D:\SSO\SSO\SiteB\obj\Debug\SSO.SiteB.dll
-D:\SSO\SSO\SiteB\obj\Debug\SSO.SiteB.pdb
