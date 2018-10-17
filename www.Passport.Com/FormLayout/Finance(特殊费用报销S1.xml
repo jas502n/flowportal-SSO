@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+  <Table ID="Fin_Applicant" Name="特殊费用报销">
+<Company Type="String" Name="公司代码"></Company>
+    <Dept Type="String" Name="部门"></Dept>
+    <SN Type="String" Name="申请单号"></SN>
+    <AppDate Type="String" Name="申请日期"></AppDate>
+    <Applicant Type="String" Name="姓名"></Applicant>
+    <HRID Type="String" Name="工号"></HRID>
+
+  </Table>
+  <Table ID="Fin_CE_S_Info" Name="报销明细">
+    <Type Type="String" Name="费用类别"></Type>
+    <UseFor Type="String" Name="用途"></UseFor>
+    <Amount Type="String" Name="金额总计"></Amount>
+  </Table>
+  <Table ID="Fin_ClaimingExpenses" Name="报销信息">
+    <Unit Type="String" Name="币种"></Unit>
+    <DK_State Type="String" Name="是否需要付款"></DK_State>
+  </Table>
+  <Table ID="Fin_Payee" Name="付款信息">
+    <Payee Type="String" Name="收款单位"></Payee>
+    <Account Type="String" Name="账号"></Account>
+  </Table>
+</Layout>

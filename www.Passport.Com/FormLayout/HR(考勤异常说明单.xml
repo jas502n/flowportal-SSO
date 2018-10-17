@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+  <Table ID="HR_AttendanceAbnormal_DTL" Name="考勤异常">
+    <EmpID Type="String" Name="工号"></EmpID>
+    <EmpName Type="String" Name="姓名"></EmpName>
+    <BelongDay Type="String" Name="异常日期"></BelongDay>
+    <FromDate Type="String" Name="到岗时间"></FromDate>
+    <ToDate Type="String" Name="离岗时间"></ToDate>
+    <Note Type="String" Name="异常原因"></Note>
+  </Table>
+</Layout>

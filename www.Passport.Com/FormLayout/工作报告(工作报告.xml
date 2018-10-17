@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+  <Table ID="IT_WorkReport" Name="表单内容">
+    <HrName Type="String" Name="报告人"></HrName>
+    <AppDate Type="String" Name="填写日期"></AppDate>
+    <ReportType Type="String" Name="报告类型"></ReportType>
+    <WeekNum Type="String" Name="主题"></WeekNum>
+    <Summary Type="String" Name="重点工作总结"></Summary>
+    <WorkPlan Type="String" Name="工作计划"></WorkPlan>
+  </Table>
+
+  <Table ID="IT_WorkReport_Content" Name="工作内容">
+    <WorkContent Type="String" Name="内容"></WorkContent>
+    <WorkType Type="String" Name="任务类型"></WorkType>
+    <WorkFlag Type="String" Name="任务标签"></WorkFlag>
+    <TaskRole Type="String" Name="任务角色"></TaskRole>
+    <TaskTime Type="String" Name="估算时间(H)"></TaskTime>
+    <Process Type="String" Name="进度"></Process>
+  </Table>
+</Layout>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+
+  <Table ID="HR_GongGan_MAIN" Name="出差申请">
+    <AppSN Type="String" Name="流水号"></AppSN>
+    <AppDate Type="String" Name="申请日期"></AppDate>
+    <AppCompany Type="String" Name="公司"></AppCompany>
+    <AppDept Type="String" Name="部门"></AppDept>
+    <AppHRName Type="String" Name="申请人"></AppHRName>
+  </Table>
+ 
+  <Table ID="HR_GangGan_DTL" Name="表单内容">
+     <DayInt Type="String" Name="天"></DayInt>
+	 <HourInt Type="String" Name="小时"></HourInt>
+	 <Address Type="String" Name="出差地点"></Address>
+	 <Cost Type="String" Name="预计费用"></Cost> 
+	 <Vehicle Type="String" Name="交通工具"></Vehicle>  
+	 <Vehicle Type="String" Name="公干地点"></Vehicle>  
+     <Note Type="String" Name="出差目的"></Note>
+	 <Note Type="String" Name="出差原因"></Note>
+	 <Note Type="String" Name="出差原因"></Note>
+  </Table>
+
+</Layout>

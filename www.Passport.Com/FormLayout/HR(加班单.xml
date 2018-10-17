@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+ 
+  <Table ID="HR_OVERTIME_MAIN" Name="加班申请">
+    <AppSN Type="String" Name="流水号"></AppSN>
+    <AppDate Type="String" Name="申请日期"></AppDate>
+    <AppCompany Type="String" Name="公司"></AppCompany>
+    <AppDept Type="String" Name="部门"></AppDept>
+    <AppHRName Type="String" Name="申请人"></AppHRName>
+  </Table>
+ 
+  <Table ID="HR_OVERTIME_DTL" Name="表单内容">
+    <OverTypeTitle Type="String" Name="加班地点"></OverTypeTitle>
+    <OverNote Type="String" Name="具体地点"></OverNote>
+	<BelongDay Type="String" Name="加班日期"></BelongDay>
+    <FromDate Type="String" Name="加班时间"></FromDate>
+	<ToDate Type="String" Name="结束时间"></ToDate>
+	<SumTime Type="String" Name="合计时间"></SumTime>
+    <Note Type="String" Name="加班原因"></Note>
+  </Table>
+
+  <Table ID="HR_OVERTIME_HISTORY" Name="加班历史">
+    <FromDate Type="String" Name="加班时间"></FromDate>
+	<ToDate Type="String" Name="结束时间"></ToDate>
+    <Note Type="String" Name="加班原因"></Note>
+  </Table>
+ 
+
+</Layout>

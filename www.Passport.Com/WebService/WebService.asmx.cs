@@ -229,38 +229,89 @@ namespace Joson.SSO.Passport
 
         #region OpenConnection
 
-        protected IDbConnection OpenConnection()
+        protected IDbConnection OpenConnection(Boolean SkyworthOAConnection=false)
         {
             SqlConnection cn = new SqlConnection();
 
-            string strDataServer = System.Web.Configuration.WebConfigurationManager.AppSettings["SQLConnection"];
-            cn.ConnectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            String SkyOAConnection = SkyworthOAConnection ? "SkyworthOAConnection" : "ConnectionString";
+            //String SkyOAConnection = System.Web.Configuration.WebConfigurationManager.AppSettings["SkyworthOAConnection"];
+            cn.ConnectionString = System.Web.Configuration.WebConfigurationManager.ConnectionStrings[SkyOAConnection].ConnectionString;
             cn.Open();
             return cn;
         }
 
 
-        public DataTable ExecuteDataTable(String strSQL)
+        public DataTable ExecuteDataTable(String strSQL, Boolean SkyworthOAConnection= true)
         {
             DataTable table = new DataTable();
 
+            SqlConnection Connection= OpenConnection(SkyworthOAConnection) as SqlConnection;
 
             using (SqlCommand cmd = new SqlCommand())
             {
 
-                cmd.Connection = OpenConnection() as SqlConnection;
+                cmd.Connection = Connection;
                 cmd.CommandText = strSQL;
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
+                    table.TableName= "SkyworthOA";
                     table.Load(reader);
+
+                    if (!reader.IsClosed) { reader.Close(); }
+
                 }
+
+                cmd.Connection.Close();
+                cmd.Dispose();
+
                 return table;
             }
 
         }
 
         #endregion
+
+
+
+        [WebMethod]
+        public void GetOAInfo(String EmpID)
+        {
+            DataTable table = new DataTable();
+            DataSet ds = new DataSet();
+
+            #region 资产查询
+
+            String strSQL = $@"SELECT * From [INFOTB547] Where Field8163='{EmpID}' ";
+
+
+            #endregion
+
+            table = ExecuteDataTable(strSQL);
+            ds.Tables.Add(table);
+
+            if (Context.Request.HttpMethod.ToUpper() == "OPTIONS")
+            {
+                return;
+            }
+
+            //var Results = JsonAndXmlSerialization.Serialize(ds.Tables[0]);
+
+            var Results = ds.Tables[0].ToJson();
+
+            Context.Response.AppendHeader("Access-Control-Allow-Origin", "*");      // 响应类型 
+            Context.Response.AppendHeader("Access-Control-Allow-Methods", "POST");  // 响应头设置 
+            Context.Response.AppendHeader("Access-Control-Allow-Headers", "x-requested-with,content-type");
+
+            Context.Response.ContentType = "application/json;charset=gb2312";
+            Context.Response.Charset = "GB2312"; //设置字符集类型  
+            Context.Response.ContentEncoding = System.Text.Encoding.GetEncoding("GB2312");
+            Context.Response.Write(Results);
+            Context.Response.End();
+
+
+        }
+
 
 
 
@@ -335,9 +386,17 @@ namespace Joson.SSO.Passport
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     table.Load(reader);
+
+                    if (!reader.IsClosed)
+                        reader.Close();
+
                 }
+
                 #endregion
 
+                cmd.Connection.Close();
+                cmd.Dispose();
+                
 
             }
 
@@ -349,7 +408,7 @@ namespace Joson.SSO.Passport
             {
                 return;
             }
- 
+
             //var Results = JsonAndXmlSerialization.Serialize(ds.Tables[0]);
 
             var Results = ds.Tables[0].ToJson();
@@ -456,6 +515,10 @@ namespace Joson.SSO.Passport
                 }
 
                 #endregion
+                if (!reader.IsClosed)
+                    reader.Close();
+
+         
             }
 
             ds.Tables.Add(table);
@@ -601,12 +664,16 @@ namespace Joson.SSO.Passport
                     dtPerformance.TableName = "Json";
                     sda.Fill(dtPerformance);
 
-                    con.Close();
-                    con.Dispose();
-
+                    //cmd.Connection.Close();
+                    cmd.Dispose();
+                    sda.Dispose();
+                    
                     //return dtPerformance;
                     ResponseJoson(dtPerformance);
                 }
+
+                con.Close();
+                con.Dispose();
             }
 
 
@@ -672,6 +739,7 @@ namespace Joson.SSO.Passport
 
             Dt = Net.DBUtility.SQLHelper.ExecuteDataTable(CommandType.StoredProcedure, sqlString, prams);
 
+
             ///SumCount = Convert.ToInt32(cmd.Parameters["@Counts"].Value);    , ref int SumCount
 
             // return Dt;
@@ -684,7 +752,7 @@ namespace Joson.SSO.Passport
 
 
         [WebMethod]
-        public void GetTaskLst(String itemvalue)
+        public void GetTaskLst(String UserAccount)
         {
             IDictionary<String, Dictionary<String, String>> DictLst = new Dictionary<String, Dictionary<String, String>>();
 
@@ -692,6 +760,8 @@ namespace Joson.SSO.Passport
             // YZAuthHelper.AuthCheck();
 
             // string LoginUserAccount = YZAuthHelper.LoginUserAccount;
+
+            YZAuthHelper.OAuth();
 
             using (BPMConnection cn = new BPMConnection())
             {
@@ -824,23 +894,43 @@ namespace Joson.SSO.Passport
                     AccountID = strAccount,
                     AccountName = strAccount,
 
-                    sn = Entity?.SN,
-                    givenName = Entity?.GivenName,
-                    displayName = Entity?.DisplayName,
-                    initials = Entity?.initials,
-                    title = Entity?.Title,
-                    company = Entity?.Company,
-                    mail = Entity?.Mail,
-                    otherMailBox = Entity?.OtherMailBox,
-                    homePhone = Entity?.HomePhone,
-                    mobile = Entity?.Mobile,
-                    otherMobile = Entity?.OtherMobile,
+                    //sn = Entity?.SN,
+                    //givenName = Entity?.GivenName,
+                    //displayName = Entity?.DisplayName,
+                    //initials = Entity?.initials,
+                    //title = Entity?.Title,
+                    //company = Entity?.Company,
+                    //mail = Entity?.Mail,
+                    //otherMailBox = Entity?.OtherMailBox,
+                    //homePhone = Entity?.HomePhone,
+                    //mobile = Entity?.Mobile,
+                    //otherMobile = Entity?.OtherMobile,
+                    //whenCreated = Entity.WhenCreated,
+                    //whenChanged = Entity.WhenChanged,
+                    //department = Entity?.Department,
+                    //manager = Entity?.Manager,
+                    //streetAddress=Entity?.streetAddress,
+                    //physicalDeliveryOfficeName= Entity?.physicalDeliveryOfficeName,
+
+
+                    sn = Entity.SN,
+                    givenName = Entity.GivenName,
+                    displayName = Entity.DisplayName,
+                    initials = Entity.initials,
+                    title = Entity.Title,
+                    company = Entity.Company,
+                    mail = Entity.Mail,
+                    otherMailBox = Entity.OtherMailBox,
+                    homePhone = Entity.HomePhone,
+                    mobile = Entity.Mobile,
+                    otherMobile = Entity.OtherMobile,
                     whenCreated = Entity.WhenCreated,
                     whenChanged = Entity.WhenChanged,
-                    department = Entity?.Department,
-                    manager = Entity?.Manager,
-                    streetAddress = Entity?.streetAddress,
-                    physicalDeliveryOfficeName = Entity?.physicalDeliveryOfficeName,
+                    department = Entity.Department,
+                    manager = Entity.Manager,
+                    streetAddress = Entity.streetAddress,
+                    physicalDeliveryOfficeName = Entity.physicalDeliveryOfficeName,
+
 
 
                     PassWords = strPassport,
@@ -896,8 +986,8 @@ namespace Joson.SSO.Passport
             var strJoson = dtPerformance.ToJson();
             //strJoson = JosonConvert.ToJson(dtPerformance);
 
-            Context.Response.ContentType = "application/json;charset=gb2312";
-            Context.Response.ContentEncoding = System.Text.Encoding.Default;
+            //Context.Response.ContentType = "application/json;charset=gb2312";
+            //Context.Response.ContentEncoding = System.Text.Encoding.Default;
             Context.Response.Write(strJoson);
             Context.Response.End();
 

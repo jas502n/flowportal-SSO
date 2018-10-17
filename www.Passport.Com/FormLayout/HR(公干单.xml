@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+
+  <Table ID="HR_GongGan_MAIN" Name="公干申请">
+    <AppSN Type="String" Name="流水号"></AppSN>
+    <AppDate Type="String" Name="申请日期"></AppDate>
+    <AppCompany Type="String" Name="公司"></AppCompany>
+    <AppDept Type="String" Name="部门"></AppDept>
+    <AppHRName Type="String" Name="申请人"></AppHRName>
+  </Table>
+ 
+  <Table ID="HR_GangGan_DTL" Name="表单内容">
+     <DayInt Type="String" Name="天"></DayInt>
+	 <HourInt Type="String" Name="小时"></HourInt>
+	 <Address Type="String" Name="公干地点"></Address>
+     <Note Type="String" Name="公干原因"></Note>
+  </Table>
+
+</Layout>

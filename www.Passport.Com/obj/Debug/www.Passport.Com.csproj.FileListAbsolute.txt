@@ -103,6 +103,8 @@ E:\Joson\SSO-SiteX\www.Passport.Com\bin\Net.ActiveDirectoryHelper.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\Net.ADHelper.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\Net.Common.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\Net.DBUtility.dll
+E:\Joson\SSO-SiteX\www.Passport.Com\bin\Net.MobileHelper.dll
+E:\Joson\SSO-SiteX\www.Passport.Com\bin\Newtonsoft.Json.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Data.SQLite.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Data.SQLite.EF6.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Data.SQLite.Linq.dll
@@ -116,6 +118,7 @@ E:\Joson\SSO-SiteX\www.Passport.Com\bin\stdole.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\Joson.SSOSite.OAuth.pdb
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\EntityFramework.xml
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\EntityFramework.SqlServer.xml
+E:\Joson\SSO-SiteX\www.Passport.Com\bin\Newtonsoft.Json.xml
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Data.SQLite.xml
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Web.Mvc.xml
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Web.Razor.xml

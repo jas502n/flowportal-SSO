@@ -93,7 +93,11 @@
     </Reference>
     <Reference Include="Net.MobileHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Net.MobileHelper.dll</HintPath>
+      <HintPath>..\Net.Release\Net.MobileHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -167,9 +171,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
     <Content Include="SSOWebSite.aspx" />
+    <Content Include="UserLogin.aspx" />
     <Content Include="WebService\OAuthHost.asmx" />
     <Content Include="WebService\TokenService.asmx" />
-    <Content Include="UserLogin.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -234,6 +238,75 @@
     <Compile Include="SSOWebSite.aspx.designer.cs">
       <DependentUpon>SSOWebSite.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\AddressBook.ashx.cs">
+      <DependentUpon>AddressBook.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\Attachment\DownLoad.ashx.cs" />
+    <Compile Include="WebService\Iservice\Attachment\GetAttachment.ashx.cs">
+      <DependentUpon>GetAttachment.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\Attachment\UploadFiles.ashx.cs">
+      <DependentUpon>UploadFiles.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\Communication.ashx.cs">
+      <DependentUpon>Communication.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\HistoryTasks.ashx.cs">
+      <DependentUpon>HistoryTasks.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\LeaveOffice.ashx.cs">
+      <DependentUpon>LeaveOffice.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\Login.ashx.cs">
+      <DependentUpon>Login.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\Mobile.ashx.cs">
+      <DependentUpon>Mobile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\MyAllAccessable.ashx.cs">
+      <DependentUpon>MyAllAccessable.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\MyProcessed.ashx.cs">
+      <DependentUpon>MyProcessed.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\MyRequests.ashx.cs">
+      <DependentUpon>MyRequests.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\MyTasks.ashx.cs">
+      <DependentUpon>MyTasks.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\OutOffice.ashx.cs">
+      <DependentUpon>OutOffice.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\OutWorkTime.ashx.cs">
+      <DependentUpon>OutWorkTime.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\ServiceOrder.ashx.cs">
+      <DependentUpon>ServiceOrder.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\submitFrom.cs" />
+    <Compile Include="WebService\Iservice\TaskTrace.ashx.cs">
+      <DependentUpon>TaskTrace.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\TravelOffice.ashx.cs">
+      <DependentUpon>TravelOffice.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\UserInfo.ashx.cs">
+      <DependentUpon>UserInfo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\UserLogList.ashx.cs">
+      <DependentUpon>UserLogList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WebService\Iservice\WorkTimesLog.ashx.cs">
+      <DependentUpon>WorkTimesLog.ashx</DependentUpon>
+    </Compile>
     <Compile Include="WebService\JosonXML.cs" />
     <Compile Include="WebService\OAuthHost.asmx.cs">
       <DependentUpon>OAuthHost.asmx</DependentUpon>
@@ -242,13 +315,6 @@
     <Compile Include="WebService\TokenService.asmx.cs">
       <DependentUpon>TokenService.asmx</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="UserLogin.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>UserLogin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="UserLogin.aspx.designer.cs">
-      <DependentUpon>UserLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebService\WebService.asmx.cs">
       <DependentUpon>WebService.asmx</DependentUpon>
@@ -264,6 +330,28 @@
     <None Include="Properties\PublishProfiles\www.Passport.Com.pubxml" />
     <None Include="Properties\PublishProfiles\X.skyworthdigital.Com.pubxml" />
     <Content Include="Service References\JosonOAuth\WebService.wsdl" />
+    <Content Include="WebService\Iservice\LeaveOffice.ashx" />
+    <Content Include="WebService\Iservice\OutOffice.ashx" />
+    <Content Include="WebService\Iservice\OutWorkTime.ashx" />
+    <Content Include="WebService\Iservice\ServiceOrder.ashx" />
+    <Content Include="WebService\Iservice\WorkTimesLog.ashx" />
+    <Content Include="WebService\Iservice\UserLogList.ashx" />
+    <Content Include="WebService\Iservice\TravelOffice.ashx" />
+    <Content Include="WebService\Iservice\AddressBook.ashx" />
+    <Content Include="WebService\Iservice\HistoryTasks.ashx" />
+    <Content Include="WebService\Iservice\MyAllAccessable.ashx" />
+    <Content Include="WebService\Iservice\MyProcessed.ashx" />
+    <Content Include="WebService\Iservice\MyRequests.ashx" />
+    <Content Include="WebService\Iservice\MyTasks.ashx" />
+    <Content Include="WebService\Iservice\TaskTrace.ashx" />
+    <Content Include="WebService\Iservice\UserInfo.ashx" />
+    <Content Include="WebService\Iservice\Login.ashx" />
+    <Content Include="WebService\Iservice\Mobile.ashx" />
+    <Content Include="WebService\Iservice\Attachment\GetAttachment.ashx" />
+    <Content Include="WebService\Iservice\Attachment\DownLoad.ashx" />
+    <Content Include="WebService\Iservice\Attachment\YZWebService_Mobile.ashx" />
+    <Content Include="WebService\Iservice\Attachment\UploadFiles.ashx" />
+    <Content Include="WebService\Iservice\Communication.ashx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Joson.SSOSite.OAuth\Joson.SSOSite.OAuth.csproj">

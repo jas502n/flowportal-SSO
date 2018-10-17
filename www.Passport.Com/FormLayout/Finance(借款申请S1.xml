@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+  <Table ID="Fin_Applicant" Name="借款表头">
+    <SN Type="String" Name="申请单号"></SN>
+    <AppDate Type="String" Name="申请日期"></AppDate>
+    <Applicant Type="String" Name="申请人"></Applicant>
+    <HRID Type="String" Name="工号"></HRID>
+    <Dept Type="String" Name="部门"></Dept>
+  </Table>
+  <Table ID="Fin_Loan" Name="借款明细">
+    <Amount Type="String" Name="借款金额"></Amount>
+    <Date Type="String" Name="预计还款日期"></Date>
+    <Pay_Name Type="String" Name="领款人"></Pay_Name>
+    <Bank_Personal Type="String" Name="领款人账号"></Bank_Personal>
+    <Reason Type="String" Name="借款事由"></Reason>
+    <Cash_No Type="String" Name="付款银行"></Cash_No>
+    <Attachment Type="String" Name="附件"></Attachment>
+  </Table>
+</Layout>

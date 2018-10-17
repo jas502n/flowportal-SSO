@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+ 
+  <Table ID="HR_LEAVE_MAIN" Name="请假申请">
+    <AppSN Type="String" Name="流水号"></AppSN>
+    <AppDate Type="String" Name="申请日期"></AppDate>
+    <AppCompany Type="String" Name="公司"></AppCompany>
+    <AppDept Type="String" Name="部门"></AppDept>
+    <AppHRName Type="String" Name="申请人"></AppHRName>
+  </Table>
+
+  <Table ID="HR_LEAVE_DTL" Name="请假申请">
+	<LeaveName Type="String" Name="请假类型"></LeaveName>
+    <FromDate Type="String" Name="开始时间"></FromDate>
+    <ToDate Type="String" Name="结束时间"></ToDate>
+    <DayInt Type="String" Name="天"></DayInt>
+    <HourInt Type="String" Name="小时"></HourInt>
+    <Note Type="String" Name="请假原因"></Note>
+  </Table>
+
+  <Table ID="LeaveType" Name="假期类型">
+    <LeaveID Type="String" Name="LeaveID"></LeaveID>
+    <LeaveType Type="String" Name="请假类型"></LeaveType>
+  </Table>
+
+</Layout>

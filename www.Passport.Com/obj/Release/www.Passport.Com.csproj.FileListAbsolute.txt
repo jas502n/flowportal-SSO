@@ -97,7 +97,6 @@ E:\Joson\SSO-Site\www.Passport.Com\bin\System.Data.SQLite.xml
 E:\Joson\SSO-Site\www.Passport.Com\obj\Release\www.Passport.Com.csprojResolveAssemblyReference.cache
 E:\Joson\SSO-Site\www.Passport.Com\obj\Release\Joson.SSO.Passport.dll
 E:\Joson\SSO-Site\www.Passport.Com\obj\Release\Joson.SSO.Passport.pdb
-E:\Joson\SSO-SiteX\www.Passport.Com\bin\Joson.SSO.Passport.dll.config
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\Joson.SSO.Passport.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\Joson.SSO.Passport.pdb
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\DigitalHR.BLL.dll
@@ -115,6 +114,17 @@ E:\Joson\SSO-SiteX\www.Passport.Com\bin\Net.DBUtility.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Data.SQLite.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Data.SQLite.EF6.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Data.SQLite.Linq.dll
+E:\Joson\SSO-SiteX\www.Passport.Com\bin\Joson.SSOSite.OAuth.pdb
+E:\Joson\SSO-SiteX\www.Passport.Com\bin\EntityFramework.xml
+E:\Joson\SSO-SiteX\www.Passport.Com\bin\EntityFramework.SqlServer.xml
+E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Data.SQLite.xml
+E:\Joson\SSO-SiteX\www.Passport.Com\obj\Release\www.Passport.Com.csprojResolveAssemblyReference.cache
+E:\Joson\SSO-SiteX\www.Passport.Com\obj\Release\Joson.SSO.Passport.dll
+E:\Joson\SSO-SiteX\www.Passport.Com\obj\Release\Joson.SSO.Passport.pdb
+E:\Joson\SSO-SiteX\www.Passport.Com\bin\Net.MobileHelper.dll
+E:\Joson\SSO-SiteX\www.Passport.Com\bin\Newtonsoft.Json.dll
+E:\Joson\SSO-SiteX\www.Passport.Com\bin\Newtonsoft.Json.xml
+E:\Joson\SSO-SiteX\www.Passport.Com\bin\Joson.SSO.Passport.dll.config
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Web.Mvc.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Web.Razor.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Web.WebPages.Razor.dll
@@ -122,10 +132,6 @@ E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Web.WebPages.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\Microsoft.Web.Infrastructure.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Web.WebPages.Deployment.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\stdole.dll
-E:\Joson\SSO-SiteX\www.Passport.Com\bin\Joson.SSOSite.OAuth.pdb
-E:\Joson\SSO-SiteX\www.Passport.Com\bin\EntityFramework.xml
-E:\Joson\SSO-SiteX\www.Passport.Com\bin\EntityFramework.SqlServer.xml
-E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Data.SQLite.xml
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Web.Mvc.xml
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Web.Razor.xml
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\System.Web.WebPages.Razor.xml
@@ -137,6 +143,3 @@ E:\Joson\SSO-SiteX\www.Passport.Com\bin\zh-Hans\System.Web.Razor.resources.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\zh-Hans\System.Web.WebPages.resources.dll
 E:\Joson\SSO-SiteX\www.Passport.Com\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
-E:\Joson\SSO-SiteX\www.Passport.Com\obj\Release\www.Passport.Com.csprojResolveAssemblyReference.cache
-E:\Joson\SSO-SiteX\www.Passport.Com\obj\Release\Joson.SSO.Passport.dll
-E:\Joson\SSO-SiteX\www.Passport.Com\obj\Release\Joson.SSO.Passport.pdb

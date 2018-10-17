@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+
+  <Table ID="IT_BPM_Applicant" Name="BPM电子流服务申请单">
+    <SN Type="String" Name="单号"></SN>
+    <AppDate Type="String" Name="申请日期"></AppDate> 
+    <Name Type="String" Name="姓名"></Name>
+    <Dept Type="String" Name="部门"></Dept>
+    <Tel Type="String" Name="电话"></Tel>
+    <Sub_Name Type="String" Name="姓名"></Sub_Name>
+    <Sub_Dept Type="String" Name="部门"></Sub_Dept>
+    <Sub_Tel Type="String" Name="电话"></Sub_Tel>
+  </Table>
+ 
+  <Table ID="IT_BPM_ServerBody" Name="表单信息">
+    <SystemType Type="String" Name="单号" order="2"></SystemType>
+    <ApplicantModel Type="String" Name="服务类型"></ApplicantModel> 
+    <RelateProcess Type="String" Name="涉及业务流程"></RelateProcess>
+    <ProcessChange Type="String" Name="涉及业务流程变更"></ProcessChange>
+    <ProcessResponsibleName Type="String" Name="流程责任人"></ProcessResponsibleName>
+    <RequirementDescription Type="String" Name="需求描述"></RequirementDescription>
+    <ExpectedEffect Type="String" Name="预期效果"></ExpectedEffect>
+    <RequirementAttachment Type="String" Name="附件"  order="1"></RequirementAttachment>
+
+    <FeasibilityAssessment Type="String" Name="可行性评估"  Order="1" DataType="String" DataFormat="{1:是,0:否}"></FeasibilityAssessment>
+    <RequirementPlanAtt Type="String" Name="需求计划"  Order="2" DataFormat="{1:男,0:女,2:保密}"></RequirementPlanAtt>
+    <UserReturnLevel Type="String" Name="验收意见"  Order="3" DataType="DateTime" ></UserReturnLevel>
+    <UserOpinion Type="String" Name="意见或建议"  Order="4"   ></UserOpinion>
+    <ITResponsibleName Type="String" Name="IT工程师"  Order="5"></ITResponsibleName>
+	
+  </Table>
+
+
+</Layout>

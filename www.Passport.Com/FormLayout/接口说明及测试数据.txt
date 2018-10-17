@@ -1,0 +1,602 @@
+1.我的待办任务 
+
+http://oauth.skyworthdigital.com/WebService/Iservice/MyAllAccessable.ashx?UserAccount=sdt12872
+
+http://oauth.skyworthdigital.com/WebService/Iservice/Mobile.ashx?Method=MyTask&UserAccount=SDT12872
+
+所需参数: 
+{
+"Start":0,
+"Limit":20,
+"ProcessName":"",
+"Keyword":"",
+"Path":""
+
+}
+
+返回格式:
+
+{
+  "success": true,
+  "totalRows": 1,
+  "children": [
+    {
+      "StepID": 9452225,
+      "TaskID": 604224,
+      "SerialNum": "REQ2018040004",
+      "ProcessName": "工作报告",
+      "OwnerAccount": "SDT12872",
+      "OwnerName": "蒋小鹏",
+      "AgentAccount": "",
+      "AgentName": "",
+      "CreateAt": "2018-04-13 17:12:34",
+      "NodeName": "提交人",
+      "ReceiveAt": "2018-04-13 17:12:34",
+      "Share": false,
+      "Description": ""
+    }
+  ]
+}
+
+
+2.待办任务审批
+
+http://oauth.skyworthdigital.com/WebService/Iservice/MyProcessed.ashx?UserAccount=sdt12872
+
+http://oauth.skyworthdigital.com/WebService/Iservice/Mobile.ashx?Method=GetFormInfo&UserAccount=SDT12872
+
+所需参数：{ 
+
+"TaskID": 701461,
+"StepID":10532325
+
+}
+
+{
+  "FormInfo": [
+    {
+      "TableName": "IT_BPM_Flow",
+      "DisplayName": "BPM流程新增变更申请",
+      "IsRepeatable": false,
+      "Rows": [
+        {
+          "HrName": {
+            "Name": "姓名",
+            "Value": "曾秋红"
+          },
+          "HrDept": {
+            "Name": "HrDept",
+            "Value": "汽车智能"
+          }
+        }
+      ]
+    }
+  ],
+  "ButtonList": [
+    {
+      "Text": "确认",
+      "Action": "确认",
+      "Type": "Post"
+    },
+    {
+      "Text": "拒绝",
+      "Action": "Reject",
+      "Type": "Reject"
+    },
+    {
+      "Text": "委托",
+      "Action": "Transfer",
+      "Type": "Transfer"
+    },
+    {
+      "Text": "加签",
+      "Action": "确认",
+      "Type": "Consign"
+    },
+    {
+      "Text": "退回某步",
+      "Action": "RecedeBack",
+      "Type": "RecedeBack"
+    }
+  ],
+  "success": true
+}
+
+
+3.流程审批：
+http://oauth.skyworthdigital.com/WebService/Iservice/Mobile.ashx?Method=TaskProcess&UserAccount=SDT12872
+
+所需参数：{
+"TaskID":701461,
+"StepID":10532325,
+"Action":"确认",
+"Type":"POST",
+"Comment":"审批成功",
+"Transfer_TransferTo":null,
+"Consign_ConsignUsers":null,
+"RecedeBack_ToStepID":-1
+}
+
+返回Json 
+
+
+4.流程审批节点展示：
+http://oauth.skyworthdigital.com/WebService/Iservice/Mobile.ashx?Method=GetReturnSteps&UserAccount=SDT12872
+
+所需参数：{ 
+
+"TaskID": 701461,
+"StepID":10532325
+	
+}
+
+返回格式：
+{
+  "totalRows": 8,
+  "children": [
+    {
+      "StepID": 10498127,
+      "NodeName": "开始",
+      "OwnerAccount": "SDT13804",
+      "OwnerDisplayName": "曾秋红",
+      "FinishAt": "2018-09-12 13:34:56"
+    },
+    {
+      "StepID": 10498128,
+      "NodeName": "业务审批\\直属主管",
+      "OwnerAccount": "SDT00050",
+      "OwnerDisplayName": "王立军",
+      "FinishAt": "2018-09-12 13:51:20"
+    },
+    {
+      "StepID": 10498402,
+      "NodeName": "业务审批\\部门审批50",
+      "OwnerAccount": null,
+      "OwnerDisplayName": "",
+      "FinishAt": "2018-09-12 13:51:20"
+    },
+    {
+      "StepID": 10498403,
+      "NodeName": "分管领导审批",
+      "OwnerAccount": "SDT00050",
+      "OwnerDisplayName": "王立军",
+      "FinishAt": "2018-09-12 13:51:20"
+    },
+    {
+      "StepID": 10498405,
+      "NodeName": "总裁审批",
+      "OwnerAccount": "SDT00001",
+      "OwnerDisplayName": "施驰",
+      "FinishAt": "2018-09-13 14:37:30"
+    },
+    {
+      "StepID": 10509128,
+      "NodeName": "BPM责任人",
+      "OwnerAccount": "SDT12252",
+      "OwnerDisplayName": "曲径",
+      "FinishAt": "2018-09-14 09:14:31"
+    },
+    {
+      "StepID": 10514350,
+      "NodeName": "IT实现",
+      "OwnerAccount": "SDT12765",
+      "OwnerDisplayName": "章星",
+      "FinishAt": "2018-09-17 18:22:07"
+    },
+    {
+      "StepID": 10531273,
+      "NodeName": "流程责任人确认",
+      "OwnerAccount": "SDT14004",
+      "OwnerDisplayName": "钟薇",
+      "FinishAt": "2018-09-18 09:06:04"
+    }
+  ],
+  "success": true
+}
+
+
+4.流程步骤
+http://oauth.skyworthdigital.com/WebService/Iservice/TaskTrace.ashx?UserAccount=SDT12872&tid=701461
+
+{
+    "sn": "LC2018090003",
+    "pn": "BPM电子流新建变更审批",
+    "children": [
+        {
+            "StepDisplayName": "开始",
+            "Recipient": "曾秋红",
+            "Finished": true,
+            "FinishAt": "2018-09-12 13:34",
+            "ReceiveAt": "2018-09-12 13:34",
+            "SelActionDisplayString": "提交",
+            "Comments": ""
+        },
+        {
+            "StepDisplayName": "业务审批\\直属主管",
+            "Recipient": "王立军",
+            "Finished": true,
+            "FinishAt": "2018-09-12 13:51",
+            "ReceiveAt": "2018-09-12 13:34",
+            "SelActionDisplayString": "确认",
+            "Comments": "android"
+        },
+        {
+            "StepDisplayName": "分管领导审批",
+            "Recipient": "王立军",
+            "Finished": true,
+            "FinishAt": "2018-09-12 13:51",
+            "ReceiveAt": "2018-09-12 13:51",
+            "SelActionDisplayString": "确认(Miss Resource)",
+            "Comments": ""
+        },
+        {
+            "StepDisplayName": "总裁审批",
+            "Recipient": "施驰",
+            "Finished": true,
+            "FinishAt": "2018-09-13 14:37",
+            "ReceiveAt": "2018-09-12 13:51",
+            "SelActionDisplayString": "同意(Miss Resource)",
+            "Comments": ""
+        },
+        {
+            "StepDisplayName": "BPM责任人",
+            "Recipient": "曲径",
+            "Finished": true,
+            "FinishAt": "2018-09-14 09:14",
+            "ReceiveAt": "2018-09-13 14:37",
+            "SelActionDisplayString": "提交",
+            "Comments": "在现有汽车智能订单上增加三方贸易类型，并更新流程节点。"
+        },
+        {
+            "StepDisplayName": "IT实现",
+            "Recipient": "章星",
+            "Finished": true,
+            "FinishAt": "2018-09-17 18:22",
+            "ReceiveAt": "2018-09-14 09:14",
+            "SelActionDisplayString": "确认",
+            "Comments": "已经修改,通过添加第三方贸易类别，进行流程判断"
+        },
+        {
+            "StepDisplayName": "流程责任人确认",
+            "Recipient": "钟薇",
+            "Finished": true,
+            "FinishAt": "2018-09-18 09:06",
+            "ReceiveAt": "2018-09-17 18:22",
+            "SelActionDisplayString": "确认",
+            "Comments": ""
+        },
+        {
+            "StepDisplayName": "调整手机客户端",
+            "Recipient": "蒋小鹏",
+            "Finished": true,
+            "FinishAt": "2018-09-18 16:27",
+            "ReceiveAt": "2018-09-18 09:06",
+            "SelActionDisplayString": "确认",
+            "Comments": "审批成功"
+        },
+        {
+            "StepDisplayName": "申请人确认",
+            "Recipient": "曾秋红",
+            "Finished": false,
+            "FinishAt": "",
+            "ReceiveAt": "2018-09-18 16:27",
+            "SelActionDisplayString": "Miss Resource",
+            "Comments": ""
+        }
+    ]
+}
+
+5.我的申请
+http://oauth.skyworthdigital.com/WebService/Iservice/MyRequests.ashx?UserAccount=sdt12872
+
+{
+    "totalRows": 33,
+    "children": [
+        {
+            "tid": 698476,
+            "sn": "REQ-201809008",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Running",
+            "stateText": "Running",
+            "stateProcessing": "",
+            "date": "2018-09-07 18:30:33",
+            "desc": "无内容摘要"
+        },
+        {
+            "tid": 697942,
+            "sn": "YF-2018-004233",
+            "pn": "一般费用报销",
+            "user": "蒋小鹏",
+            "state": "Running",
+            "stateText": "Running",
+            "stateProcessing": "",
+            "date": "2018-09-07 10:58:15",
+            "desc": "蒋小鹏| 报一般费用 |300.00RM"
+        },
+        {
+            "tid": 676317,
+            "sn": "HRLE2018080141",
+            "pn": "请假申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-08-07 15:15:23",
+            "desc": "申请人:蒋小鹏|请假类别:年假|请假时间"
+        },
+        {
+            "tid": 675101,
+            "sn": "REQ-201808004",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Running",
+            "stateText": "Running",
+            "stateProcessing": "",
+            "date": "2018-08-06 09:23:06",
+            "desc": "无内容摘要"
+        },
+        {
+            "tid": 670237,
+            "sn": "REQ-201807041",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-07-27 18:22:40",
+            "desc": "无内容摘要"
+        },
+        {
+            "tid": 666125,
+            "sn": "HROT2018070197",
+            "pn": "加班申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-07-21 21:03:51",
+            "desc": "申请人:蒋小鹏 加班时间:2018/7/"
+        },
+        {
+            "tid": 666119,
+            "sn": "REQ-201807029",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Running",
+            "stateText": "Running",
+            "stateProcessing": "",
+            "date": "2018-07-21 20:21:42",
+            "desc": "无内容摘要"
+        },
+        {
+            "tid": 660106,
+            "sn": "REQ-201807022",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Running",
+            "stateText": "Running",
+            "stateProcessing": "",
+            "date": "2018-07-13 18:23:26",
+            "desc": "无内容摘要"
+        },
+        {
+            "tid": 656261,
+            "sn": "REQ-201807017",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Running",
+            "stateText": "Running",
+            "stateProcessing": "",
+            "date": "2018-07-09 16:22:27",
+            "desc": "无内容摘要"
+        },
+        {
+            "tid": 650347,
+            "sn": "HRLE2018060494",
+            "pn": "请假申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-06-29 13:51:52",
+            "desc": "申请人:蒋小鹏|请假类别:年假|请假时间"
+        },
+        {
+            "tid": 650343,
+            "sn": "HRLE2018060493",
+            "pn": "请假申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-06-29 13:49:29",
+            "desc": "申请人:蒋小鹏|请假类别:年假|请假时间"
+        },
+        {
+            "tid": 649570,
+            "sn": "HRLE2018060463",
+            "pn": "请假申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-06-28 14:45:42",
+            "desc": "申请人:蒋小鹏|请假类别:年假|请假时间"
+        },
+        {
+            "tid": 649544,
+            "sn": "HRLE2018060460",
+            "pn": "请假申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-06-28 14:23:27",
+            "desc": "申请人:蒋小鹏|请假类别:年假|请假时间"
+        },
+        {
+            "tid": 635976,
+            "sn": "HRLE2018060081",
+            "pn": "请假申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-06-07 09:11:09",
+            "desc": "申请人:蒋小鹏|请假类别:年假|请假时间"
+        },
+        {
+            "tid": 633238,
+            "sn": "REQ-201806003",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-06-01 19:12:11",
+            "desc": "无内容摘要"
+        },
+        {
+            "tid": 628756,
+            "sn": "REQ-201805048",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-05-25 17:30:27",
+            "desc": "无内容摘要"
+        },
+        {
+            "tid": 624740,
+            "sn": "REQ-201805033",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-05-18 18:09:21",
+            "desc": "无内容摘要"
+        },
+        {
+            "tid": 614738,
+            "sn": "HRLE2018050056",
+            "pn": "请假申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-05-02 11:39:59",
+            "desc": "申请人:蒋小鹏|请假类别:年假|请假时间"
+        },
+        {
+            "tid": 614133,
+            "sn": "REQ-201804028",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-04-28 17:22:46",
+            "desc": "无内容摘要"
+        },
+        {
+            "tid": 611204,
+            "sn": "HRLE2018040353",
+            "pn": "请假申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-04-25 15:06:13",
+            "desc": "申请人:蒋小鹏|请假类别:年假|请假时间"
+        },
+        {
+            "tid": 610193,
+            "sn": "REQ-201804021",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-04-23 18:05:45",
+            "desc": "无内容摘要"
+        },
+        {
+            "tid": 607671,
+            "sn": "HRLE2018040282",
+            "pn": "请假申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-04-19 16:09:25",
+            "desc": "申请人:蒋小鹏|请假类别:年假|请假时间"
+        },
+        {
+            "tid": 606875,
+            "sn": "HRLE2018040263",
+            "pn": "请假申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-04-18 14:26:28",
+            "desc": "申请人:蒋小鹏|请假类别:年假|请假时间"
+        },
+        {
+            "tid": 605127,
+            "sn": "HRLE2018040232",
+            "pn": "请假申请",
+            "user": "蒋小鹏",
+            "state": "Approved",
+            "stateText": "Approved",
+            "stateProcessing": "",
+            "date": "2018-04-16 14:01:36",
+            "desc": "申请人:蒋小鹏|请假类别:年假|请假时间"
+        },
+        {
+            "tid": 604224,
+            "sn": "REQ2018040004",
+            "pn": "工作报告",
+            "user": "蒋小鹏",
+            "state": "Running",
+            "stateText": "Running",
+            "stateProcessing": "",
+            "date": "2018-04-13 17:12:34",
+            "desc": "无内容摘要"
+        }
+    ],
+    "total": 33
+}
+
+
+6 我的历史审批
+http://oauth.skyworthdigital.com/WebService/Iservice/HistoryTasks.ashx?UserAccount=sdt12872
+
+
+7、我的信息
+
+http://oauth.skyworthdigital.com/WebService/Iservice/UserInfo.ashx?UserAccount=sdt12872&Method=get
+
+返回数据:
+
+{
+    "data": {
+        "Account": "SDT12872",
+        "HRID": "SDT12872",
+        "DisplayName": "蒋小鹏",
+        "Mobile": "15013441551",
+        "OfficePhone": "26743551(7495)",
+        "HomePhone": "18682308250",
+        "EMail": "JiangXiaoPeng@skyworth.com",
+        "Office": "创维大厦14F",
+        "Birthday": "",
+        "DateHired": "",
+        "editableFields": "DisplayName,HRID,Mobile,OfficePhone,HomePhone,EMail,Office,Birthday,DateHired",
+        "Supervisor": "SDT13199",
+        "Dept": "信息管理部"
+    },
+    "success": true
+}

@@ -1,0 +1,908 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Addressbook_EmptyText" xml:space="preserve">
+    <value>无内容！</value>
+  </data>
+  <data name="Addressbook_Title" xml:space="preserve">
+    <value>通讯录</value>
+  </data>
+  <data name="All_AbortFailedTitle" xml:space="preserve">
+    <value>撤销失败！</value>
+  </data>
+  <data name="All_AbortMsg" xml:space="preserve">
+    <value>您确定要撤销申请吗？</value>
+  </data>
+  <data name="All_AbortSucceed" xml:space="preserve">
+    <value>任务已撤销！</value>
+  </data>
+  <data name="All_AbortTitle" xml:space="preserve">
+    <value>撤销确认</value>
+  </data>
+  <data name="All_AM" xml:space="preserve">
+    <value>上午</value>
+  </data>
+  <data name="All_ApproveFailed" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="All_ApproveFailedTitle" xml:space="preserve">
+    <value>审批失败！</value>
+  </data>
+  <data name="All_BtnAbort" xml:space="preserve">
+    <value>撤销申请</value>
+  </data>
+  <data name="All_BtnFinished" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="All_BtnInform" xml:space="preserve">
+    <value>任务知会</value>
+  </data>
+  <data name="All_BtnInviteIndicate" xml:space="preserve">
+    <value>邀请阅示</value>
+  </data>
+  <data name="All_BtnMore" xml:space="preserve">
+    <value>更多</value>
+  </data>
+  <data name="All_BtnPickback" xml:space="preserve">
+    <value>取回再审</value>
+  </data>
+  <data name="All_BtnPickbackRestart" xml:space="preserve">
+    <value>取回申请</value>
+  </data>
+  <data name="All_BtnReject" xml:space="preserve">
+    <value>拒绝申请</value>
+  </data>
+  <data name="All_BtnReturnToInitiator" xml:space="preserve">
+    <value>退回重填</value>
+  </data>
+  <data name="All_BtnTrace" xml:space="preserve">
+    <value>显示过程</value>
+  </data>
+  <data name="All_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="All_CommentsEmptyText" xml:space="preserve">
+    <value>请输入您的意见...</value>
+  </data>
+  <data name="All_CommentsTitle" xml:space="preserve">
+    <value>我的意见</value>
+  </data>
+  <data name="All_Communication" xml:space="preserve">
+    <value>讨论</value>
+  </data>
+  <data name="All_Communication_Audio" xml:space="preserve">
+    <value>[语音]</value>
+  </data>
+  <data name="All_Communication_Image" xml:space="preserve">
+    <value>[图片]</value>
+  </data>
+  <data name="All_CreateModuleFailed" xml:space="preserve">
+    <value>加载模块失败，请重新再试！</value>
+  </data>
+  <data name="All_DateFmt_Days0" xml:space="preserve">
+    <value>A g:i</value>
+  </data>
+  <data name="All_DateFmt_Days1" xml:space="preserve">
+    <value>昨天 G:i</value>
+  </data>
+  <data name="All_DateFmt_Days2" xml:space="preserve">
+    <value>前天 G:i</value>
+  </data>
+  <data name="All_DateFmt_fmt" xml:space="preserve">
+    <value>y-n-j G:i</value>
+  </data>
+  <data name="All_DateFmt_Hours" xml:space="preserve">
+    <value>A g:i</value>
+  </data>
+  <data name="All_DateFmt_Months0" xml:space="preserve">
+    <value>j日 G:i</value>
+  </data>
+  <data name="All_DateFmt_Weeks0" xml:space="preserve">
+    <value>L G:i</value>
+  </data>
+  <data name="All_DateFmt_Weeks1" xml:space="preserve">
+    <value>上L G:i</value>
+  </data>
+  <data name="All_DateFmt_Years0" xml:space="preserve">
+    <value>n月j日 G:i</value>
+  </data>
+  <data name="All_Day" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="All_DayG17" xml:space="preserve">
+    <value>晚上</value>
+  </data>
+  <data name="All_DayLE11" xml:space="preserve">
+    <value>上午</value>
+  </data>
+  <data name="All_DayLE13" xml:space="preserve">
+    <value>中午</value>
+  </data>
+  <data name="All_DayLE17" xml:space="preserve">
+    <value>下午</value>
+  </data>
+  <data name="All_DayLE7" xml:space="preserve">
+    <value>凌晨</value>
+  </data>
+  <data name="All_Done" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="All_Download" xml:space="preserve">
+    <value>下载</value>
+  </data>
+  <data name="All_DownloadFailed" xml:space="preserve">
+    <value>下载失败！错误代码：{0}</value>
+  </data>
+  <data name="All_EmptyField" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="All_Filter" xml:space="preserve">
+    <value>筛选</value>
+  </data>
+  <data name="All_HourPostfix" xml:space="preserve">
+    <value>点</value>
+  </data>
+  <data name="All_InformFailedTitle" xml:space="preserve">
+    <value>知会失败！</value>
+  </data>
+  <data name="All_InformSucceed" xml:space="preserve">
+    <value>已知会：{0}</value>
+  </data>
+  <data name="All_InviteIndicateFailedTitle" xml:space="preserve">
+    <value>邀请阅示失败！</value>
+  </data>
+  <data name="All_InviteIndicateSucceed" xml:space="preserve">
+    <value>已邀请阅示：{0}</value>
+  </data>
+  <data name="All_Loading" xml:space="preserve">
+    <value>加载中...</value>
+  </data>
+  <data name="All_MinutePostfix" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="All_MissField" xml:space="preserve">
+    <value>暂缺</value>
+  </data>
+  <data name="All_Month" xml:space="preserve">
+    <value>月</value>
+  </data>
+  <data name="All_MonthName1" xml:space="preserve">
+    <value>一月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MonthName10" xml:space="preserve">
+    <value>十月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MonthName11" xml:space="preserve">
+    <value>十一月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MonthName12" xml:space="preserve">
+    <value>十二月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MonthName2" xml:space="preserve">
+    <value>二月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MonthName3" xml:space="preserve">
+    <value>三月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MonthName4" xml:space="preserve">
+    <value>四月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MonthName5" xml:space="preserve">
+    <value>五月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MonthName6" xml:space="preserve">
+    <value>六月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MonthName7" xml:space="preserve">
+    <value>七月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MonthName8" xml:space="preserve">
+    <value>八月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MonthName9" xml:space="preserve">
+    <value>九月</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_MsgTitleFailed" xml:space="preserve">
+    <value>操作失败</value>
+  </data>
+  <data name="All_MsgTitleInfo" xml:space="preserve">
+    <value>提示</value>
+  </data>
+  <data name="All_MsgTitleSucceed" xml:space="preserve">
+    <value>操作成功</value>
+  </data>
+  <data name="All_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="All_NoAttachment" xml:space="preserve">
+    <value>无附件</value>
+  </data>
+  <data name="All_OK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="All_Open" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="All_PageMaskerDownRefresh" xml:space="preserve">
+    <value>下拉刷新</value>
+  </data>
+  <data name="All_PageMaskerLoaded" xml:space="preserve">
+    <value>内容已刷新</value>
+  </data>
+  <data name="All_PageMaskerLoadingText" xml:space="preserve">
+    <value>加载中请稍候...</value>
+  </data>
+  <data name="All_PageMaskerReleaseMore" xml:space="preserve">
+    <value>释放显示更多内容</value>
+  </data>
+  <data name="All_PageMaskerReleaseRefresh" xml:space="preserve">
+    <value>释放刷新</value>
+  </data>
+  <data name="All_PageMaskerUpMore" xml:space="preserve">
+    <value>上拉显示更多内容</value>
+  </data>
+  <data name="All_PickbackFailedTitle" xml:space="preserve">
+    <value>取回失败！</value>
+  </data>
+  <data name="All_PickbackMsg" xml:space="preserve">
+    <value>您确定要取回申请吗？</value>
+  </data>
+  <data name="All_PickbackSucceed" xml:space="preserve">
+    <value>任务已取回！</value>
+  </data>
+  <data name="All_PickbackTitle" xml:space="preserve">
+    <value>取回确认</value>
+  </data>
+  <data name="All_PickRestartFailedTitle" xml:space="preserve">
+    <value>取回失败！</value>
+  </data>
+  <data name="All_PickRestartMsg" xml:space="preserve">
+    <value>您确定要取回申请吗？</value>
+  </data>
+  <data name="All_PickRestartSucceed" xml:space="preserve">
+    <value>任务已取回！</value>
+  </data>
+  <data name="All_PickRestartTitle" xml:space="preserve">
+    <value>取回确认</value>
+  </data>
+  <data name="All_PM" xml:space="preserve">
+    <value>下午</value>
+  </data>
+  <data name="All_RejectFailedTitle" xml:space="preserve">
+    <value>拒绝失败！</value>
+  </data>
+  <data name="All_RejectMsg" xml:space="preserve">
+    <value>您确定要拒绝申请吗？</value>
+  </data>
+  <data name="All_RejectSucceed" xml:space="preserve">
+    <value>任务已拒绝！</value>
+  </data>
+  <data name="All_RejectTitle" xml:space="preserve">
+    <value>拒绝确认</value>
+  </data>
+  <data name="All_ReturnToInitiatorFailedTitle" xml:space="preserve">
+    <value>退回失败！</value>
+  </data>
+  <data name="All_ReturnToInitiatorMsg" xml:space="preserve">
+    <value>您确定要将任务退回给提交人吗？</value>
+  </data>
+  <data name="All_ReturnToInitiatorSucceed" xml:space="preserve">
+    <value>任务已退回给：{0}！</value>
+  </data>
+  <data name="All_ReturnToInitiatorTitle" xml:space="preserve">
+    <value>退回确认</value>
+  </data>
+  <data name="All_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="All_SaveSucceed" xml:space="preserve">
+    <value>保存成功！</value>
+  </data>
+  <data name="All_Saving" xml:space="preserve">
+    <value>保存中...</value>
+  </data>
+  <data name="All_SearchAll" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="All_SearchCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="All_SearchPlaceHolder" xml:space="preserve">
+    <value>查找</value>
+  </data>
+  <data name="All_SN" xml:space="preserve">
+    <value>流水号</value>
+  </data>
+  <data name="All_TaskOptTitleInform" xml:space="preserve">
+    <value>知会</value>
+  </data>
+  <data name="All_TaskOptTitleInviteIndicate" xml:space="preserve">
+    <value>邀请阅示</value>
+  </data>
+  <data name="All_TaskStatus_Aborted" xml:space="preserve">
+    <value>已撤销</value>
+  </data>
+  <data name="All_TaskStatus_All" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="All_TaskStatus_Finished" xml:space="preserve">
+    <value>已完成</value>
+  </data>
+  <data name="All_TaskStatus_Rejected" xml:space="preserve">
+    <value>已拒绝</value>
+  </data>
+  <data name="All_TaskStatus_Running" xml:space="preserve">
+    <value>处理中</value>
+  </data>
+  <data name="All_WaitMsgAbort" xml:space="preserve">
+    <value>正在撤销...</value>
+  </data>
+  <data name="All_WaitMsgPickback" xml:space="preserve">
+    <value>正在取回...</value>
+  </data>
+  <data name="All_WeekDayName0" xml:space="preserve">
+    <value>星期日</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName1" xml:space="preserve">
+    <value>星期一</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName10" xml:space="preserve">
+    <value>周日</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName11" xml:space="preserve">
+    <value>周一</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName12" xml:space="preserve">
+    <value>周二</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName13" xml:space="preserve">
+    <value>周三</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName14" xml:space="preserve">
+    <value>周四</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName15" xml:space="preserve">
+    <value>周五</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName16" xml:space="preserve">
+    <value>周六</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName2" xml:space="preserve">
+    <value>星期二</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName3" xml:space="preserve">
+    <value>星期三</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName4" xml:space="preserve">
+    <value>星期四</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName5" xml:space="preserve">
+    <value>星期五</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_WeekDayName6" xml:space="preserve">
+    <value>星期六</value>
+    <comment>1</comment>
+  </data>
+  <data name="All_Year" xml:space="preserve">
+    <value>年</value>
+  </data>
+  <data name="All_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="Aspx_All_Amount" xml:space="preserve">
+    <value>金额</value>
+  </data>
+  <data name="Aspx_All_Reason" xml:space="preserve">
+    <value>原因</value>
+  </data>
+  <data name="Aspx_EmptyTaskDesc" xml:space="preserve">
+    <value>无内容摘要</value>
+  </data>
+  <data name="Aspx_FormData_Attachment" xml:space="preserve">
+    <value>附件</value>
+  </data>
+  <data name="Aspx_FormData_Comments" xml:space="preserve">
+    <value>签核意见</value>
+  </data>
+  <data name="Aspx_FormData_Date" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="Aspx_FormData_Desc" xml:space="preserve">
+    <value>摘要</value>
+  </data>
+  <data name="Aspx_FormData_Initiator" xml:space="preserve">
+    <value>提交人</value>
+  </data>
+  <data name="Aspx_FormData_NoComments" xml:space="preserve">
+    <value>无签核意见</value>
+  </data>
+  <data name="Aspx_FormData_Process" xml:space="preserve">
+    <value>流程</value>
+  </data>
+  <data name="Aspx_FormData_Status" xml:space="preserve">
+    <value>审批状态</value>
+  </data>
+  <data name="Aspx_FormData_StatusWaitGet" xml:space="preserve">
+    <value>等待获取</value>
+  </data>
+  <data name="Aspx_FormData_StepName" xml:space="preserve">
+    <value>审批关卡</value>
+  </data>
+  <data name="Aspx_Login_Date" xml:space="preserve">
+    <value>{0}年{1}月{2}日</value>
+  </data>
+  <data name="Aspx_Module_AddressBook" xml:space="preserve">
+    <value>通讯录</value>
+  </data>
+  <data name="Aspx_Module_HistoryTasks" xml:space="preserve">
+    <value>业务查询</value>
+  </data>
+  <data name="Aspx_Module_MyProcessed" xml:space="preserve">
+    <value>参办审批</value>
+  </data>
+  <data name="Aspx_Module_MyRequests" xml:space="preserve">
+    <value>我的申请</value>
+  </data>
+  <data name="Aspx_Module_MyTasks" xml:space="preserve">
+    <value>待办事宜</value>
+  </data>
+  <data name="Aspx_Module_NewApp" xml:space="preserve">
+    <value>新增应用</value>
+  </data>
+  <data name="Aspx_Module_OutOfOffice" xml:space="preserve">
+    <value>外出设置</value>
+  </data>
+  <data name="Aspx_Module_PersonalCenter" xml:space="preserve">
+    <value>账号管理</value>
+  </data>
+  <data name="Aspx_Module_TaskCommunication" xml:space="preserve">
+    <value>流程讨论</value>
+  </data>
+  <data name="Audio_GetAudioFailed" xml:space="preserve">
+    <value>获取音频失败：{0}</value>
+  </data>
+  <data name="BPMDlgs_BtnAddUser" xml:space="preserve">
+    <value>添加用户</value>
+  </data>
+  <data name="BPMDlgs_SelUserTitle" xml:space="preserve">
+    <value>选择用户</value>
+  </data>
+  <data name="Camera_GetPhotoFailed" xml:space="preserve">
+    <value>获取照片失败：{0}</value>
+  </data>
+  <data name="ChangePassword_Account" xml:space="preserve">
+    <value>账号</value>
+  </data>
+  <data name="ChangePassword_BtnSave" xml:space="preserve">
+    <value>提交修改</value>
+  </data>
+  <data name="ChangePassword_CfmPwd" xml:space="preserve">
+    <value>密码确认</value>
+  </data>
+  <data name="ChangePassword_CfmPwdEmptyText" xml:space="preserve">
+    <value>请再输入一次新密码</value>
+  </data>
+  <data name="ChangePassword_NewPwd" xml:space="preserve">
+    <value>新密码</value>
+  </data>
+  <data name="ChangePassword_NewPwdCfmErr" xml:space="preserve">
+    <value>两次输入的新密码不一致，请重新输入新密码！</value>
+  </data>
+  <data name="ChangePassword_NewPwdEmptyErr" xml:space="preserve">
+    <value>新密码不能为空！</value>
+  </data>
+  <data name="ChangePassword_NewPwdEmptyText" xml:space="preserve">
+    <value>请输入新密码</value>
+  </data>
+  <data name="ChangePassword_OrgPwd" xml:space="preserve">
+    <value>原密码</value>
+  </data>
+  <data name="ChangePassword_OrgPwdEmptyText" xml:space="preserve">
+    <value>请输入原密码</value>
+  </data>
+  <data name="ChangePassword_PwdUpdated" xml:space="preserve">
+    <value>密码已更新！</value>
+  </data>
+  <data name="ChangePassword_PwdUpdateFailed" xml:space="preserve">
+    <value>更新密码失败！原因:&lt;br/&gt;{0}</value>
+  </data>
+  <data name="ChangePassword_Title" xml:space="preserve">
+    <value>修改密码</value>
+  </data>
+  <data name="Communication_Audio" xml:space="preserve">
+    <value>语音</value>
+  </data>
+  <data name="Communication_Camera" xml:space="preserve">
+    <value>拍照</value>
+  </data>
+  <data name="Communication_EmptyText" xml:space="preserve">
+    <value>无评论！</value>
+  </data>
+  <data name="Communication_LoadingText" xml:space="preserve">
+    <value>正在刷新内容...</value>
+  </data>
+  <data name="Communication_Photo" xml:space="preserve">
+    <value>照片</value>
+  </data>
+  <data name="Communication_PullUpRefresh" xml:space="preserve">
+    <value>上拉刷新</value>
+  </data>
+  <data name="Communication_ReleaseRefresh" xml:space="preserve">
+    <value>释放刷新</value>
+  </data>
+  <data name="Communication_Send" xml:space="preserve">
+    <value>发送</value>
+  </data>
+  <data name="Employee_AddContract" xml:space="preserve">
+    <value>添加常用联系人</value>
+  </data>
+  <data name="Employee_HomePhone" xml:space="preserve">
+    <value>手机短号</value>
+  </data>
+  <data name="Employee_Mobile" xml:space="preserve">
+    <value>移动电话</value>
+  </data>
+  <data name="Employee_OfficePhone" xml:space="preserve">
+    <value>办公电话</value>
+  </data>
+  <data name="Employee_Share" xml:space="preserve">
+    <value>共享联系人</value>
+  </data>
+  <data name="Employee_Supevisor" xml:space="preserve">
+    <value>主管</value>
+  </data>
+  <data name="Employee_Title" xml:space="preserve">
+    <value>员工信息</value>
+  </data>
+  <data name="HistroyTasks_EmptyText" xml:space="preserve">
+    <value>无内容！</value>
+  </data>
+  <data name="HistroyTasks_LoadingText" xml:space="preserve">
+    <value>加载中...</value>
+  </data>
+  <data name="HistroyTasks_Refreshed" xml:space="preserve">
+    <value>任务已刷新</value>
+  </data>
+  <data name="HistroyTasks_Refreshing" xml:space="preserve">
+    <value>正在刷新...</value>
+  </data>
+  <data name="HistroyTasks_Title" xml:space="preserve">
+    <value>业务查询</value>
+  </data>
+  <data name="HtmlReader_Title" xml:space="preserve">
+    <value>详细信息</value>
+  </data>
+  <data name="MyProcessed_EmptyText" xml:space="preserve">
+    <value>无内容！</value>
+  </data>
+  <data name="MyProcessed_LoadingText" xml:space="preserve">
+    <value>加载中...</value>
+  </data>
+  <data name="MyProcessed_Refreshed" xml:space="preserve">
+    <value>列表已刷新</value>
+  </data>
+  <data name="MyProcessed_Refreshing" xml:space="preserve">
+    <value>正在刷新...</value>
+  </data>
+  <data name="MyProcessed_Title" xml:space="preserve">
+    <value>参办审批</value>
+  </data>
+  <data name="MyRequests_EmptyText" xml:space="preserve">
+    <value>无申请！</value>
+  </data>
+  <data name="MyRequests_LoadingText" xml:space="preserve">
+    <value>加载申请列表...</value>
+  </data>
+  <data name="MyRequests_Refreshed" xml:space="preserve">
+    <value>申请列表已刷新</value>
+  </data>
+  <data name="MyRequests_Refreshing" xml:space="preserve">
+    <value>正在刷新申请列表...</value>
+  </data>
+  <data name="MyRequests_Title" xml:space="preserve">
+    <value>我的申请</value>
+  </data>
+  <data name="NavPanel_Caption" xml:space="preserve">
+    <value>移动办公平台</value>
+  </data>
+  <data name="NavPanel_Welcome" xml:space="preserve">
+    <value>欢迎，{0}</value>
+  </data>
+  <data name="OutOfOffice_EndDate" xml:space="preserve">
+    <value>结束日期</value>
+  </data>
+  <data name="OutOfOffice_EndTime" xml:space="preserve">
+    <value>结束时间</value>
+  </data>
+  <data name="OutOfOffice_Period" xml:space="preserve">
+    <value>外出时间段</value>
+  </data>
+  <data name="OutOfOffice_SaveFailed" xml:space="preserve">
+    <value>外出设置更新失败！原因:&lt;br/&gt;{0}</value>
+  </data>
+  <data name="OutOfOffice_StartDate" xml:space="preserve">
+    <value>开始日期</value>
+  </data>
+  <data name="OutOfOffice_StartTime" xml:space="preserve">
+    <value>开始时间</value>
+  </data>
+  <data name="OutOfOffice_StatusInOffice" xml:space="preserve">
+    <value>在公司</value>
+  </data>
+  <data name="OutOfOffice_StatusOut" xml:space="preserve">
+    <value>外出中</value>
+  </data>
+  <data name="OutOfOffice_StatusPeriod" xml:space="preserve">
+    <value>仅在以下时间段外出</value>
+  </data>
+  <data name="OutOfOffice_Title" xml:space="preserve">
+    <value>外出设置</value>
+  </data>
+  <data name="OutOfOffice_ValidateEndDate" xml:space="preserve">
+    <value>请输入外出结束日期</value>
+  </data>
+  <data name="OutOfOffice_ValidateEndLTStart" xml:space="preserve">
+    <value>结束时间必需大于开始时间</value>
+  </data>
+  <data name="OutOfOffice_ValidateEndTime" xml:space="preserve">
+    <value>请输入外出结束时间</value>
+  </data>
+  <data name="OutOfOffice_ValidateStartDate" xml:space="preserve">
+    <value>请输入外出开始日期</value>
+  </data>
+  <data name="OutOfOffice_ValidateStartTime" xml:space="preserve">
+    <value>请输入外出开始时间</value>
+  </data>
+  <data name="PersonalInfo_Account" xml:space="preserve">
+    <value>账号</value>
+  </data>
+  <data name="PersonalInfo_Birthday" xml:space="preserve">
+    <value>出生日期</value>
+  </data>
+  <data name="PersonalInfo_ChangeHeadShot" xml:space="preserve">
+    <value>修改头像</value>
+  </data>
+  <data name="PersonalInfo_DateHired" xml:space="preserve">
+    <value>入职日期</value>
+  </data>
+  <data name="PersonalInfo_Dept" xml:space="preserve">
+    <value>所属部门</value>
+  </data>
+  <data name="PersonalInfo_EMail" xml:space="preserve">
+    <value>电子邮件</value>
+  </data>
+  <data name="PersonalInfo_HomePhone" xml:space="preserve">
+    <value>家庭电话</value>
+  </data>
+  <data name="PersonalInfo_HRID" xml:space="preserve">
+    <value>员工编号</value>
+  </data>
+  <data name="PersonalInfo_Mobile" xml:space="preserve">
+    <value>移动电话</value>
+  </data>
+  <data name="PersonalInfo_Name" xml:space="preserve">
+    <value>姓名</value>
+  </data>
+  <data name="PersonalInfo_Office" xml:space="preserve">
+    <value>办公地点</value>
+  </data>
+  <data name="PersonalInfo_OfficePhone" xml:space="preserve">
+    <value>办公室电话</value>
+  </data>
+  <data name="PersonalInfo_Supevisor" xml:space="preserve">
+    <value>直接上司</value>
+  </data>
+  <data name="PersonalInfo_Title" xml:space="preserve">
+    <value>个人信息</value>
+  </data>
+  <data name="Process_SubmitCfmMsg" xml:space="preserve">
+    <value>您确定要提交审核吗？</value>
+  </data>
+  <data name="Process_SubmitCfmTitle" xml:space="preserve">
+    <value>审批确认</value>
+  </data>
+  <data name="Process_Title" xml:space="preserve">
+    <value>审批</value>
+  </data>
+  <data name="Process_WaitMsgInform" xml:space="preserve">
+    <value>正在知会...</value>
+  </data>
+  <data name="Process_WaitMsgInviteIndicate" xml:space="preserve">
+    <value>正在邀请阅示...</value>
+  </data>
+  <data name="Process_WaitMsgReject" xml:space="preserve">
+    <value>正在拒绝...</value>
+  </data>
+  <data name="Process_WaitMsgReturnToInitiator" xml:space="preserve">
+    <value>正在退回...</value>
+  </data>
+  <data name="Process_WaitMsgSubmit" xml:space="preserve">
+    <value>正在提交...</value>
+  </data>
+  <data name="TaskCommunicationList_EmptyText" xml:space="preserve">
+    <value>无讨论！</value>
+  </data>
+  <data name="TaskCommunicationList_LoadingText" xml:space="preserve">
+    <value>加载中...</value>
+  </data>
+  <data name="TaskCommunicationList_Refreshed" xml:space="preserve">
+    <value>消息已刷新</value>
+  </data>
+  <data name="TaskCommunicationList_Refreshing" xml:space="preserve">
+    <value>正在刷新...</value>
+  </data>
+  <data name="TaskCommunicationList_Title" xml:space="preserve">
+    <value>流程讨论</value>
+  </data>
+  <data name="TaskCommunication_Title" xml:space="preserve">
+    <value>讨论</value>
+  </data>
+  <data name="TaskList_EmptyText" xml:space="preserve">
+    <value>无待处理任务！</value>
+  </data>
+  <data name="TaskList_LoadingText" xml:space="preserve">
+    <value>加载任务列表...</value>
+  </data>
+  <data name="TaskList_Refreshed" xml:space="preserve">
+    <value>任务列表已刷新</value>
+  </data>
+  <data name="TaskList_TaskListRefreshing" xml:space="preserve">
+    <value>正在刷新任务列表...</value>
+  </data>
+  <data name="TaskList_Title" xml:space="preserve">
+    <value>待办事宜</value>
+  </data>
+  <data name="TaskTrace_PullDownRefresh" xml:space="preserve">
+    <value>下拉刷新</value>
+  </data>
+  <data name="TaskTrace_Refreshing" xml:space="preserve">
+    <value>正在刷新内容...</value>
+  </data>
+  <data name="TaskTrace_ReleaseDownRefresh" xml:space="preserve">
+    <value>释放刷新</value>
+  </data>
+  <data name="TaskTrace_Title" xml:space="preserve">
+    <value>过程追踪</value>
+  </data>
+</root>

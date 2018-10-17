@@ -1,0 +1,43 @@
+每次调用都需要 ?Method=GetFormInfo&UserAccount=sdt14316
+
+1、GetFormInfo【OK - 1、需要JSON数据：{"TaskID":319363,"StepID",-1}，2、需要服务端有XML模板】
+http://bpm.sdt.com/YZSoft/WebService/YZWebService_Mobile.ashx?Method=GetFormInfo&UserAccount=sdt14316
+
+2、GetReturnSteps【OK 需要JSON数据：{"StepID":-1}】
+http://bpm.sdt.com/YZSoft/WebService/YZWebService_Mobile.ashx?Method=GetReturnSteps&UserAccount=sdt14316
+
+3、GetUserInfo【OK 获取UserAccount用户信息】
+http://bpm.sdt.com/YZSoft/WebService/YZWebService_Mobile.ashx?Method=GetUserInfo&UserAccount=sdt14316
+
+4、GetApprovalLog 【OK-需JSON数据:{"TaskID":319363}】
+http://bpm.sdt.com/YZSoft/WebService/YZWebService_Mobile.ashx?Method=GetApprovalLog&UserAccount=sdt14316
+
+5、MyTask 【OK 需JSON数据:{"Start":0,"Limit":20,"ProcessName":"","Keyword":"","Path":""}】
+http://bpm.sdt.com/YZSoft/WebService/YZWebService_Mobile.ashx?Method=MyTask&UserAccount=sdt14316
+
+6、TaskProcess【OK 需JSON数据:{"TaskID":319363,"StepID":5270135,Action:"同意(注:动态按钮名字)","Type":"POST","Comment":"审批内容","Transfer_TransferTo":"","Consign_ConsignUsers":"","RecedeBack_ToStepID":-1}】
+http://bpm.sdt.com/YZSoft/WebService/YZWebService_Mobile.ashx?Method=TaskProcess
+
+下方测试:文秀已改传参方式后已无法使用
+http://172.28.253.126:8080/YZSoft/WebService/YZWebService_Mobile.ashx?Method=TaskProcess&TaskID=319363&UserAccount=sdt143161&StepID=5270135&Action=同意&Type=POST&Comment=接口测试AAA
+
+7、PostTask【未测-接口文档未公布该方法，且与6步骤功能审批重复，需JSON数据{"ProcessName":"","Action":"","Comment":"","FormData":"XML格式数据"}】
+http://bpm.sdt.com/YZSoft/WebService/YZWebService_Mobile.ashx?Method=PostTask
+
+8、SaveAttachment 【OK 保存附件，注：只支持单个文件】
+http://bpm.sdt.com/YZSoft/WebService/YZWebService_Mobile.ashx?Method=SaveAttachment&UserAccount=sdt14316
+
+上传成功文件返回JSON如下：
+"{
+  "success": true,
+  "fileid": "201809110001",
+  "attachment": {
+    "FileID": "201809110001",
+    "Name": "无线组织员工.xls",
+    "Ext": ".xls",
+    "Size": 21504,
+    "LastUpdate": "2018-09-11 10:59:23",
+    "OwnerAccount": "sdt14316"
+  }
+}"
+

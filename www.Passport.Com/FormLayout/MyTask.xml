@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+  <Table ID="BPMInstTasks" Name="待办任务">
+    <ProcessName Type="String" Name="流程"></ProcessName>
+    <OwnerAccount Type="String" Name="发起人"></OwnerAccount>
+    <CreateAt Type="String" Name="发起时间"></CreateAt>
+
+  </Table>
+</Layout>

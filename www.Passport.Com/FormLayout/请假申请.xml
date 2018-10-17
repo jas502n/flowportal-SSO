@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+  <Table ID="HR_LEAVE_DTL" Name="请假申请">
+    <LeaveID Type="String" Name="请假类型"></LeaveID>
+    <FromDate Type="String" Name="开始时间"></FromDate>
+    <ToDate Type="String" Name="结束时间"></ToDate>
+    <DayInt Type="String" Name="天"></DayInt>
+    <HourInt Type="String" Name="小时"></HourInt>
+    <Note Type="String" Name="请假原因"></Note>
+  </Table>
+</Layout>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+  <Table ID="Fin_Applicant" Name="付款申请">
+<Company Type="String" Name="公司代码"></Company>
+<Dept Type="String" Name="部门"></Dept>
+    <SN Type="String" Name="申请单号"></SN>
+    <AppDate Type="String" Name="申请日期"></AppDate>
+    <Applicant Type="String" Name="申请人"></Applicant>
+    <HRID Type="String" Name="工号"></HRID>
+   
+    <AddedTaxYN Type="String" Name="专票"></AddedTaxYN>
+    <QualityYN Type="String" Name="质量费用"></QualityYN>
+  </Table>
+  <Table ID="Fin_Payee" Name="付款明细">
+    <Invoice Type="String" Name="类型"></Invoice>
+    <Payee Type="String" Name="收款单位"></Payee>
+    <Attachment Type="String" Name="附件"></Attachment>
+<Amount Type="String" Name="付款金额"></Amount>
+    <Reason Type="String" Name="付款原因"></Reason>
+
+
+  </Table>
+</Layout>

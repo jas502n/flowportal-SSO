@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+  <Table ID="QTHT_Applicant_All" Name="一般费用报销">
+    <AppSN Type="String" Name="流程编号"></AppSN>
+    <AppDate Type="String" Name="申请日期"></AppDate>
+    <AppHRName Type="String" Name="申请人"></AppHRName>
+    <htzrr Type="String" Name="合同责任人"></htzrr>
+    <AppDept Type="String" Name="责任部门"></AppDept>
+    <jjcd Type="String" Name="紧急程度"></jjcd>
+    <ContractType Type="String" Name="合同类型"></ContractType>
+    <ContractLocation Type="String" Name="合同区域"></ContractLocation>
+    <IsBid Type="String" Name="是否招投标"></IsBid>
+    <RisePrice Type="String" Name="是否涉及涨价"></RisePrice>
+    <coustomer Type="String" Name="客户名称"></coustomer>
+    <fj Type="String" Name="附件"></fj>
+    <zzwj Type="String" Name="资质文件"></zzwj>
+    <ZLFJ Type="String" Name="质量协议附件"></ZLFJ>
+    <State Type="String" Name="合同状态"></State>
+  </Table>
+</Layout>

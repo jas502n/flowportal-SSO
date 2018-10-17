@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+  <Table ID="IT_BPM_Flow" Name="BPM流程新增变更申请">
+    <HrName Type="String" Name="姓名"></HrName>
+    <HrDept Type="String" Name="HrDept"></HrDept>
+  </Table>
+</Layout>

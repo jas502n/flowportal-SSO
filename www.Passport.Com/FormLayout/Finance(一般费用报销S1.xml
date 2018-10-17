@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Layout>
+  <Table ID="Fin_Applicant" Name="一般费用报销">
+    <SN Type="String" Name="申请单号"></SN>
+    <AppDate Type="String" Name="申请日期"></AppDate>
+    <Applicant Type="String" Name="姓名"></Applicant>
+	<HRID Type="String" Name="工号"></HRID>
+    <Dept Type="String" Name="部门"></Dept>
+
+	<Sub_Name Type="String" Name="姓名"></Sub_Name>
+	<Sub_HRID Type="String" Name="工号"></Sub_HRID>
+    <Sub_Dept Type="String" Name="部门"></Sub_Dept>
+
+     <CostName Type="String" Name="成本中心"></CostName>
+	 <InsideOrder Type="String" Name="内部订单"></InsideOrder>
+	 <AddedTaxShow Type="String" Name="是否专票"></AddedTaxShow>
+	 <QualityYN Type="String" Name="是否质量费用"></QualityYN> 
+	 <QualityProject Type="String" Name="订单/项目"></QualityProject>  
+	 <QualityTime Type="String" Name="事故时间"></QualityTime>  
+     <QualityReason Type="String" Name="事故原因"></QualityReason>
+	 <QualityOutline Type="String" Name="事故简述"></QualityOutline>
+	 <QualityAttachments Type="String" Name="凭证"></QualityAttachments>
+  </Table>
+
+  <Table ID="Fin_ClaimingExpenses" Name="表单内容">
+     <DK_State Type="String" Name="是否打款"></DK_State>
+	 <DK_Amount Type="String" Name="打款金额"></DK_Amount>
+	 <Bank_Account Type="String" Name="付款银行"></Bank_Account>
+	 <App_Account Type="String" Name="银行账号"></App_Account> 
+	 <App_Bank_Name Type="String" Name="开户银行"></App_Bank_Name>  
+	 <App_Bank_Province Type="String" Name="所在省"></App_Bank_Province>
+	 <App_Bank_City Type="String" Name="所在市"></App_Bank_City>
+	 <OPBANKNAME Type="String" Name="支行"></OPBANKNAME>
+	 <Attachment Type="String" Name="附件"></Attachment>  
+  </Table>
+
+</Layout>
